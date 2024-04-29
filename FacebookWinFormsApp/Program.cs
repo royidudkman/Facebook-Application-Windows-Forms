@@ -19,7 +19,7 @@ namespace BasicFacebookFeatures
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FormMain());
-            //royi 
+            //royi amit make chan
         }
     }
 }
