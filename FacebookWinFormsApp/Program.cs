@@ -19,9 +19,6 @@ namespace BasicFacebookFeatures
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FormMain());
-// HEAD
-            //royi amit make change 2222dfd ffff
-
         }
     }
 }
