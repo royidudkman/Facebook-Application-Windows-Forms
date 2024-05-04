@@ -43,7 +43,7 @@
             // 
             // buttonLogin
             // 
-            this.buttonLogin.Location = new System.Drawing.Point(18, 17);
+            this.buttonLogin.Location = new System.Drawing.Point(441, 213);
             this.buttonLogin.Margin = new System.Windows.Forms.Padding(4);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(268, 32);
@@ -55,10 +55,10 @@
             // buttonLogout
             // 
             this.buttonLogout.Enabled = false;
-            this.buttonLogout.Location = new System.Drawing.Point(18, 57);
+            this.buttonLogout.Location = new System.Drawing.Point(441, 271);
             this.buttonLogout.Margin = new System.Windows.Forms.Padding(4);
             this.buttonLogout.Name = "buttonLogout";
-            this.buttonLogout.Size = new System.Drawing.Size(268, 32);
+            this.buttonLogout.Size = new System.Drawing.Size(268, 38);
             this.buttonLogout.TabIndex = 52;
             this.buttonLogout.Text = "Logout";
             this.buttonLogout.UseVisualStyleBackColor = true;
@@ -67,10 +67,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(314, 17);
+            this.label1.Location = new System.Drawing.Point(314, 3);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(559, 36);
+            this.label1.Size = new System.Drawing.Size(831, 52);
             this.label1.TabIndex = 53;
             this.label1.Text = "This is the AppID of \"Design Patterns App 2.4\". The grader will use it to test yo" +
     "ur app.\r\nType here your own AppID to test it:";
@@ -93,17 +93,17 @@
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.buttonLogout);
             this.tabPage1.Controls.Add(this.buttonLogin);
-            this.tabPage1.Location = new System.Drawing.Point(4, 27);
+            this.tabPage1.Location = new System.Drawing.Point(4, 35);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1235, 666);
+            this.tabPage1.Size = new System.Drawing.Size(1235, 658);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // pictureBoxProfile
             // 
-            this.pictureBoxProfile.Location = new System.Drawing.Point(18, 96);
+            this.pictureBoxProfile.Location = new System.Drawing.Point(511, 128);
             this.pictureBoxProfile.Name = "pictureBoxProfile";
             this.pictureBoxProfile.Size = new System.Drawing.Size(79, 78);
             this.pictureBoxProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -112,25 +112,26 @@
             // 
             // textBoxAppID
             // 
-            this.textBoxAppID.Location = new System.Drawing.Point(317, 61);
+            this.textBoxAppID.Location = new System.Drawing.Point(441, 90);
             this.textBoxAppID.Name = "textBoxAppID";
-            this.textBoxAppID.Size = new System.Drawing.Size(237, 24);
+            this.textBoxAppID.Size = new System.Drawing.Size(237, 32);
             this.textBoxAppID.TabIndex = 54;
             this.textBoxAppID.Text = "893455099216824";
+            this.textBoxAppID.TextChanged += new System.EventHandler(this.textBoxAppID_TextChanged);
             // 
             // tabPage2
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 27);
+            this.tabPage2.Location = new System.Drawing.Point(4, 35);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1235, 666);
+            this.tabPage2.Size = new System.Drawing.Size(1235, 658);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // FormMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 26F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1243, 697);
             this.Controls.Add(this.tabControl1);

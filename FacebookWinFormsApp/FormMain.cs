@@ -61,5 +61,10 @@ namespace BasicFacebookFeatures
             buttonLogin.Enabled = true;
             buttonLogout.Enabled = false;
         }
+
+        private void textBoxAppID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
