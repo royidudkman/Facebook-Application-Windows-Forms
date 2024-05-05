@@ -9,25 +9,25 @@ namespace BasicFacebookFeatures.Data
 {
     internal class BusinessCard
     {
+        private FacebookWrapper.LoginResult m_LoginResult;
         private string m_Name;
         private string m_LastName;
-        private string m_Phone;
         private string m_Email;
-        private string m_Gender;
-        private string m_Location;
-        private string m_HomeTown;
+        private eGender? m_Gender;
+        private FacebookWrapper.ObjectModel.City m_Location;
+        private FacebookWrapper.ObjectModel.City m_HomeTown;
         private string m_LinkWebsite;
 
-        public BusinessCard(string name, string lastName, string phone, string email, string gender, string location, string homeTown, string linkWebsite)
+        public BusinessCard(FacebookWrapper.LoginResult i_loginResult)
         {
-            Name = name;
-            LastName = lastName;
-            Phone = phone;
-            Email = email;
-            Gender = gender;
-            Location = location;
-            HomeTown = homeTown;
-            LinkWebsite = linkWebsite;
+            m_LoginResult = i_loginResult;
+            Name = m_LoginResult.LoggedInUser.Name;
+            LastName = m_LoginResult.LoggedInUser.LastName;
+            Email = m_LoginResult.LoggedInUser.Email;
+            Gender = m_LoginResult.LoggedInUser.Gender;
+            Location = m_LoginResult.LoggedInUser.Location;
+            HomeTown = m_LoginResult.LoggedInUser.Hometown;
+            LinkWebsite = m_LoginResult.LoggedInUser.Link;
         }
 
         public string Name
@@ -42,31 +42,25 @@ namespace BasicFacebookFeatures.Data
             set { m_LastName = value; }
         }
 
-        public string Phone
-        {
-            get { return m_Phone; }
-            set { m_Phone = value; }
-        }
-
         public string Email
         {
             get { return m_Email; }
             set { m_Email = value; }
         }
 
-        public string Gender
+        public eGender? Gender
         {
             get { return m_Gender; }
             set { m_Gender = value; }
         }
 
-        public string Location
+        public FacebookWrapper.ObjectModel.City Location
         {
             get { return m_Location; }
             set { m_Location = value; }
         }
 
-        public string HomeTown
+        public FacebookWrapper.ObjectModel.City HomeTown
         {
             get { return m_HomeTown; }
             set { m_HomeTown = value; }
@@ -84,7 +78,6 @@ namespace BasicFacebookFeatures.Data
 
             businessCardBuilder.AppendLine("Name: " + Name);
             businessCardBuilder.AppendLine("Last Name: " + LastName);
-            businessCardBuilder.AppendLine("Phone: " + Phone);
             businessCardBuilder.AppendLine("Email: " + Email);
             businessCardBuilder.AppendLine("Gender: " + Gender);
             businessCardBuilder.AppendLine("Location: " + Location);

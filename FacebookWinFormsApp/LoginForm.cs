@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FacebookWrapper;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,16 +19,25 @@ namespace BasicFacebookFeatures
         {
             InitializeComponent();
             FacebookWrapper.FacebookService.s_CollectionLimit = 25;
-            m_AppSettings = new AppSettings(893455099216824, new string[] { "emai", "user_birthday", "user_friends" });
+            m_AppSettings = new AppSettings(893455099216824, new string[] { "email", "user_birthday", "user_friends" });
         }
 
 
         private void buttonLogin_clicked(object sender, EventArgs e)
         {
-            if(m_AppSettings.LoginResult== null)
+            if(m_AppSettings.LoginResult == null)
             {
                 m_AppSettings.Login();
+                if (string.IsNullOrEmpty(m_AppSettings.LoginResult.ErrorMessage))
+                {
+                    this.Hide();
+
+                    MainForm mainForm = new MainForm();          
+                    mainForm.Show();
+                }
             }
+
+            
         }
     }
 }

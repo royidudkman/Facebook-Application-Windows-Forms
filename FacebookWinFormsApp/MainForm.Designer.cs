@@ -32,8 +32,8 @@
             this.labelHead = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.ButtonCreateBusinessCard = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -44,9 +44,10 @@
             this.labelHead.AutoSize = true;
             this.labelHead.Font = new System.Drawing.Font("Calibri", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelHead.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.labelHead.Location = new System.Drawing.Point(294, 19);
+            this.labelHead.Location = new System.Drawing.Point(196, 12);
+            this.labelHead.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelHead.Name = "labelHead";
-            this.labelHead.Size = new System.Drawing.Size(216, 49);
+            this.labelHead.Size = new System.Drawing.Size(149, 33);
             this.labelHead.TabIndex = 0;
             this.labelHead.Text = "Hello User !";
             this.labelHead.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -55,10 +56,10 @@
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(240)))), ((int)(((byte)(248)))));
             this.button1.Font = new System.Drawing.Font("Aharoni", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.button1.Location = new System.Drawing.Point(7, 53);
-            this.button1.Margin = new System.Windows.Forms.Padding(10);
+            this.button1.Location = new System.Drawing.Point(5, 34);
+            this.button1.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(196, 38);
+            this.button1.Size = new System.Drawing.Size(131, 25);
             this.button1.TabIndex = 1;
             this.button1.Text = "send happy Bday";
             this.button1.UseVisualStyleBackColor = false;
@@ -68,61 +69,65 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(202)))), ((int)(((byte)(228)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.ButtonCreateBusinessCard);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 295);
+            this.panel1.Location = new System.Drawing.Point(0, 190);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 155);
+            this.panel1.Size = new System.Drawing.Size(533, 102);
             this.panel1.TabIndex = 4;
-            // 
-            // button2
-            // 
-            this.button2.AutoSize = true;
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(240)))), ((int)(((byte)(248)))));
-            this.button2.Font = new System.Drawing.Font("Aharoni", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.button2.Location = new System.Drawing.Point(293, 53);
-            this.button2.Margin = new System.Windows.Forms.Padding(10);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(215, 38);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Create Business Card";
-            this.button2.UseVisualStyleBackColor = false;
             // 
             // button3
             // 
             this.button3.AutoSize = true;
             this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(240)))), ((int)(((byte)(248)))));
             this.button3.Font = new System.Drawing.Font("Aharoni", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.button3.Location = new System.Drawing.Point(575, 53);
-            this.button3.Margin = new System.Windows.Forms.Padding(10);
+            this.button3.Location = new System.Drawing.Point(383, 34);
+            this.button3.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(194, 38);
+            this.button3.Size = new System.Drawing.Size(141, 25);
             this.button3.TabIndex = 3;
             this.button3.Text = "Create new Album";
             this.button3.UseVisualStyleBackColor = false;
             // 
+            // ButtonCreateBusinessCard
+            // 
+            this.ButtonCreateBusinessCard.AutoSize = true;
+            this.ButtonCreateBusinessCard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(240)))), ((int)(((byte)(248)))));
+            this.ButtonCreateBusinessCard.Font = new System.Drawing.Font("Aharoni", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.ButtonCreateBusinessCard.Location = new System.Drawing.Point(195, 34);
+            this.ButtonCreateBusinessCard.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.ButtonCreateBusinessCard.Name = "ButtonCreateBusinessCard";
+            this.ButtonCreateBusinessCard.Size = new System.Drawing.Size(156, 25);
+            this.ButtonCreateBusinessCard.TabIndex = 2;
+            this.ButtonCreateBusinessCard.Text = "Create Business Card";
+            this.ButtonCreateBusinessCard.UseVisualStyleBackColor = false;
+            this.ButtonCreateBusinessCard.Click += new System.EventHandler(this.ButtonCreateBusinessCard_Click);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(325, 116);
+            this.pictureBox1.Location = new System.Drawing.Point(217, 75);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(138, 121);
+            this.pictureBox1.Size = new System.Drawing.Size(92, 79);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
-            // Form1
+            // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(4)))), ((int)(((byte)(94)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(533, 292);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.labelHead);
-            this.Name = "Form1";
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);
@@ -139,7 +144,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button ButtonCreateBusinessCard;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
