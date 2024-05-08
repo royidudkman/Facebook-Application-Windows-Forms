@@ -1,4 +1,5 @@
-﻿using BasicFacebookFeatures.Data;
+﻿using BasicFacebookFeatures.controllers;
+using BasicFacebookFeatures.Data;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,7 +14,7 @@ namespace BasicFacebookFeatures
 {
     public partial class BusinessCardScreen : Form
     {
-        private BusinessCard m_businessCard;
+        private BusinessCardController BusinessCardController;
         public BusinessCardScreen()
         {
             InitializeComponent();
