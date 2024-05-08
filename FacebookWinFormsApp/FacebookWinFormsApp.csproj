@@ -109,8 +109,10 @@
     <Compile Include="BusinessCardScreen.Designer.cs">
       <DependentUpon>BusinessCardScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="controllers\BdayController.cs" />
     <Compile Include="Data\BusinessCard.cs" />
     <Compile Include="Data\GreetingCard.cs" />
+    <Compile Include="interfaces\ILoginResultReciver.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
