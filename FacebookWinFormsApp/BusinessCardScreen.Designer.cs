@@ -51,6 +51,7 @@
             this.checkedListBoxOptions.Name = "checkedListBoxOptions";
             this.checkedListBoxOptions.Size = new System.Drawing.Size(122, 109);
             this.checkedListBoxOptions.TabIndex = 0;
+            this.checkedListBoxOptions.SelectedIndexChanged += new System.EventHandler(this.checkedListBoxOptions_SelectedIndexChanged);
             // 
             // richTextBoxPreview
             // 
@@ -61,6 +62,7 @@
             this.richTextBoxPreview.Size = new System.Drawing.Size(187, 109);
             this.richTextBoxPreview.TabIndex = 1;
             this.richTextBoxPreview.Text = "here will be the Business Card";
+            this.richTextBoxPreview.TextChanged += new System.EventHandler(this.richTextBoxPreview_TextChanged);
             // 
             // buttonSave
             // 
@@ -73,6 +75,7 @@
             this.buttonSave.TabIndex = 2;
             this.buttonSave.Text = "Save ";
             this.buttonSave.UseVisualStyleBackColor = false;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
             // labelTitle
             // 

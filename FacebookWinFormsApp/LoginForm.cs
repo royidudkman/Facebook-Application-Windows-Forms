@@ -15,6 +15,7 @@ namespace BasicFacebookFeatures
     {
 
         private AppSettings m_AppSettings;
+        private MainForm m_MainForm;
         public LoginForm()
         {
             InitializeComponent();
@@ -25,15 +26,14 @@ namespace BasicFacebookFeatures
 
         private void buttonLogin_clicked(object sender, EventArgs e)
         {
-            if(m_AppSettings.LoginResult == null)
+            if(AppSettings.LoginResult == null)
             {
                 m_AppSettings.Login();
-                if (string.IsNullOrEmpty(m_AppSettings.LoginResult.ErrorMessage))
+                if (string.IsNullOrEmpty(AppSettings.LoginResult.ErrorMessage))
                 {
                     this.Hide();
-
-                    MainForm mainForm = new MainForm();          
-                    mainForm.Show();
+                    m_MainForm = new MainForm();
+                    m_MainForm.Show();                          
                 }
             }
 

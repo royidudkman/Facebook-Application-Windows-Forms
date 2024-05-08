@@ -63,6 +63,7 @@
             this.buttonSendHappyBirthday.TabIndex = 1;
             this.buttonSendHappyBirthday.Text = "send happy Bday";
             this.buttonSendHappyBirthday.UseVisualStyleBackColor = false;
+            this.buttonSendHappyBirthday.Click += new System.EventHandler(this.buttonSendHappyBirthday_Click);
             // 
             // panel1
             // 

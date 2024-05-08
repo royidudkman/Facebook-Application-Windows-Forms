@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BasicFacebookFeatures.controllers
 {
-    internal class BdayController : ILoginResultReciver
+    internal class BdayController 
     {
          FacebookWrapper.LoginResult LoginResult { get; set; }
          GreetingCard GreetingCard { get; set; }
@@ -47,10 +47,7 @@ namespace BasicFacebookFeatures.controllers
 
         }
 
-        public void OnLogin(LoginResult i_LoginResult)
-        {
-            this.LoginResult = i_LoginResult;
-        }
+     
     }
 
 

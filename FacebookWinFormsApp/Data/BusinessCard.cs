@@ -9,69 +9,28 @@ namespace BasicFacebookFeatures.Data
 {
     internal class BusinessCard
     {
-        private FacebookWrapper.LoginResult m_LoginResult;
-        private string m_Name;
-        private string m_LastName;
-        private string m_Email;
-        private eGender? m_Gender;
-        private FacebookWrapper.ObjectModel.City m_Location;
-        private FacebookWrapper.ObjectModel.City m_HomeTown;
-        private string m_LinkWebsite;
+        private FacebookWrapper.LoginResult LoginResult { get; set; }
+        private string Name { get; set; }
+        private string LastName { get; set; }
+        private string Email { get; set; }
+        private eGender? Gender { get; set; }
+        private FacebookWrapper.ObjectModel.City Location { get; set; }
+        private FacebookWrapper.ObjectModel.City HomeTown { get; set; }
+        private string LinkWebsite { get; set; }
 
         public BusinessCard(FacebookWrapper.LoginResult i_loginResult)
-        {
-            m_LoginResult = i_loginResult;
-            Name = m_LoginResult.LoggedInUser.Name;
-            LastName = m_LoginResult.LoggedInUser.LastName;
-            Email = m_LoginResult.LoggedInUser.Email;
-            Gender = m_LoginResult.LoggedInUser.Gender;
-            Location = m_LoginResult.LoggedInUser.Location;
-            HomeTown = m_LoginResult.LoggedInUser.Hometown;
-            LinkWebsite = m_LoginResult.LoggedInUser.Link;
+        {    
+            LoginResult = i_loginResult;
+            Name = LoginResult.LoggedInUser.Name;
+            LastName = LoginResult.LoggedInUser.LastName;
+            Email = LoginResult.LoggedInUser.Email;
+            Gender = LoginResult.LoggedInUser.Gender;
+            Location = LoginResult.LoggedInUser.Location;
+            HomeTown = LoginResult.LoggedInUser.Hometown;
+            LinkWebsite = LoginResult.LoggedInUser.Link;
         }
 
-        public string Name
-        {
-            get { return m_Name; }
-            set { m_Name = value; }
-        }
-
-        public string LastName
-        {
-            get { return m_LastName; }
-            set { m_LastName = value; }
-        }
-
-        public string Email
-        {
-            get { return m_Email; }
-            set { m_Email = value; }
-        }
-
-        public eGender? Gender
-        {
-            get { return m_Gender; }
-            set { m_Gender = value; }
-        }
-
-        public FacebookWrapper.ObjectModel.City Location
-        {
-            get { return m_Location; }
-            set { m_Location = value; }
-        }
-
-        public FacebookWrapper.ObjectModel.City HomeTown
-        {
-            get { return m_HomeTown; }
-            set { m_HomeTown = value; }
-        }
-
-        public string LinkWebsite
-        {
-            get { return m_LinkWebsite; }
-            set { m_LinkWebsite = value; }
-        }
-
+       
         public string BusinessCardFormat()
         {
             StringBuilder businessCardBuilder = new StringBuilder();
