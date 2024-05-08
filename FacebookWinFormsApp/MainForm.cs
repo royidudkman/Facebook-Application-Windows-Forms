@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace BasicFacebookFeatures
 {
-    public partial class MainForm : Form, ILoginResultReciver
+    public partial class MainForm : Form
     {
         private FacebookWrapper.LoginResult LoginResult { get; set; }
         private BusinessCardScreen BusinessCardScreen { get; set; }
@@ -20,7 +20,7 @@ namespace BasicFacebookFeatures
         {
             InitializeComponent();
             BusinessCardScreen = new BusinessCardScreen();
-            LoginResult = AppSettings.LoginResult;
+            LoginResult = sd.LoginResult;
             SetTitleAndProfilePicture();
         }
 
@@ -42,10 +42,6 @@ namespace BasicFacebookFeatures
             
         }
 
-        public void OnLogin(LoginResult i_LoginResult)
-        {
-            LoginResult = i_LoginResult;
-            SetTitleAndProfilePicture();
-        }
+     
     }
 }

@@ -111,6 +111,7 @@
     </Compile>
     <Compile Include="controllers\BdayController.cs" />
     <Compile Include="controllers\BusinessCardController.cs" />
+    <Compile Include="Data\AuthRepository.cs" />
     <Compile Include="Data\BusinessCard.cs" />
     <Compile Include="Data\GreetingCard.cs" />
     <Compile Include="interfaces\ILoginResultReciver.cs" />
@@ -134,7 +135,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Data\UserOperation.cs" />
     <EmbeddedResource Include="AlbumsCreateScreen.resx">
       <DependentUpon>AlbumsCreateScreen.cs</DependentUpon>
     </EmbeddedResource>
