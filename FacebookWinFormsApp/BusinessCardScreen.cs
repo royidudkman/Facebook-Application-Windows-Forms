@@ -18,21 +18,60 @@ namespace BasicFacebookFeatures
         public BusinessCardScreen()
         {
             InitializeComponent();
+            BusinessCardController = new BusinessCardController();
         }
 
-        private void checkedListBoxOptions_SelectedIndexChanged(object sender, EventArgs e)
+        private void checkedListBoxOptions_ItemCheck(object sender, ItemCheckEventArgs e)
         {
-
+            UpdateRichTextBoxPreview();
         }
 
-        private void richTextBoxPreview_TextChanged(object sender, EventArgs e)
+        private void UpdateRichTextBoxPreview()
         {
+            StringBuilder previewText = new StringBuilder();
 
+            foreach (string checkedItem in checkedListBoxOptions.CheckedItems)
+            {
+                string propertyValue = GetPropertyValue(checkedItem);
+
+
+                previewText.AppendLine($"{checkedItem}: {propertyValue}");
+            }
+
+            richTextBoxPreview.Text = previewText.ToString();
         }
+
+
+        private string GetPropertyValue(string propertyName)
+        {
+            // Get the value of the property from the BusinessCardController
+            switch (propertyName)
+            {
+                case "Name":
+                    return BusinessCardController.BusinessCard.Name;
+                case "Last Name":
+                    return BusinessCardController.BusinessCard.LastName;
+                case "Location":
+                    return BusinessCardController.BusinessCard.Location?.ToString();
+                case "Home Town":
+                    return BusinessCardController.BusinessCard.HomeTown?.ToString();
+                case "Gender":
+                    return BusinessCardController.BusinessCard.Gender?.ToString();
+                case "Link To Website":
+                    return BusinessCardController.BusinessCard.LinkWebsite;
+                default:
+                    return string.Empty;
+            }
+        }
+
+
+
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
 
         }
+
+        
     }
 }
