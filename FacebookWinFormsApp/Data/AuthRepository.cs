@@ -8,5 +8,6 @@ namespace BasicFacebookFeatures.Data
 {
     internal class AuthRepository
     {
+        //del
     }
 }
