@@ -22,8 +22,7 @@ namespace BasicFacebookFeatures
         private void ButtonCreateBusinessCard_Click(object sender, EventArgs e)
         {
             this.Hide();
-            BusinessCardScreen.Show();
-            
+            BusinessCardScreen.Show();    
         }
     }
 }
