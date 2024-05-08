@@ -15,7 +15,7 @@ namespace BasicFacebookFeatures.controllers
 
         public BusinessCardController()
         {
-            BusinessCard = new BusinessCard(sd.LoginResult);
+            BusinessCard = new BusinessCard(AuthRepository.LoginResult);
 
         }
 

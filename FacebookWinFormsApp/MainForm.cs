@@ -1,4 +1,5 @@
-﻿using BasicFacebookFeatures.interfaces;
+﻿using BasicFacebookFeatures.Data;
+using BasicFacebookFeatures.interfaces;
 using FacebookWrapper;
 using System;
 using System.Collections.Generic;
@@ -20,7 +21,7 @@ namespace BasicFacebookFeatures
         {
             InitializeComponent();
             BusinessCardScreen = new BusinessCardScreen();
-            LoginResult = sd.LoginResult;
+            LoginResult = AuthRepository.LoginResult;
             SetTitleAndProfilePicture();
         }
 
