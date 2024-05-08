@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("");
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.listViewFriends = new System.Windows.Forms.ListView();
             this.Friends = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -116,6 +114,15 @@
             this.labelTitle.Size = new System.Drawing.Size(335, 24);
             this.labelTitle.TabIndex = 4;
             this.labelTitle.Text = "Send Happy Bday To Your Friends";
+            // 
+            // listView1
+            // 
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(34, 72);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(121, 83);
+            this.listView1.TabIndex = 3;
+            this.listView1.UseCompatibleStateImageBehavior = false;
             // 
             // BdayScreen
             // 
