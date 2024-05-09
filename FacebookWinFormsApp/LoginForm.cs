@@ -21,7 +21,23 @@ namespace BasicFacebookFeatures
         {
             InitializeComponent();
             FacebookWrapper.FacebookService.s_CollectionLimit = 25;
-            m_auth = new AuthRepository(893455099216824, new string[] { "email", "user_birthday", "user_friends" });
+            m_auth = new AuthRepository(893455099216824, new string[] 
+            { 
+                    "email",
+                    "public_profile",
+                    "user_age_range",
+                    "user_birthday",
+                    "user_events",
+                    "user_friends",
+                    "user_gender",
+                    "user_hometown",
+                    "user_likes",
+                    "user_link",
+                    "user_location",
+                    "user_photos",
+                    "user_posts",
+                    "user_videos" 
+            });
         }
 
 

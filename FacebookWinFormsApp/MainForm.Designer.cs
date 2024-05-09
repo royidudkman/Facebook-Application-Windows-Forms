@@ -32,12 +32,21 @@
             this.labelTitle = new System.Windows.Forms.Label();
             this.buttonSendHappyBirthday = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonLogout = new System.Windows.Forms.Button();
             this.buttonCreateNewAlbum = new System.Windows.Forms.Button();
             this.ButtonCreateBusinessCard = new System.Windows.Forms.Button();
             this.pictureBoxUserProfile = new System.Windows.Forms.PictureBox();
-            this.buttonLogout = new System.Windows.Forms.Button();
+            this.tabControlFeed = new System.Windows.Forms.TabControl();
+            this.tabPagePosts = new System.Windows.Forms.TabPage();
+            this.tabPageAbout = new System.Windows.Forms.TabPage();
+            this.tabPageFriends = new System.Windows.Forms.TabPage();
+            this.tabPagePictures = new System.Windows.Forms.TabPage();
+            this.tabPageVideos = new System.Windows.Forms.TabPage();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUserProfile)).BeginInit();
+            this.tabControlFeed.SuspendLayout();
+            this.tabPagePosts.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelTitle
@@ -76,11 +85,26 @@
             this.panel1.Controls.Add(this.ButtonCreateBusinessCard);
             this.panel1.Controls.Add(this.buttonSendHappyBirthday);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 562);
+            this.panel1.Location = new System.Drawing.Point(0, 573);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1260, 102);
+            this.panel1.Size = new System.Drawing.Size(765, 102);
             this.panel1.TabIndex = 4;
+            // 
+            // buttonLogout
+            // 
+            this.buttonLogout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonLogout.AutoSize = true;
+            this.buttonLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(240)))), ((int)(((byte)(248)))));
+            this.buttonLogout.Font = new System.Drawing.Font("Aharoni", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.buttonLogout.ForeColor = System.Drawing.Color.Red;
+            this.buttonLogout.Location = new System.Drawing.Point(587, 34);
+            this.buttonLogout.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.buttonLogout.Name = "buttonLogout";
+            this.buttonLogout.Size = new System.Drawing.Size(141, 25);
+            this.buttonLogout.TabIndex = 4;
+            this.buttonLogout.Text = "Logout";
+            this.buttonLogout.UseVisualStyleBackColor = false;
             // 
             // buttonCreateNewAlbum
             // 
@@ -122,20 +146,89 @@
             this.pictureBoxUserProfile.TabIndex = 5;
             this.pictureBoxUserProfile.TabStop = false;
             // 
-            // buttonLogout
+            // tabControlFeed
             // 
-            this.buttonLogout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonLogout.AutoSize = true;
-            this.buttonLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(240)))), ((int)(((byte)(248)))));
-            this.buttonLogout.Font = new System.Drawing.Font("Aharoni", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.buttonLogout.ForeColor = System.Drawing.Color.Red;
-            this.buttonLogout.Location = new System.Drawing.Point(1082, 34);
-            this.buttonLogout.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
-            this.buttonLogout.Name = "buttonLogout";
-            this.buttonLogout.Size = new System.Drawing.Size(141, 25);
-            this.buttonLogout.TabIndex = 4;
-            this.buttonLogout.Text = "Logout";
-            this.buttonLogout.UseVisualStyleBackColor = false;
+            this.tabControlFeed.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tabControlFeed.Controls.Add(this.tabPagePosts);
+            this.tabControlFeed.Controls.Add(this.tabPageAbout);
+            this.tabControlFeed.Controls.Add(this.tabPageFriends);
+            this.tabControlFeed.Controls.Add(this.tabPagePictures);
+            this.tabControlFeed.Controls.Add(this.tabPageVideos);
+            this.tabControlFeed.ItemSize = new System.Drawing.Size(42, 18);
+            this.tabControlFeed.Location = new System.Drawing.Point(21, 88);
+            this.tabControlFeed.Name = "tabControlFeed";
+            this.tabControlFeed.SelectedIndex = 0;
+            this.tabControlFeed.Size = new System.Drawing.Size(721, 449);
+            this.tabControlFeed.TabIndex = 6;
+            // 
+            // tabPagePosts
+            // 
+            this.tabPagePosts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(240)))), ((int)(((byte)(248)))));
+            this.tabPagePosts.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tabPagePosts.Controls.Add(this.flowLayoutPanel1);
+            this.tabPagePosts.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.tabPagePosts.Location = new System.Drawing.Point(4, 22);
+            this.tabPagePosts.Name = "tabPagePosts";
+            this.tabPagePosts.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPagePosts.Size = new System.Drawing.Size(713, 423);
+            this.tabPagePosts.TabIndex = 0;
+            this.tabPagePosts.Text = "Posts";
+            // 
+            // tabPageAbout
+            // 
+            this.tabPageAbout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(240)))), ((int)(((byte)(248)))));
+            this.tabPageAbout.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tabPageAbout.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.tabPageAbout.Location = new System.Drawing.Point(4, 22);
+            this.tabPageAbout.Name = "tabPageAbout";
+            this.tabPageAbout.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageAbout.Size = new System.Drawing.Size(701, 423);
+            this.tabPageAbout.TabIndex = 1;
+            this.tabPageAbout.Text = "About";
+            // 
+            // tabPageFriends
+            // 
+            this.tabPageFriends.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(240)))), ((int)(((byte)(248)))));
+            this.tabPageFriends.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tabPageFriends.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.tabPageFriends.Location = new System.Drawing.Point(4, 22);
+            this.tabPageFriends.Name = "tabPageFriends";
+            this.tabPageFriends.Size = new System.Drawing.Size(701, 423);
+            this.tabPageFriends.TabIndex = 2;
+            this.tabPageFriends.Text = "Friends";
+            // 
+            // tabPagePictures
+            // 
+            this.tabPagePictures.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(240)))), ((int)(((byte)(248)))));
+            this.tabPagePictures.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tabPagePictures.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.tabPagePictures.Location = new System.Drawing.Point(4, 22);
+            this.tabPagePictures.Name = "tabPagePictures";
+            this.tabPagePictures.Size = new System.Drawing.Size(701, 423);
+            this.tabPagePictures.TabIndex = 3;
+            this.tabPagePictures.Text = "Pictures";
+            // 
+            // tabPageVideos
+            // 
+            this.tabPageVideos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(240)))), ((int)(((byte)(248)))));
+            this.tabPageVideos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tabPageVideos.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.tabPageVideos.Location = new System.Drawing.Point(4, 22);
+            this.tabPageVideos.Name = "tabPageVideos";
+            this.tabPageVideos.Size = new System.Drawing.Size(701, 423);
+            this.tabPageVideos.TabIndex = 4;
+            this.tabPageVideos.Text = "Videos";
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(703, 413);
+            this.flowLayoutPanel1.TabIndex = 0;
             // 
             // MainForm
             // 
@@ -143,17 +236,21 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(4)))), ((int)(((byte)(94)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(1260, 664);
+            this.ClientSize = new System.Drawing.Size(765, 675);
+            this.Controls.Add(this.tabControlFeed);
             this.Controls.Add(this.pictureBoxUserProfile);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.labelTitle);
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MinimumSize = new System.Drawing.Size(781, 714);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUserProfile)).EndInit();
+            this.tabControlFeed.ResumeLayout(false);
+            this.tabPagePosts.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -168,5 +265,12 @@
         private System.Windows.Forms.Button ButtonCreateBusinessCard;
         private System.Windows.Forms.PictureBox pictureBoxUserProfile;
         private System.Windows.Forms.Button buttonLogout;
+        private System.Windows.Forms.TabControl tabControlFeed;
+        private System.Windows.Forms.TabPage tabPagePosts;
+        private System.Windows.Forms.TabPage tabPageAbout;
+        private System.Windows.Forms.TabPage tabPageFriends;
+        private System.Windows.Forms.TabPage tabPagePictures;
+        private System.Windows.Forms.TabPage tabPageVideos;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }
