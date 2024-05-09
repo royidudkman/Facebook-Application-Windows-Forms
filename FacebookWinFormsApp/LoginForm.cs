@@ -1,4 +1,5 @@
-﻿using FacebookWrapper;
+﻿using BasicFacebookFeatures.Data;
+using FacebookWrapper;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,22 +15,22 @@ namespace BasicFacebookFeatures
     public partial class LoginForm : Form
     {
 
-        private AppSettings m_AppSettings;
+        private AuthRepository m_auth;
         private MainForm m_MainForm;
         public LoginForm()
         {
             InitializeComponent();
             FacebookWrapper.FacebookService.s_CollectionLimit = 25;
-            m_AppSettings = new AppSettings(893455099216824, new string[] { "email", "user_birthday", "user_friends" });
+            m_auth = new AuthRepository(893455099216824, new string[] { "email", "user_birthday", "user_friends" });
         }
 
 
         private void buttonLogin_clicked(object sender, EventArgs e)
         {
-            if(AppSettings.LoginResult == null)
+            if(AuthRepository.LoginResult == null)
             {
-                m_AppSettings.Login();
-                if (string.IsNullOrEmpty(AppSettings.LoginResult.ErrorMessage))
+                m_auth.Login();
+                if (string.IsNullOrEmpty(AuthRepository.LoginResult.ErrorMessage))
                 {
                     this.Hide();
                     m_MainForm = new MainForm();
@@ -41,3 +42,7 @@ namespace BasicFacebookFeatures
         }
     }
 }
+
+
+//"publish_to_groups", "pages_read_engagement", "pages_manage_posts" sex_sex_sex555@walla.com
+//                      "pages_show_list" ,

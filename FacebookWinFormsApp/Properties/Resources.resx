@@ -121,8 +121,15 @@
   <data name="facebook_logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>facebook logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="greeting" xml:space="preserve">
+  <data name="GreetType1" xml:space="preserve">
     <value>Happy Birthday! 🎉🎂 Wishing you a day filled with joy, laughter, and all the things that make you smile. May this year be filled with unforgettable moments, cherished memories, and endless possibilities. Here's to you, and to all the amazing adventures that lie ahead! Cheers to another fantastic year of life!</value>
     <comment>happyBday</comment>
+  </data>
+  <data name="GreetType2" xml:space="preserve">
+    <value>"Happy Birthday to someone who brings sunshine into the lives of everyone around them! 🎉☀️ May your special day be as bright and beautiful as you are, filled with love, laughter, and unforgettable moments. Here's to another year of spreading joy and making wonderful memories! Cheers to you!"</value>
+  </data>
+  <data name="GreetType3" xml:space="preserve">
+    <value>Birthday Greeting 3:
+"Wishing the happiest of birthdays to an incredible soul! 🎂🌟 May this day be a celebration of all the wonderful things that make you unique and loved. Here's to laughter that fills the air, smiles that light up faces, and happiness that knows no bounds. May the year ahead be even more amazing than the last, filled with love, success, and endless blessings. Cheers to you and the remarkable journey ahead!"</value>
   </data>
 </root>

@@ -1,4 +1,5 @@
-﻿using BasicFacebookFeatures.interfaces;
+﻿using BasicFacebookFeatures.Data;
+using BasicFacebookFeatures.interfaces;
 using FacebookWrapper;
 using FacebookWrapper.ObjectModel;
 using System;
@@ -11,45 +12,77 @@ namespace BasicFacebookFeatures.controllers
 {
     internal class BdayController 
     {
-         FacebookWrapper.LoginResult LoginResult { get; set; }
-         GreetingCard GreetingCard { get; set; }
+       
+        public GreetingCard GreetingCard { get; set; }
 
+        public User Friend { get; set; }    
+
+        public eGreetTypes eGreetTypes { get; set; }
 
         public BdayController()
-        {
-            GreetingCard = new GreetingCard(LoginResult,"");
+        { 
+
         }
 
 
 
-        public FacebookObjectCollection<FriendList> GetAllAppFriends()
+        public FacebookObjectCollection<User> GetAllAppFriends()
         {
-            FacebookObjectCollection<FriendList> userFriends = LoginResult.LoggedInUser.FriendLists;
-            if(userFriends.Count > 0)
+            FacebookObjectCollection<User> userFriends =AuthRepository.LoginResult.LoggedInUser.Friends;
+            if (userFriends.Count > 0)
             {
                 return userFriends;
             }
             else
             {
-                return null; // there is no friends for this user
+                throw new Exception(); // there is no friends for this user
             }
-            
+
         }
 
-        public void ShowGreeting()
+        public String CreateAGreetingForFriend(User i_friendToGreet, eGreetTypes eGreetTypes)
         {
+            string friendName;
+            if(i_friendToGreet != null) 
+            { 
+                friendName = i_friendToGreet.Name;
+            }
+            else
+            {
+                friendName = "My Friend";
+            }
+            GreetingCard = new GreetingCard(friendName , eGreetTypes);
+            return GreetingCard.FormatMessage();
 
         }
 
 
         public void PostGreeting()
         {
-
+            if (GreetingCard != null)
+            {
+                if (AuthRepository.LoginResult != null && AuthRepository.LoginResult.LoggedInUser != null)
+                {
+                    AuthRepository.LoginResult.LoggedInUser.PostStatus(GreetingCard.RecipientName);
+                }
+                else
+                {
+                    throw new InvalidOperationException("User is not logged in.");
+                }
+            }
+            else
+            {
+                throw new ArgumentNullException(nameof(GreetingCard), "Greeting card is null.");
+            }
         }
 
-     
     }
 
+
+    public enum eGreetTypes
+    {
+        TYPE1,TYPE2,TYPE3,CUSTOM_GREET
+    }
 
 
 }

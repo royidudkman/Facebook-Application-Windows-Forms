@@ -73,9 +73,28 @@ namespace BasicFacebookFeatures.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Happy Birthday! 🎉🎂 Wishing you a day filled with joy, laughter, and all the things that make you smile. May this year be filled with unforgettable moments, cherished memories, and endless possibilities. Here&apos;s to you, and to all the amazing adventures that lie ahead! Cheers to another fantastic year of life!.
         /// </summary>
-        internal static string greeting {
+        internal static string GreetType1 {
             get {
-                return ResourceManager.GetString("greeting", resourceCulture);
+                return ResourceManager.GetString("GreetType1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &quot;Happy Birthday to someone who brings sunshine into the lives of everyone around them! 🎉☀️ May your special day be as bright and beautiful as you are, filled with love, laughter, and unforgettable moments. Here&apos;s to another year of spreading joy and making wonderful memories! Cheers to you!&quot;.
+        /// </summary>
+        internal static string GreetType2 {
+            get {
+                return ResourceManager.GetString("GreetType2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Birthday Greeting 3:
+        ///&quot;Wishing the happiest of birthdays to an incredible soul! 🎂🌟 May this day be a celebration of all the wonderful things that make you unique and loved. Here&apos;s to laughter that fills the air, smiles that light up faces, and happiness that knows no bounds. May the year ahead be even more amazing than the last, filled with love, success, and endless blessings. Cheers to you and the remarkable journey ahead!&quot;.
+        /// </summary>
+        internal static string GreetType3 {
+            get {
+                return ResourceManager.GetString("GreetType3", resourceCulture);
             }
         }
     }

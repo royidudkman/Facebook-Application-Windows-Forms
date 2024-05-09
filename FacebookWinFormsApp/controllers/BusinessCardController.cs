@@ -9,22 +9,17 @@ using System.Threading.Tasks;
 
 namespace BasicFacebookFeatures.controllers
 {
-    internal class BusinessCardController : ILoginResultReciver
+    internal class BusinessCardController 
     {
-        private BusinessCard BuisnessCard { get; set; }
-        private FacebookWrapper.LoginResult LoginResult { get; set; }
+        private BusinessCard BusinessCard { get; set; }
 
         public BusinessCardController()
         {
+            BusinessCard = new BusinessCard(AuthRepository.LoginResult);
+             
         }
 
 
-
-        public void OnLogin(LoginResult i_LoginResult)
-        {
-            this.LoginResult = i_LoginResult;
-            BuisnessCard = new BusinessCard(LoginResult);
-
-        }
+     
     }
 }
