@@ -8,6 +8,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 using System.Windows.Forms;
 
 namespace BasicFacebookFeatures
@@ -23,19 +24,19 @@ namespace BasicFacebookFeatures
 
         private void checkedListBoxOptions_ItemCheck(object sender, ItemCheckEventArgs e)
         {
-            UpdateRichTextBoxPreview();
+            BeginInvoke((Action)UpdateRichTextBoxPreview);
         }
 
         private void UpdateRichTextBoxPreview()
         {
             StringBuilder previewText = new StringBuilder();
+            richTextBoxPreview.Clear();
 
             foreach (string checkedItem in checkedListBoxOptions.CheckedItems)
             {
                 string propertyValue = GetPropertyValue(checkedItem);
-
-
                 previewText.AppendLine($"{checkedItem}: {propertyValue}");
+
             }
 
             richTextBoxPreview.Text = previewText.ToString();
@@ -69,9 +70,35 @@ namespace BasicFacebookFeatures
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
+            if (!string.IsNullOrEmpty(richTextBoxPreview.Text))
+            {
+                using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+                {
+                    saveFileDialog.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
+                    saveFileDialog.Title = "Save Text File";
 
+                    if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                    {  
+                        string filePath = saveFileDialog.FileName;
+
+                        try
+                        {
+                            File.WriteAllText(filePath, richTextBoxPreview.Text);
+                            MessageBox.Show($"File saved successfully", "File Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show($"Error saving file: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("No content to save.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
-        
+
     }
 }

@@ -39,7 +39,7 @@ namespace BasicFacebookFeatures.Data
         public void Login()
         {
             LoginResult = FacebookWrapper.FacebookService.Connect("EAAMsl7nPw7gBO2Nij36I44LTHQBpXTBKDf8ZAhMMWU8fcMAbdZB81FEZCMmMZA7kc0w3NIkEBrOnS4jM9furY5NgM63VDCHOeGDdXnaOfLx2W9pYkOLzXyU7nDTjU1wan0lqm6yoPLLoJDsbn4l2yiZBOVN2ZCn8FojO1vF8rY9l9rI1ZCAc3IuqUbTngZDZD");
-
+            //LoginResult = FacebookWrapper.FacebookService.Login(m_AppId.ToString(), m_RequiredPermissions);
         }
 
 
