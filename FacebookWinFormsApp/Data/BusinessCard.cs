@@ -9,14 +9,14 @@ namespace BasicFacebookFeatures.Data
 {
     internal class BusinessCard
     {
-        private FacebookWrapper.LoginResult LoginResult { get; set; }
-        private string Name { get; set; }
-        private string LastName { get; set; }
-        private string Email { get; set; }
-        private eGender? Gender { get; set; }
-        private FacebookWrapper.ObjectModel.City Location { get; set; }
-        private FacebookWrapper.ObjectModel.City HomeTown { get; set; }
-        private string LinkWebsite { get; set; }
+        public FacebookWrapper.LoginResult LoginResult { get; set; }
+        public string Name { get; set; }
+        public string LastName { get; set; }
+        public string Email { get; set; }
+        public eGender? Gender { get; set; }
+        public FacebookWrapper.ObjectModel.City Location { get; set; }
+        public FacebookWrapper.ObjectModel.City HomeTown { get; set; }
+        public string LinkWebsite { get; set; }
 
         public BusinessCard(FacebookWrapper.LoginResult i_loginResult)
         {    
@@ -30,21 +30,7 @@ namespace BasicFacebookFeatures.Data
             LinkWebsite = LoginResult.LoggedInUser.Link;
         }
 
-       
-        public string BusinessCardFormat()
-        {
-            StringBuilder businessCardBuilder = new StringBuilder();
-
-            businessCardBuilder.AppendLine("Name: " + Name);
-            businessCardBuilder.AppendLine("Last Name: " + LastName);
-            businessCardBuilder.AppendLine("Email: " + Email);
-            businessCardBuilder.AppendLine("Gender: " + Gender);
-            businessCardBuilder.AppendLine("Location: " + Location);
-            businessCardBuilder.AppendLine("HomeTown: " + HomeTown);
-            businessCardBuilder.AppendLine("Website: " + LinkWebsite);
-
-            return businessCardBuilder.ToString();
-        }
+         
 
     }
 }

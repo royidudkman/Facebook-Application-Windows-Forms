@@ -41,35 +41,33 @@
             this.checkedListBoxOptions.Items.AddRange(new object[] {
             "Name",
             "Last Name",
-            "Age",
             "Location",
             "Home Town",
             "Gender",
             "Link To Website"});
             this.checkedListBoxOptions.Location = new System.Drawing.Point(78, 72);
-            this.checkedListBoxOptions.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkedListBoxOptions.Margin = new System.Windows.Forms.Padding(2);
             this.checkedListBoxOptions.Name = "checkedListBoxOptions";
-            this.checkedListBoxOptions.Size = new System.Drawing.Size(122, 109);
+            this.checkedListBoxOptions.Size = new System.Drawing.Size(122, 94);
             this.checkedListBoxOptions.TabIndex = 0;
-            this.checkedListBoxOptions.SelectedIndexChanged += new System.EventHandler(this.checkedListBoxOptions_SelectedIndexChanged);
+            this.checkedListBoxOptions.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checkedListBoxOptions_ItemCheck);
             // 
             // richTextBoxPreview
             // 
             this.richTextBoxPreview.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(240)))), ((int)(((byte)(248)))));
             this.richTextBoxPreview.Location = new System.Drawing.Point(311, 72);
-            this.richTextBoxPreview.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.richTextBoxPreview.Margin = new System.Windows.Forms.Padding(2);
             this.richTextBoxPreview.Name = "richTextBoxPreview";
             this.richTextBoxPreview.Size = new System.Drawing.Size(187, 109);
             this.richTextBoxPreview.TabIndex = 1;
-            this.richTextBoxPreview.Text = "here will be the Business Card";
-            this.richTextBoxPreview.TextChanged += new System.EventHandler(this.richTextBoxPreview_TextChanged);
+            this.richTextBoxPreview.Text = "";
             // 
             // buttonSave
             // 
             this.buttonSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(240)))), ((int)(((byte)(248)))));
             this.buttonSave.Font = new System.Drawing.Font("Aharoni", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.buttonSave.Location = new System.Drawing.Point(217, 209);
-            this.buttonSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonSave.Margin = new System.Windows.Forms.Padding(2);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(96, 38);
             this.buttonSave.TabIndex = 2;
@@ -98,7 +96,7 @@
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.richTextBoxPreview);
             this.Controls.Add(this.checkedListBoxOptions);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "BusinessCardScreen";
             this.Text = "BusinessCardScreen";
             this.ResumeLayout(false);
