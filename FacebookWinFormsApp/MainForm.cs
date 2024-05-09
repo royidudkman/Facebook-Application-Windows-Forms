@@ -40,6 +40,9 @@ namespace BasicFacebookFeatures
 
         private void buttonSendHappyBirthday_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            BdayScreen bdayScreen = new BdayScreen();
+            bdayScreen.Show();
             
         }
 

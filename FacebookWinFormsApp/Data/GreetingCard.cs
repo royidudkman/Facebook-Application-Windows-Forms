@@ -1,4 +1,6 @@
-﻿using BasicFacebookFeatures.Properties;
+﻿using BasicFacebookFeatures.controllers;
+using BasicFacebookFeatures.Data;
+using BasicFacebookFeatures.Properties;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,19 +12,43 @@ namespace BasicFacebookFeatures
 {
     internal class GreetingCard
     {
-        private FacebookWrapper.LoginResult LoginResult { get; set; }
-        private string SenderName { get; set; }
-        private string RecipientName { get; set; }
-        private string Message { get; }
-        private List<string> Attachment { get; set; }
+    
+        public string SenderName { get; set; }
+        public string RecipientName { get; set; }
+        public string Message { get; set; }
 
-        public GreetingCard(FacebookWrapper.LoginResult i_loginResult , string i_recipientName)
+        public eGreetTypes eGreetTypes { get; set; }
+        public List<string> Attachment { get; set; }
+
+        public GreetingCard(string i_recipientName , eGreetTypes i_eGreetTypes = eGreetTypes.TYPE1)
         {
-            LoginResult = i_loginResult;
-            SenderName = i_loginResult.LoggedInUser.Name;
+            SenderName = AuthRepository.LoginResult.LoggedInUser.Name;
             RecipientName = i_recipientName;
-            Message = Resources.greeting;
             Attachment = new List<string>();
+            switch (i_eGreetTypes)
+            {
+                case eGreetTypes.TYPE1:
+                    {
+                        Message = Resources.GreetType1;
+                        break;
+                    }
+                case eGreetTypes.TYPE2:
+                    {
+                        Message = Resources.GreetType2;
+                        break;
+                    }
+                case eGreetTypes.TYPE3:
+                    {
+                        Message= Resources.GreetType3;
+                        break;
+                    }
+                case eGreetTypes.CUSTOM_GREET:
+                    {
+                        Message = "";
+                        break;
+                    }
+                   
+            }
         }
 
 

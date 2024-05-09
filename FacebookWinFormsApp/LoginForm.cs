@@ -42,3 +42,7 @@ namespace BasicFacebookFeatures
         }
     }
 }
+
+
+//"publish_to_groups", "pages_read_engagement", "pages_manage_posts" sex_sex_sex555@walla.com
+//                      "pages_show_list" ,

@@ -29,54 +29,43 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.listViewFriends = new System.Windows.Forms.ListView();
-            this.Friends = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.listBoxUserFriends = new System.Windows.Forms.ListBox();
             this.buttonPostBlessing = new System.Windows.Forms.Button();
-            this.richTextBoxPreview = new System.Windows.Forms.RichTextBox();
+            this.richTextBoxGreeting = new System.Windows.Forms.RichTextBox();
             this.labelTitle = new System.Windows.Forms.Label();
+            this.radioButtonGreetType1 = new System.Windows.Forms.RadioButton();
+            this.radioButtonGreetType2 = new System.Windows.Forms.RadioButton();
+            this.radioButtonGreetType3 = new System.Windows.Forms.RadioButton();
+            this.radioButtonCustomGreed = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.listViewFriends);
+            this.groupBox1.Controls.Add(this.radioButtonCustomGreed);
+            this.groupBox1.Controls.Add(this.radioButtonGreetType3);
+            this.groupBox1.Controls.Add(this.radioButtonGreetType2);
+            this.groupBox1.Controls.Add(this.radioButtonGreetType1);
+            this.groupBox1.Controls.Add(this.listBoxUserFriends);
             this.groupBox1.Controls.Add(this.buttonPostBlessing);
-            this.groupBox1.Controls.Add(this.richTextBoxPreview);
+            this.groupBox1.Controls.Add(this.richTextBoxGreeting);
             this.groupBox1.Location = new System.Drawing.Point(8, 43);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(517, 242);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
             // 
-            // listViewFriends
+            // listBoxUserFriends
             // 
-            this.listViewFriends.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(232)))), ((int)(((byte)(244)))));
-            this.listViewFriends.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.Friends,
-            this.columnHeader2});
-            this.listViewFriends.HideSelection = false;
-            this.listViewFriends.Items.AddRange(new System.Windows.Forms.ListViewItem[] {});
-            this.listViewFriends.Location = new System.Drawing.Point(87, 72);
-            this.listViewFriends.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.listViewFriends.Name = "listViewFriends";
-            this.listViewFriends.Size = new System.Drawing.Size(98, 83);
-            this.listViewFriends.TabIndex = 3;
-            this.listViewFriends.UseCompatibleStateImageBehavior = false;
-            this.listViewFriends.View = System.Windows.Forms.View.Details;
-            // 
-            // Friends
-            // 
-            this.Friends.Text = "Friends";
-            this.Friends.Width = 70;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Gender";
-            this.columnHeader2.Width = 71;
+            this.listBoxUserFriends.FormattingEnabled = true;
+            this.listBoxUserFriends.Location = new System.Drawing.Point(35, 72);
+            this.listBoxUserFriends.Name = "listBoxUserFriends";
+            this.listBoxUserFriends.Size = new System.Drawing.Size(160, 95);
+            this.listBoxUserFriends.TabIndex = 4;
+            this.listBoxUserFriends.SelectedIndexChanged += new System.EventHandler(this.listBoxUserFriends_SelectedIndexChanged);
             // 
             // buttonPostBlessing
             // 
@@ -84,22 +73,23 @@
             this.buttonPostBlessing.Font = new System.Drawing.Font("Aharoni", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.buttonPostBlessing.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.buttonPostBlessing.Location = new System.Drawing.Point(393, 198);
-            this.buttonPostBlessing.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonPostBlessing.Margin = new System.Windows.Forms.Padding(2);
             this.buttonPostBlessing.Name = "buttonPostBlessing";
             this.buttonPostBlessing.Size = new System.Drawing.Size(120, 40);
             this.buttonPostBlessing.TabIndex = 2;
             this.buttonPostBlessing.Text = "Post the blessing";
             this.buttonPostBlessing.UseVisualStyleBackColor = false;
+            this.buttonPostBlessing.Click += new System.EventHandler(this.buttonPostBlessing_Click);
             // 
-            // richTextBoxPreview
+            // richTextBoxGreeting
             // 
-            this.richTextBoxPreview.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(232)))), ((int)(((byte)(244)))));
-            this.richTextBoxPreview.Location = new System.Drawing.Point(244, 72);
-            this.richTextBoxPreview.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.richTextBoxPreview.Name = "richTextBoxPreview";
-            this.richTextBoxPreview.Size = new System.Drawing.Size(179, 83);
-            this.richTextBoxPreview.TabIndex = 1;
-            this.richTextBoxPreview.Text = "preview";
+            this.richTextBoxGreeting.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(232)))), ((int)(((byte)(244)))));
+            this.richTextBoxGreeting.Location = new System.Drawing.Point(317, 72);
+            this.richTextBoxGreeting.Margin = new System.Windows.Forms.Padding(2);
+            this.richTextBoxGreeting.Name = "richTextBoxGreeting";
+            this.richTextBoxGreeting.Size = new System.Drawing.Size(179, 83);
+            this.richTextBoxGreeting.TabIndex = 1;
+            this.richTextBoxGreeting.Text = "preview";
             // 
             // labelTitle
             // 
@@ -113,6 +103,61 @@
             this.labelTitle.TabIndex = 4;
             this.labelTitle.Text = "Send Happy Bday To Your Friends";
             // 
+            // radioButtonGreetType1
+            // 
+            this.radioButtonGreetType1.AutoSize = true;
+            this.radioButtonGreetType1.Font = new System.Drawing.Font("Aharoni", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.radioButtonGreetType1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.radioButtonGreetType1.Location = new System.Drawing.Point(201, 68);
+            this.radioButtonGreetType1.Name = "radioButtonGreetType1";
+            this.radioButtonGreetType1.Size = new System.Drawing.Size(100, 17);
+            this.radioButtonGreetType1.TabIndex = 9;
+            this.radioButtonGreetType1.TabStop = true;
+            this.radioButtonGreetType1.Text = "Greet Type 1";
+            this.radioButtonGreetType1.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonGreetType2
+            // 
+            this.radioButtonGreetType2.AutoSize = true;
+            this.radioButtonGreetType2.Font = new System.Drawing.Font("Aharoni", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.radioButtonGreetType2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.radioButtonGreetType2.Location = new System.Drawing.Point(201, 98);
+            this.radioButtonGreetType2.Name = "radioButtonGreetType2";
+            this.radioButtonGreetType2.Size = new System.Drawing.Size(100, 17);
+            this.radioButtonGreetType2.TabIndex = 10;
+            this.radioButtonGreetType2.TabStop = true;
+            this.radioButtonGreetType2.Text = "Greet Type 2";
+            this.radioButtonGreetType2.UseVisualStyleBackColor = true;
+            this.radioButtonGreetType2.CheckedChanged += new System.EventHandler(this.radioButtonGreetType2_CheckedChanged);
+            // 
+            // radioButtonGreetType3
+            // 
+            this.radioButtonGreetType3.AutoSize = true;
+            this.radioButtonGreetType3.Font = new System.Drawing.Font("Aharoni", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.radioButtonGreetType3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.radioButtonGreetType3.Location = new System.Drawing.Point(201, 127);
+            this.radioButtonGreetType3.Name = "radioButtonGreetType3";
+            this.radioButtonGreetType3.Size = new System.Drawing.Size(100, 17);
+            this.radioButtonGreetType3.TabIndex = 11;
+            this.radioButtonGreetType3.TabStop = true;
+            this.radioButtonGreetType3.Text = "Greet Type 3";
+            this.radioButtonGreetType3.UseVisualStyleBackColor = true;
+            this.radioButtonGreetType3.CheckedChanged += new System.EventHandler(this.radioButtonGreetType3_CheckedChanged);
+            // 
+            // radioButtonCustomGreed
+            // 
+            this.radioButtonCustomGreed.AutoSize = true;
+            this.radioButtonCustomGreed.Font = new System.Drawing.Font("Aharoni", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.radioButtonCustomGreed.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.radioButtonCustomGreed.Location = new System.Drawing.Point(201, 157);
+            this.radioButtonCustomGreed.Name = "radioButtonCustomGreed";
+            this.radioButtonCustomGreed.Size = new System.Drawing.Size(107, 17);
+            this.radioButtonCustomGreed.TabIndex = 12;
+            this.radioButtonCustomGreed.TabStop = true;
+            this.radioButtonCustomGreed.Text = "Custom Greet";
+            this.radioButtonCustomGreed.UseVisualStyleBackColor = true;
+            this.radioButtonCustomGreed.CheckedChanged += new System.EventHandler(this.radioButtonCustomGreet_CheckedChanged);
+            // 
             // BdayScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -123,11 +168,12 @@
             this.Controls.Add(this.groupBox1);
             this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MinimizeBox = false;
             this.Name = "BdayScreen";
             this.Text = "BdayScreen";
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -137,10 +183,12 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button buttonPostBlessing;
-        private System.Windows.Forms.RichTextBox richTextBoxPreview;
-        private System.Windows.Forms.ListView listViewFriends;
-        private System.Windows.Forms.ColumnHeader Friends;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.RichTextBox richTextBoxGreeting;
         private System.Windows.Forms.Label labelTitle;
+        private System.Windows.Forms.ListBox listBoxUserFriends;
+        private System.Windows.Forms.RadioButton radioButtonCustomGreed;
+        private System.Windows.Forms.RadioButton radioButtonGreetType3;
+        private System.Windows.Forms.RadioButton radioButtonGreetType2;
+        private System.Windows.Forms.RadioButton radioButtonGreetType1;
     }
 }
