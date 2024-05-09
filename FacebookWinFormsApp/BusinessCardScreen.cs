@@ -45,7 +45,6 @@ namespace BasicFacebookFeatures
 
         private string GetPropertyValue(string propertyName)
         {
-            // Get the value of the property from the BusinessCardController
             switch (propertyName)
             {
                 case "Name":
