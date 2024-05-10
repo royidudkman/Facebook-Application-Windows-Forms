@@ -1,10 +1,12 @@
-﻿using System;
+﻿using CefSharp.DevTools.CSS;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Net;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,6 +18,7 @@ namespace BasicFacebookFeatures
         private string m_UserName;
         private string m_PostText;
         private string m_PostPictureURL;
+        private string m_PostVideoURL;
         private Image m_UserProfilePicture;
 
 
@@ -59,8 +62,9 @@ namespace BasicFacebookFeatures
                 if(value != null)
                 {
                     m_PostPictureURL = value;
-                    DisplayImageFromUrl(value, pictureBoxPostPicture);
+                    pictureBoxPostPicture.LoadAsync(value);
                 }
+
                 else
                 {
                     pictureBoxPostPicture.Visible = false;
@@ -68,6 +72,27 @@ namespace BasicFacebookFeatures
                 
             }
         }
+
+        public string PostVideoURL
+        {
+            get { return m_PostVideoURL; }
+            set
+            {
+                if(value != null)
+                {
+                    m_PostVideoURL = value;
+                    axWindowsMediaPlayer1.URL = value;
+                    axWindowsMediaPlayer1.Ctlcontrols.stop();
+                }
+
+                else
+                {
+                    axWindowsMediaPlayer1.Visible = false;
+                }
+               
+            }
+        }
+     
 
         public Image UserProfilePicture
         {
@@ -85,29 +110,7 @@ namespace BasicFacebookFeatures
         }
 
 
-        private void DisplayImageFromUrl(string imageUrl, PictureBox i_pictureBox)
-        {
-            try
-            {
-                using (var webClient = new WebClient())
-                {
-                    byte[] imageData = webClient.DownloadData(imageUrl);
-
-                    using (var stream = new System.IO.MemoryStream(imageData))
-                    {
-                        Image image = Image.FromStream(stream);
-                        i_pictureBox.Image = image;
-                    }
-                }
-            }
-
-            catch (Exception ex)
-            {
-                // Handle any errors, e.g., display a default image or show an error message
-                MessageBox.Show($"Error loading image: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
+     
        
 
     }

@@ -161,6 +161,7 @@
             this.tabControlFeed.SelectedIndex = 0;
             this.tabControlFeed.Size = new System.Drawing.Size(1082, 315);
             this.tabControlFeed.TabIndex = 6;
+            this.tabControlFeed.SelectedIndexChanged += new System.EventHandler(this.tabControlFeed_SelectedIndexChanged);
             // 
             // tabPagePosts
             // 
