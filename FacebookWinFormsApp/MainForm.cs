@@ -1,4 +1,5 @@
-﻿using BasicFacebookFeatures.Data;
+﻿using BasicFacebookFeatures.controllers;
+using BasicFacebookFeatures.Data;
 using BasicFacebookFeatures.interfaces;
 using FacebookWrapper;
 using FacebookWrapper.ObjectModel;
@@ -18,7 +19,7 @@ namespace BasicFacebookFeatures
     {
         private FacebookWrapper.LoginResult LoginResult { get; set; }
         private BusinessCardScreen BusinessCardScreen { get; set; }
-        private PostItem[] m_Posts;
+        private PostsController m_PostsController = new PostsController();
 
         public MainForm()
         {
@@ -26,8 +27,7 @@ namespace BasicFacebookFeatures
             BusinessCardScreen = new BusinessCardScreen();
             LoginResult = AuthRepository.LoginResult;
             SetTitleAndProfilePicture();
-            populatePosts();
-
+            populatePosts(m_PostsController.FetchPosts());
 
         }
 
@@ -52,40 +52,51 @@ namespace BasicFacebookFeatures
 
         }
 
-        private void populatePosts()
+      
+
+        private void tabControlFeed_SelectedIndexChanged(object sender, EventArgs e)
         {
-            FacebookObjectCollection<Post> allPosts = LoginResult.LoggedInUser.Posts;
+            int selectedIndex = tabControlFeed.SelectedIndex;
 
-            m_Posts = new PostItem[allPosts.Count];
-            for (int i = 0; i < m_Posts.Length; i++)
+            switch (selectedIndex)
             {
-                m_Posts[i] = new PostItem();
-                m_Posts[i].UserName = LoginResult.LoggedInUser.Name;
-                m_Posts[i].UserProfilePicture = LoginResult.LoggedInUser.ImageSmall;
-                m_Posts[i].PostText = allPosts[i].Message;
-                m_Posts[i].PostPictureURL = allPosts[i].PictureURL;
-
+                case 0: // Posts tab
+                    //populatePosts(m_PostsController.FetchPosts());
+                    break;
+                case 1: // About tab
+                        // Execute code for the About tab
+                    MessageBox.Show("About tab selected");
+                    break;
+                case 2: // Friends tab
+                        // Execute code for the Friends tab
+                    MessageBox.Show("Friends tab selected");
+                    break;
+                case 3: // Pictures tab
+                        // Execute code for the Pictures tab
+                    MessageBox.Show("Pictures tab selected");
+                    break;
+                case 4: // Video tab
+                        // Execute code for the Video tab
+                    MessageBox.Show("Video tab selected");
+                    break;
+                default:
+                    // Handle other tabs or unexpected cases
+                    break;
+            }
+        }
+        private void populatePosts(PostItem[] i_Posts)
+        {
+            for (int i = 0; i < i_Posts.Length; i++)
+            {
                 if (flowLayoutPanel1.Controls.Count < 0)
                 {
                     flowLayoutPanel1.Controls.Clear();
                 }
                 else
                 {
-                    flowLayoutPanel1.Controls.Add(m_Posts[i]);
+                    flowLayoutPanel1.Controls.Add(i_Posts[i]);
                 }
             }
         }
-
-        private void fetchPosts()
-        {
-            //m_Posts[i] = new PostItem();
-            //m_Posts[i].Name = LoginResult.LoggedInUser.Name;
-            //m_Posts[i].UserProfilePicture = LoginResult.LoggedInUser.ImageSmall;
-            //m_Posts[i].PostText = LoginResult.LoggedInUser.Name;
-            //m_Posts[i].PostPicture = LoginResult.LoggedInUser.ImageLarge;
-
-        }
-
-
     }
 }

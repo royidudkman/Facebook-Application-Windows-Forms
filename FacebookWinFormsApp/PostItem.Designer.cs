@@ -10,12 +10,15 @@ namespace BasicFacebookFeatures
 
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PostItem));
             this.pictureBoxProfilePicture = new System.Windows.Forms.PictureBox();
             this.labelName = new System.Windows.Forms.Label();
             this.labelPostText = new System.Windows.Forms.Label();
             this.pictureBoxPostPicture = new System.Windows.Forms.PictureBox();
+            this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfilePicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPostPicture)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBoxProfilePicture
@@ -58,9 +61,19 @@ namespace BasicFacebookFeatures
             this.pictureBoxPostPicture.TabIndex = 3;
             this.pictureBoxPostPicture.TabStop = false;
             // 
+            // axWindowsMediaPlayer1
+            // 
+            this.axWindowsMediaPlayer1.Enabled = true;
+            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(163, 113);
+            this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
+            this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
+            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(345, 254);
+            this.axWindowsMediaPlayer1.TabIndex = 4;
+            // 
             // PostItem
             // 
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Controls.Add(this.axWindowsMediaPlayer1);
             this.Controls.Add(this.pictureBoxPostPicture);
             this.Controls.Add(this.labelPostText);
             this.Controls.Add(this.labelName);
@@ -69,6 +82,7 @@ namespace BasicFacebookFeatures
             this.Size = new System.Drawing.Size(663, 411);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfilePicture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPostPicture)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -76,5 +90,6 @@ namespace BasicFacebookFeatures
 
         private Label labelPostText;
         private PictureBox pictureBoxPostPicture;
+        private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
     }
 }
