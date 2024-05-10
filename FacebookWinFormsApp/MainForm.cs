@@ -86,6 +86,13 @@ namespace BasicFacebookFeatures
 
         }
 
+  
 
+        private void buttonCreateNewAlbum_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            AlbumsCreateScreen albumsCreateScreen = new AlbumsCreateScreen();
+            albumsCreateScreen.Show();
+        }
     }
 }

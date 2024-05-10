@@ -28,138 +28,220 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBoxAlbums = new System.Windows.Forms.ComboBox();
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AlbumsCreateScreen));
             this.labelTitle = new System.Windows.Forms.Label();
-            this.listBoxAlbums = new System.Windows.Forms.ListBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.labelName = new System.Windows.Forms.Label();
-            this.buttonCreateAlbum = new System.Windows.Forms.Button();
-            this.buttonSetAlbum = new System.Windows.Forms.Button();
-            this.pictureAlbum = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBoxImagesFromAlbum = new System.Windows.Forms.PictureBox();
+            this.comboBoxAlbumsNames = new System.Windows.Forms.ComboBox();
+            this.radioButtonThreeOnThree = new System.Windows.Forms.RadioButton();
+            this.radioButtonOneOnTwo = new System.Windows.Forms.RadioButton();
+            this.radioButtonTwoOnTwo = new System.Windows.Forms.RadioButton();
+            this.buttonBackImage = new System.Windows.Forms.Button();
+            this.buttonNextImage = new System.Windows.Forms.Button();
+            this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.buttonPostImage = new System.Windows.Forms.Button();
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureAlbum)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImagesFromAlbum)).BeginInit();
             this.SuspendLayout();
-            // 
-            // comboBoxAlbums
-            // 
-            this.comboBoxAlbums.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(240)))), ((int)(((byte)(248)))));
-            this.comboBoxAlbums.FormattingEnabled = true;
-            this.comboBoxAlbums.Location = new System.Drawing.Point(0, 0);
-            this.comboBoxAlbums.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.comboBoxAlbums.Name = "comboBoxAlbums";
-            this.comboBoxAlbums.Size = new System.Drawing.Size(135, 21);
-            this.comboBoxAlbums.TabIndex = 0;
             // 
             // labelTitle
             // 
             this.labelTitle.AutoSize = true;
-            this.labelTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.labelTitle.Location = new System.Drawing.Point(179, 18);
-            this.labelTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelTitle.Font = new System.Drawing.Font("Aharoni", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.labelTitle.Location = new System.Drawing.Point(401, 25);
             this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(137, 24);
+            this.labelTitle.Size = new System.Drawing.Size(290, 39);
             this.labelTitle.TabIndex = 4;
-            this.labelTitle.Text = "Create Album";
-            // 
-            // listBoxAlbums
-            // 
-            this.listBoxAlbums.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(240)))), ((int)(((byte)(248)))));
-            this.listBoxAlbums.FormattingEnabled = true;
-            this.listBoxAlbums.Location = new System.Drawing.Point(2, 22);
-            this.listBoxAlbums.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.listBoxAlbums.Name = "listBoxAlbums";
-            this.listBoxAlbums.Size = new System.Drawing.Size(133, 186);
-            this.listBoxAlbums.TabIndex = 1;
+            this.labelTitle.Text = "Create Canvas";
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.labelName);
-            this.panel1.Controls.Add(this.buttonCreateAlbum);
-            this.panel1.Controls.Add(this.buttonSetAlbum);
-            this.panel1.Controls.Add(this.pictureAlbum);
-            this.panel1.Controls.Add(this.comboBoxAlbums);
-            this.panel1.Controls.Add(this.listBoxAlbums);
-            this.panel1.Location = new System.Drawing.Point(2, 75);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Controls.Add(this.buttonPostImage);
+            this.panel1.Controls.Add(this.tableLayoutPanel);
+            this.panel1.Controls.Add(this.buttonNextImage);
+            this.panel1.Controls.Add(this.buttonBackImage);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.pictureBoxImagesFromAlbum);
+            this.panel1.Controls.Add(this.comboBoxAlbumsNames);
+            this.panel1.Controls.Add(this.radioButtonThreeOnThree);
+            this.panel1.Controls.Add(this.radioButtonOneOnTwo);
+            this.panel1.Controls.Add(this.radioButtonTwoOnTwo);
+            this.panel1.Location = new System.Drawing.Point(21, 94);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(498, 216);
+            this.panel1.Size = new System.Drawing.Size(984, 417);
             this.panel1.TabIndex = 5;
             // 
-            // labelName
+            // label1
             // 
-            this.labelName.AutoSize = true;
-            this.labelName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(240)))), ((int)(((byte)(248)))));
-            this.labelName.Location = new System.Drawing.Point(213, 5);
-            this.labelName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelName.Name = "labelName";
-            this.labelName.Size = new System.Drawing.Size(67, 13);
-            this.labelName.TabIndex = 6;
-            this.labelName.Text = "Image Name";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label1.Location = new System.Drawing.Point(3, 48);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(158, 24);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Select Layout : ";
             // 
-            // buttonCreateAlbum
+            // pictureBoxImagesFromAlbum
             // 
-            this.buttonCreateAlbum.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(240)))), ((int)(((byte)(248)))));
-            this.buttonCreateAlbum.Font = new System.Drawing.Font("Aharoni", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.buttonCreateAlbum.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.buttonCreateAlbum.Location = new System.Drawing.Point(365, 104);
-            this.buttonCreateAlbum.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.buttonCreateAlbum.Name = "buttonCreateAlbum";
-            this.buttonCreateAlbum.Size = new System.Drawing.Size(113, 22);
-            this.buttonCreateAlbum.TabIndex = 4;
-            this.buttonCreateAlbum.Text = "Create Album ";
-            this.buttonCreateAlbum.UseVisualStyleBackColor = false;
+            this.pictureBoxImagesFromAlbum.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxImagesFromAlbum.Image")));
+            this.pictureBoxImagesFromAlbum.Location = new System.Drawing.Point(253, 75);
+            this.pictureBoxImagesFromAlbum.Name = "pictureBoxImagesFromAlbum";
+            this.pictureBoxImagesFromAlbum.Size = new System.Drawing.Size(170, 136);
+            this.pictureBoxImagesFromAlbum.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxImagesFromAlbum.TabIndex = 5;
+            this.pictureBoxImagesFromAlbum.TabStop = false;
             // 
-            // buttonSetAlbum
+            // comboBoxAlbumsNames
             // 
-            this.buttonSetAlbum.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(240)))), ((int)(((byte)(248)))));
-            this.buttonSetAlbum.Font = new System.Drawing.Font("Aharoni", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.buttonSetAlbum.Location = new System.Drawing.Point(355, 68);
-            this.buttonSetAlbum.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.buttonSetAlbum.Name = "buttonSetAlbum";
-            this.buttonSetAlbum.Size = new System.Drawing.Size(130, 22);
-            this.buttonSetAlbum.TabIndex = 3;
-            this.buttonSetAlbum.Text = "Set Album Properties";
-            this.buttonSetAlbum.UseVisualStyleBackColor = false;
+            this.comboBoxAlbumsNames.FormattingEnabled = true;
+            this.comboBoxAlbumsNames.Items.AddRange(new object[] {
+            ""});
+            this.comboBoxAlbumsNames.Location = new System.Drawing.Point(253, 41);
+            this.comboBoxAlbumsNames.Name = "comboBoxAlbumsNames";
+            this.comboBoxAlbumsNames.Size = new System.Drawing.Size(170, 28);
+            this.comboBoxAlbumsNames.TabIndex = 4;
+            this.comboBoxAlbumsNames.SelectedIndexChanged += new System.EventHandler(this.comboBoxAlbumsNames_SelectedIndexChanged);
             // 
-            // pictureAlbum
+            // radioButtonThreeOnThree
             // 
-            this.pictureAlbum.Image = global::BasicFacebookFeatures.Properties.Resources.facebook_logo;
-            this.pictureAlbum.Location = new System.Drawing.Point(138, 22);
-            this.pictureAlbum.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.pictureAlbum.Name = "pictureAlbum";
-            this.pictureAlbum.Size = new System.Drawing.Size(205, 185);
-            this.pictureAlbum.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureAlbum.TabIndex = 2;
-            this.pictureAlbum.TabStop = false;
+            this.radioButtonThreeOnThree.AutoSize = true;
+            this.radioButtonThreeOnThree.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.radioButtonThreeOnThree.Image = ((System.Drawing.Image)(resources.GetObject("radioButtonThreeOnThree.Image")));
+            this.radioButtonThreeOnThree.Location = new System.Drawing.Point(24, 169);
+            this.radioButtonThreeOnThree.Name = "radioButtonThreeOnThree";
+            this.radioButtonThreeOnThree.Size = new System.Drawing.Size(93, 25);
+            this.radioButtonThreeOnThree.TabIndex = 2;
+            this.radioButtonThreeOnThree.Text = "3 X 3";
+            this.radioButtonThreeOnThree.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.radioButtonThreeOnThree.UseVisualStyleBackColor = true;
+            this.radioButtonThreeOnThree.CheckedChanged += new System.EventHandler(this.radioButtonThreeOnThree_CheckedChanged);
+            // 
+            // radioButtonOneOnTwo
+            // 
+            this.radioButtonOneOnTwo.AutoSize = true;
+            this.radioButtonOneOnTwo.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.radioButtonOneOnTwo.Image = ((System.Drawing.Image)(resources.GetObject("radioButtonOneOnTwo.Image")));
+            this.radioButtonOneOnTwo.Location = new System.Drawing.Point(24, 130);
+            this.radioButtonOneOnTwo.Name = "radioButtonOneOnTwo";
+            this.radioButtonOneOnTwo.Size = new System.Drawing.Size(93, 25);
+            this.radioButtonOneOnTwo.TabIndex = 1;
+            this.radioButtonOneOnTwo.Text = "1 X 2";
+            this.radioButtonOneOnTwo.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.radioButtonOneOnTwo.UseVisualStyleBackColor = true;
+            this.radioButtonOneOnTwo.CheckedChanged += new System.EventHandler(this.radioButtonOneOnTwo_CheckedChanged);
+            // 
+            // radioButtonTwoOnTwo
+            // 
+            this.radioButtonTwoOnTwo.AutoSize = true;
+            this.radioButtonTwoOnTwo.Checked = true;
+            this.radioButtonTwoOnTwo.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.radioButtonTwoOnTwo.Image = ((System.Drawing.Image)(resources.GetObject("radioButtonTwoOnTwo.Image")));
+            this.radioButtonTwoOnTwo.Location = new System.Drawing.Point(24, 91);
+            this.radioButtonTwoOnTwo.Name = "radioButtonTwoOnTwo";
+            this.radioButtonTwoOnTwo.Size = new System.Drawing.Size(93, 25);
+            this.radioButtonTwoOnTwo.TabIndex = 0;
+            this.radioButtonTwoOnTwo.TabStop = true;
+            this.radioButtonTwoOnTwo.Text = "2 X 2";
+            this.radioButtonTwoOnTwo.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.radioButtonTwoOnTwo.UseVisualStyleBackColor = true;
+            this.radioButtonTwoOnTwo.CheckedChanged += new System.EventHandler(this.radioButtonTwoOnTwo_CheckedChanged);
+            // 
+            // buttonBackImage
+            // 
+            this.buttonBackImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(4)))), ((int)(((byte)(94)))));
+            this.buttonBackImage.Font = new System.Drawing.Font("Aharoni", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.buttonBackImage.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.buttonBackImage.Location = new System.Drawing.Point(253, 228);
+            this.buttonBackImage.Name = "buttonBackImage";
+            this.buttonBackImage.Size = new System.Drawing.Size(79, 40);
+            this.buttonBackImage.TabIndex = 8;
+            this.buttonBackImage.Text = "Back";
+            this.buttonBackImage.UseVisualStyleBackColor = false;
+            this.buttonBackImage.Click += new System.EventHandler(this.buttonBackImage_Click);
+            // 
+            // buttonNextImage
+            // 
+            this.buttonNextImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(4)))), ((int)(((byte)(94)))));
+            this.buttonNextImage.Font = new System.Drawing.Font("Aharoni", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.buttonNextImage.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.buttonNextImage.Location = new System.Drawing.Point(344, 228);
+            this.buttonNextImage.Name = "buttonNextImage";
+            this.buttonNextImage.Size = new System.Drawing.Size(79, 40);
+            this.buttonNextImage.TabIndex = 9;
+            this.buttonNextImage.Text = "Next";
+            this.buttonNextImage.UseVisualStyleBackColor = false;
+            this.buttonNextImage.Click += new System.EventHandler(this.buttonNextImage_Click);
+            // 
+            // tableLayoutPanel
+            // 
+            this.tableLayoutPanel.ColumnCount = 3;
+            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel.Location = new System.Drawing.Point(482, 3);
+            this.tableLayoutPanel.Name = "tableLayoutPanel";
+            this.tableLayoutPanel.RowCount = 3;
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel.Size = new System.Drawing.Size(497, 314);
+            this.tableLayoutPanel.TabIndex = 10;
+            // 
+            // buttonPostImage
+            // 
+            this.buttonPostImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(4)))), ((int)(((byte)(94)))));
+            this.buttonPostImage.Font = new System.Drawing.Font("Aharoni", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.buttonPostImage.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.buttonPostImage.Location = new System.Drawing.Point(637, 343);
+            this.buttonPostImage.Name = "buttonPostImage";
+            this.buttonPostImage.Size = new System.Drawing.Size(179, 54);
+            this.buttonPostImage.TabIndex = 6;
+            this.buttonPostImage.Text = "Post Image";
+            this.buttonPostImage.UseVisualStyleBackColor = false;
+            this.buttonPostImage.Click += new System.EventHandler(this.buttonPostImage_Click);
+            // 
+            // notifyIcon1
+            // 
+            this.notifyIcon1.Text = "notifyIcon1";
+            this.notifyIcon1.Visible = true;
             // 
             // AlbumsCreateScreen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(202)))), ((int)(((byte)(228)))));
-            this.ClientSize = new System.Drawing.Size(533, 292);
+            this.ClientSize = new System.Drawing.Size(1012, 516);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.labelTitle);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "AlbumsCreateScreen";
             this.Text = "AlbumsCreateScreen";
+            this.Load += new System.EventHandler(this.AlbumsCreateScreen_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureAlbum)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImagesFromAlbum)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ComboBox comboBoxAlbums;
         private System.Windows.Forms.Label labelTitle;
-        private System.Windows.Forms.ListBox listBoxAlbums;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureAlbum;
-        private System.Windows.Forms.Button buttonCreateAlbum;
-        private System.Windows.Forms.Button buttonSetAlbum;
-        private System.Windows.Forms.Label labelName;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBoxImagesFromAlbum;
+        private System.Windows.Forms.ComboBox comboBoxAlbumsNames;
+        private System.Windows.Forms.RadioButton radioButtonThreeOnThree;
+        private System.Windows.Forms.RadioButton radioButtonOneOnTwo;
+        private System.Windows.Forms.RadioButton radioButtonTwoOnTwo;
+        private System.Windows.Forms.Button buttonNextImage;
+        private System.Windows.Forms.Button buttonBackImage;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel;
+        private System.Windows.Forms.Button buttonPostImage;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
     }
 }

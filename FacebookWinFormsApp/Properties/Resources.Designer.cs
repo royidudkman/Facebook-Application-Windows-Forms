@@ -61,16 +61,6 @@ namespace BasicFacebookFeatures.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap facebook_logo {
-            get {
-                object obj = ResourceManager.GetObject("facebook_logo", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Happy Birthday! 🎉🎂 Wishing you a day filled with joy, laughter, and all the things that make you smile. May this year be filled with unforgettable moments, cherished memories, and endless possibilities. Here&apos;s to you, and to all the amazing adventures that lie ahead! Cheers to another fantastic year of life!.
         /// </summary>
         internal static string GreetType1 {
