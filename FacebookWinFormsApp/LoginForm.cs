@@ -64,35 +64,13 @@ namespace BasicFacebookFeatures
             if (AuthRepository.LoginResult == null)
             {
                 LoadingScreen loadingScreen = new LoadingScreen();
-
-                // Show the loading screen in a separate thread
-                Thread loadingThread = new Thread(() =>
-                {
-                    Application.Run(loadingScreen);
-                });
-                loadingThread.Start();
-
-                // Start the login task
-                Task loginTask = Task.Run(() =>
+                loadingScreen.Show();
+                await Task.Run(() =>
                 {
                     m_auth.Login();
                 });
-
-                // Wait for the login task to complete asynchronously
-                await loginTask;
-
-                // Check if login was successful
                 if (string.IsNullOrEmpty(AuthRepository.LoginResult.ErrorMessage))
                 {
-                    // Hide the loading screen when MainForm is ready
-                    loadingScreen.Invoke(new MethodInvoker(delegate
-                    {
-                        loadingScreen.Close();
-                    }));
-
-                    // Show the main form
-                    m_MainForm = new MainForm();
-                    m_MainForm.Show();
                     this.Hide();
                 }
             }

@@ -45,10 +45,7 @@
             this.tabPageFriends = new System.Windows.Forms.TabPage();
             this.flowLayoutPanelFriends = new System.Windows.Forms.FlowLayoutPanel();
             this.tabPagePictures = new System.Windows.Forms.TabPage();
-            this.tabPageVideos = new System.Windows.Forms.TabPage();
             this.flowLayoutPanelPictures = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowLayoutPanelFriends = new System.Windows.Forms.FlowLayoutPanel();
-            this.tabPagePictures = new System.Windows.Forms.TabPage();
             this.tabPageLikedPages = new System.Windows.Forms.TabPage();
             this.tabPageTeams = new System.Windows.Forms.TabPage();
             this.flowLayoutLikedPages = new System.Windows.Forms.FlowLayoutPanel();

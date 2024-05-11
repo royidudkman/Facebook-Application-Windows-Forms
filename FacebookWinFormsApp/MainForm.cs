@@ -21,7 +21,6 @@ namespace BasicFacebookFeatures
         private FacebookWrapper.LoginResult LoginResult { get; set; }
         private BusinessCardScreen BusinessCardScreen { get; set; }
         private PostsController m_PostsController = new PostsController();
-        private FriendsController m_FriendsController = new FriendsController();
         private PictureTabController pictureTabController { get; set; }
         private DataToCardsFetcher m_DataToCard = new DataToCardsFetcher();
         public static LoadingSpinner LoadingSpinner { get; set; } = new LoadingSpinner();

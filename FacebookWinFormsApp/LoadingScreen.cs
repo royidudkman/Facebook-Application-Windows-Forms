@@ -20,58 +20,19 @@ namespace BasicFacebookFeatures
             InitializeComponent();
         }
 
-        //private void timer1_Tick(object sender, EventArgs e)
-        //{
-        //    progressBar.Value += 5;
-        //    labelPrecent.Text = progressBar.Value.ToString() + "%";
-        //    if(progressBar.Value == 100)
-        //    {
-        //        this.Cursor = Cursors.WaitCursor;
-        //        //MainForm = new MainForm();
-        //        //MainForm.Show();
-        //        timer1.Stop();
-        //        this.Hide();
-        //    }
-        //}
-
-        private void UpdateProgressBar(int value)
-        {
-            if (progressBar.InvokeRequired)
-            {
-                progressBar.Invoke((MethodInvoker)(() => progressBar.Value = value));
-            }
-            else
-            {
-                progressBar.Value = value;
-            }
-        }
-
-        private void UpdateLabel(string text)
-        {
-            if (labelPrecent.InvokeRequired)
-            {
-                labelPrecent.Invoke((MethodInvoker)(() => labelPrecent.Text = text));
-            }
-            else
-            {
-                labelPrecent.Text = text;
-            }
-        }
-
         private void timer1_Tick(object sender, EventArgs e)
         {
-            int newValue = progressBar.Value + 5;
-            UpdateProgressBar(newValue);
-            UpdateLabel(newValue.ToString() + "%");
-
-            if (newValue == 100)
+            progressBar.Value += 5;
+            labelPrecent.Text = progressBar.Value.ToString() + "%";
+            if (progressBar.Value == 100)
             {
                 this.Cursor = Cursors.WaitCursor;
+                MainForm = new MainForm();
+                MainForm.Show();
                 timer1.Stop();
                 this.Hide();
             }
         }
-
 
 
     }
