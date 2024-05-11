@@ -111,10 +111,17 @@
     </Compile>
     <Compile Include="controllers\BdayController.cs" />
     <Compile Include="controllers\BusinessCardController.cs" />
+    <Compile Include="controllers\FriendsController.cs" />
     <Compile Include="controllers\PostsController.cs" />
     <Compile Include="Data\AuthRepository.cs" />
     <Compile Include="Data\BusinessCard.cs" />
     <Compile Include="Data\GreetingCard.cs" />
+    <Compile Include="FriendItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FriendItem.Designer.cs">
+      <DependentUpon>FriendItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="interfaces\ILoginResultReciver.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -150,6 +157,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BusinessCardScreen.resx">
       <DependentUpon>BusinessCardScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FriendItem.resx">
+      <DependentUpon>FriendItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

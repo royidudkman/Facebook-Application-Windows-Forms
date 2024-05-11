@@ -20,6 +20,7 @@ namespace BasicFacebookFeatures
         private FacebookWrapper.LoginResult LoginResult { get; set; }
         private BusinessCardScreen BusinessCardScreen { get; set; }
         private PostsController m_PostsController = new PostsController();
+        private FriendsController m_FriendsController = new FriendsController();
 
         public MainForm()
         {
@@ -27,7 +28,8 @@ namespace BasicFacebookFeatures
             BusinessCardScreen = new BusinessCardScreen();
             LoginResult = AuthRepository.LoginResult;
             SetTitleAndProfilePicture();
-            populatePosts(m_PostsController.FetchPosts());
+            populateFlowLayoutPanel(flowLayoutPanelPosts, m_PostsController.FetchPosts());   
+            populateFlowLayoutPanel(flowLayoutPanelFriends, m_FriendsController.FetchFriends());
 
         }
 
@@ -52,51 +54,83 @@ namespace BasicFacebookFeatures
 
         }
 
-      
+
 
         private void tabControlFeed_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int selectedIndex = tabControlFeed.SelectedIndex;
+            //int selectedIndex = tabControlFeed.SelectedIndex;
 
-            switch (selectedIndex)
-            {
-                case 0: // Posts tab
-                    //populatePosts(m_PostsController.FetchPosts());
-                    break;
-                case 1: // About tab
-                        // Execute code for the About tab
-                    MessageBox.Show("About tab selected");
-                    break;
-                case 2: // Friends tab
-                        // Execute code for the Friends tab
-                    MessageBox.Show("Friends tab selected");
-                    break;
-                case 3: // Pictures tab
-                        // Execute code for the Pictures tab
-                    MessageBox.Show("Pictures tab selected");
-                    break;
-                case 4: // Video tab
-                        // Execute code for the Video tab
-                    MessageBox.Show("Video tab selected");
-                    break;
-                default:
-                    // Handle other tabs or unexpected cases
-                    break;
-            }
+
+            //switch (selectedIndex)
+            //{
+            //    case 0: // Posts tab
+            //        //populatePosts(m_PostsController.FetchPosts());
+            //        break;
+            //    case 1: // About tab
+            //        displayAbout();
+            //        break;
+            //    case 2: // Friends tab
+            //        //populateFlowLayoutPanel(flowLayoutPanelFriends, m_FriendsController.FetchFriends());
+            //        break;
+            //    case 3: // Pictures tab
+            //            // Execute code for the Pictures tab
+            //        MessageBox.Show("Pictures tab selected");
+            //        break;
+            //    case 4: // Video tab
+            //            // Execute code for the Video tab
+            //        MessageBox.Show("Video tab selected");
+            //        break;
+            //    default:
+            //        // Handle other tabs or unexpected cases
+            //        break;
+            //}
         }
-        private void populatePosts(PostItem[] i_Posts)
+
+        private void displayAbout()
         {
-            for (int i = 0; i < i_Posts.Length; i++)
+            //WorkExperience[] work = LoginResult.LoggedInUser.WorkExperiences;  //null      
+            //Education[] education = LoginResult.LoggedInUser.Educations;//null
+            //User.eRelationshipStatus? relationshipStatus = LoginResult.LoggedInUser.RelationshipStatus;// not found
+            //FacebookObjectCollection<Group> groups = LoginResult.LoggedInUser.Groups;//not found
+            //City hometown = LoginResult.LoggedInUser.Hometown;//not found
+            //FacebookObjectCollection<Video> videos = LoginResult.LoggedInUser.Videos;//not found
+
+      
+           
+
+            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.Append($"First Name: {LoginResult.LoggedInUser.FirstName}\n");
+            stringBuilder.Append($"Last Name: {LoginResult.LoggedInUser.LastName}\n");
+            stringBuilder.Append($"City: {LoginResult.LoggedInUser.Location.Name}\n");
+            stringBuilder.Append($"Email: {LoginResult.LoggedInUser.Email}\n");
+            stringBuilder.Append($"Gender: {LoginResult.LoggedInUser.Gender}\n");
+
+            labelInformation.Text = stringBuilder.ToString();
+
+            //--------------------------------LATER-------------------------------------------
+           
+            //FacebookObjectCollection<Page> likedPages = LoginResult.LoggedInUser.LikedPages;
+            //PicturesColleciton pictures = LoginResult.LoggedInUser.Pictures;
+            //Page[] teams = LoginResult.LoggedInUser.FavofriteTeams;
+            //---------------------------------------------------------------------------------
+
+            return;
+        }
+
+  
+        private void populateFlowLayoutPanel(FlowLayoutPanel i_FlowLayoutPanel, UserControl[] i_Items)
+        {
+            for (int i = 0; i < i_Items.Length; i++)
             {
-                if (flowLayoutPanel1.Controls.Count < 0)
+                if (flowLayoutPanelPosts.Controls.Count < 0)
                 {
-                    flowLayoutPanel1.Controls.Clear();
+                    i_FlowLayoutPanel.Controls.Clear();
                 }
                 else
                 {
-                    flowLayoutPanel1.Controls.Add(i_Posts[i]);
+                    i_FlowLayoutPanel.Controls.Add(i_Items[i]);
                 }
             }
-        }
+        }    
     }
 }
