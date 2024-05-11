@@ -21,7 +21,7 @@ namespace BasicFacebookFeatures
         private FacebookWrapper.LoginResult LoginResult { get; set; }
         private BusinessCardScreen BusinessCardScreen { get; set; }
         private PostsController m_PostsController = new PostsController();
-        private FriendsController m_FriendsController = new FriendsController();
+        private DataToCardsFetcher m_DataToCard = new DataToCardsFetcher();
         public static LoadingSpinner LoadingSpinner { get; set; } = new LoadingSpinner();
 
         public MainForm()
@@ -32,7 +32,9 @@ namespace BasicFacebookFeatures
             SetTitleAndProfilePicture();
             populateFlowLayoutPanel(flowLayoutPanelPosts, m_PostsController.FetchPosts());
             displayAbout();
-            populateFlowLayoutPanel(flowLayoutPanelFriends, m_FriendsController.FetchFriends());
+            populateFlowLayoutPanel(flowLayoutPanelFriends, m_DataToCard.FetchFriends());
+            populateFlowLayoutPanel(flowLayoutLikedPages, m_DataToCard.FetchLikedPages());
+            populateFlowLayoutPanel(flowLayoutPanelTeams, m_DataToCard.FetchTeams());
 
         }
 
@@ -66,8 +68,8 @@ namespace BasicFacebookFeatures
             //City hometown = LoginResult.LoggedInUser.Hometown;//not found
             //FacebookObjectCollection<Video> videos = LoginResult.LoggedInUser.Videos;//not found
 
-      
-           
+
+
 
             StringBuilder stringBuilder = new StringBuilder();
             stringBuilder.Append($"First Name: {LoginResult.LoggedInUser.FirstName}\n");
@@ -80,9 +82,9 @@ namespace BasicFacebookFeatures
 
             //--------------------------------LATER-------------------------------------------
            
-            //FacebookObjectCollection<Page> likedPages = LoginResult.LoggedInUser.LikedPages;
+            FacebookObjectCollection<Page> likedPages = LoginResult.LoggedInUser.LikedPages;
             //PicturesColleciton pictures = LoginResult.LoggedInUser.Pictures;
-            //Page[] teams = LoginResult.LoggedInUser.FavofriteTeams;
+            Page[] teams = LoginResult.LoggedInUser.FavofriteTeams;
             //---------------------------------------------------------------------------------
 
             return;

@@ -43,9 +43,12 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.labelInformation = new System.Windows.Forms.Label();
             this.tabPageFriends = new System.Windows.Forms.TabPage();
-            this.tabPagePictures = new System.Windows.Forms.TabPage();
-            this.tabPageVideos = new System.Windows.Forms.TabPage();
             this.flowLayoutPanelFriends = new System.Windows.Forms.FlowLayoutPanel();
+            this.tabPagePictures = new System.Windows.Forms.TabPage();
+            this.tabPageLikedPages = new System.Windows.Forms.TabPage();
+            this.tabPageTeams = new System.Windows.Forms.TabPage();
+            this.flowLayoutLikedPages = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanelTeams = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUserProfile)).BeginInit();
             this.tabControlFeed.SuspendLayout();
@@ -53,6 +56,8 @@
             this.tabPageAbout.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tabPageFriends.SuspendLayout();
+            this.tabPageLikedPages.SuspendLayout();
+            this.tabPageTeams.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelTitle
@@ -60,9 +65,10 @@
             this.labelTitle.AutoSize = true;
             this.labelTitle.Font = new System.Drawing.Font("Calibri", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTitle.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.labelTitle.Location = new System.Drawing.Point(129, 17);
+            this.labelTitle.Location = new System.Drawing.Point(86, 11);
+            this.labelTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(216, 49);
+            this.labelTitle.Size = new System.Drawing.Size(149, 33);
             this.labelTitle.TabIndex = 0;
             this.labelTitle.Text = "Hello User !";
             this.labelTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -72,10 +78,10 @@
             this.buttonSendHappyBirthday.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.buttonSendHappyBirthday.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(240)))), ((int)(((byte)(248)))));
             this.buttonSendHappyBirthday.Font = new System.Drawing.Font("Aharoni", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.buttonSendHappyBirthday.Location = new System.Drawing.Point(10, 47);
-            this.buttonSendHappyBirthday.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
+            this.buttonSendHappyBirthday.Location = new System.Drawing.Point(7, 31);
+            this.buttonSendHappyBirthday.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.buttonSendHappyBirthday.Name = "buttonSendHappyBirthday";
-            this.buttonSendHappyBirthday.Size = new System.Drawing.Size(196, 38);
+            this.buttonSendHappyBirthday.Size = new System.Drawing.Size(131, 25);
             this.buttonSendHappyBirthday.TabIndex = 1;
             this.buttonSendHappyBirthday.Text = "send happy Bday";
             this.buttonSendHappyBirthday.UseVisualStyleBackColor = false;
@@ -90,9 +96,10 @@
             this.panel1.Controls.Add(this.ButtonCreateBusinessCard);
             this.panel1.Controls.Add(this.buttonSendHappyBirthday);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 884);
+            this.panel1.Location = new System.Drawing.Point(0, 573);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1148, 154);
+            this.panel1.Size = new System.Drawing.Size(765, 102);
             this.panel1.TabIndex = 4;
             // 
             // buttonLogout
@@ -102,10 +109,10 @@
             this.buttonLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(240)))), ((int)(((byte)(248)))));
             this.buttonLogout.Font = new System.Drawing.Font("Aharoni", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.buttonLogout.ForeColor = System.Drawing.Color.Red;
-            this.buttonLogout.Location = new System.Drawing.Point(933, 43);
-            this.buttonLogout.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
+            this.buttonLogout.Location = new System.Drawing.Point(620, 28);
+            this.buttonLogout.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.buttonLogout.Name = "buttonLogout";
-            this.buttonLogout.Size = new System.Drawing.Size(212, 46);
+            this.buttonLogout.Size = new System.Drawing.Size(141, 30);
             this.buttonLogout.TabIndex = 4;
             this.buttonLogout.Text = "Logout";
             this.buttonLogout.UseVisualStyleBackColor = false;
@@ -116,10 +123,10 @@
             this.buttonCreateNewAlbum.AutoSize = true;
             this.buttonCreateNewAlbum.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(240)))), ((int)(((byte)(248)))));
             this.buttonCreateNewAlbum.Font = new System.Drawing.Font("Aharoni", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.buttonCreateNewAlbum.Location = new System.Drawing.Point(612, 43);
-            this.buttonCreateNewAlbum.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
+            this.buttonCreateNewAlbum.Location = new System.Drawing.Point(408, 28);
+            this.buttonCreateNewAlbum.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.buttonCreateNewAlbum.Name = "buttonCreateNewAlbum";
-            this.buttonCreateNewAlbum.Size = new System.Drawing.Size(291, 46);
+            this.buttonCreateNewAlbum.Size = new System.Drawing.Size(194, 30);
             this.buttonCreateNewAlbum.TabIndex = 3;
             this.buttonCreateNewAlbum.Text = "Create new Album";
             this.buttonCreateNewAlbum.UseVisualStyleBackColor = false;
@@ -131,10 +138,10 @@
             this.ButtonCreateBusinessCard.AutoSize = true;
             this.ButtonCreateBusinessCard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(240)))), ((int)(((byte)(248)))));
             this.ButtonCreateBusinessCard.Font = new System.Drawing.Font("Aharoni", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.ButtonCreateBusinessCard.Location = new System.Drawing.Point(280, 47);
-            this.ButtonCreateBusinessCard.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
+            this.ButtonCreateBusinessCard.Location = new System.Drawing.Point(187, 31);
+            this.ButtonCreateBusinessCard.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.ButtonCreateBusinessCard.Name = "ButtonCreateBusinessCard";
-            this.ButtonCreateBusinessCard.Size = new System.Drawing.Size(322, 46);
+            this.ButtonCreateBusinessCard.Size = new System.Drawing.Size(215, 30);
             this.ButtonCreateBusinessCard.TabIndex = 2;
             this.ButtonCreateBusinessCard.Text = "Create Business Card";
             this.ButtonCreateBusinessCard.UseVisualStyleBackColor = false;
@@ -143,9 +150,10 @@
             // pictureBoxUserProfile
             // 
             this.pictureBoxUserProfile.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxUserProfile.Image")));
-            this.pictureBoxUserProfile.Location = new System.Drawing.Point(16, 17);
+            this.pictureBoxUserProfile.Location = new System.Drawing.Point(11, 11);
+            this.pictureBoxUserProfile.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBoxUserProfile.Name = "pictureBoxUserProfile";
-            this.pictureBoxUserProfile.Size = new System.Drawing.Size(88, 74);
+            this.pictureBoxUserProfile.Size = new System.Drawing.Size(59, 48);
             this.pictureBoxUserProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxUserProfile.TabIndex = 5;
             this.pictureBoxUserProfile.TabStop = false;
@@ -159,13 +167,13 @@
             this.tabControlFeed.Controls.Add(this.tabPageAbout);
             this.tabControlFeed.Controls.Add(this.tabPageFriends);
             this.tabControlFeed.Controls.Add(this.tabPagePictures);
-            this.tabControlFeed.Controls.Add(this.tabPageVideos);
+            this.tabControlFeed.Controls.Add(this.tabPageLikedPages);
+            this.tabControlFeed.Controls.Add(this.tabPageTeams);
             this.tabControlFeed.ItemSize = new System.Drawing.Size(42, 18);
-            this.tabControlFeed.Location = new System.Drawing.Point(25, 126);
-            this.tabControlFeed.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tabControlFeed.Location = new System.Drawing.Point(17, 82);
             this.tabControlFeed.Name = "tabControlFeed";
             this.tabControlFeed.SelectedIndex = 0;
-            this.tabControlFeed.Size = new System.Drawing.Size(1082, 315);
+            this.tabControlFeed.Size = new System.Drawing.Size(721, 467);
             this.tabControlFeed.TabIndex = 6;
             // 
             // tabPagePosts
@@ -175,10 +183,9 @@
             this.tabPagePosts.Controls.Add(this.flowLayoutPanelPosts);
             this.tabPagePosts.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.tabPagePosts.Location = new System.Drawing.Point(4, 22);
-            this.tabPagePosts.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabPagePosts.Name = "tabPagePosts";
-            this.tabPagePosts.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tabPagePosts.Size = new System.Drawing.Size(1074, 289);
+            this.tabPagePosts.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPagePosts.Size = new System.Drawing.Size(713, 441);
             this.tabPagePosts.TabIndex = 0;
             this.tabPagePosts.Text = "Posts";
             // 
@@ -187,8 +194,9 @@
             this.flowLayoutPanelPosts.AutoScroll = true;
             this.flowLayoutPanelPosts.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanelPosts.Location = new System.Drawing.Point(3, 3);
+            this.flowLayoutPanelPosts.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanelPosts.Name = "flowLayoutPanelPosts";
-            this.flowLayoutPanelPosts.Size = new System.Drawing.Size(703, 413);
+            this.flowLayoutPanelPosts.Size = new System.Drawing.Size(703, 431);
             this.flowLayoutPanelPosts.TabIndex = 0;
             // 
             // tabPageAbout
@@ -198,10 +206,9 @@
             this.tabPageAbout.Controls.Add(this.panel2);
             this.tabPageAbout.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.tabPageAbout.Location = new System.Drawing.Point(4, 22);
-            this.tabPageAbout.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabPageAbout.Name = "tabPageAbout";
-            this.tabPageAbout.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tabPageAbout.Size = new System.Drawing.Size(1074, 289);
+            this.tabPageAbout.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageAbout.Size = new System.Drawing.Size(713, 441);
             this.tabPageAbout.TabIndex = 1;
             this.tabPageAbout.Text = "About";
             // 
@@ -210,15 +217,17 @@
             this.panel2.Controls.Add(this.labelInformation);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 3);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(703, 413);
+            this.panel2.Size = new System.Drawing.Size(703, 431);
             this.panel2.TabIndex = 0;
             // 
             // labelInformation
             // 
             this.labelInformation.AutoSize = true;
             this.labelInformation.Font = new System.Drawing.Font("Microsoft JhengHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelInformation.Location = new System.Drawing.Point(21, 37);
+            this.labelInformation.Location = new System.Drawing.Point(14, 24);
+            this.labelInformation.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelInformation.Name = "labelInformation";
             this.labelInformation.Size = new System.Drawing.Size(64, 24);
             this.labelInformation.TabIndex = 5;
@@ -231,11 +240,20 @@
             this.tabPageFriends.Controls.Add(this.flowLayoutPanelFriends);
             this.tabPageFriends.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.tabPageFriends.Location = new System.Drawing.Point(4, 22);
-            this.tabPageFriends.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabPageFriends.Name = "tabPageFriends";
-            this.tabPageFriends.Size = new System.Drawing.Size(1074, 289);
+            this.tabPageFriends.Size = new System.Drawing.Size(713, 441);
             this.tabPageFriends.TabIndex = 2;
             this.tabPageFriends.Text = "Friends";
+            // 
+            // flowLayoutPanelFriends
+            // 
+            this.flowLayoutPanelFriends.AutoScroll = true;
+            this.flowLayoutPanelFriends.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanelFriends.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanelFriends.Margin = new System.Windows.Forms.Padding(2);
+            this.flowLayoutPanelFriends.Name = "flowLayoutPanelFriends";
+            this.flowLayoutPanelFriends.Size = new System.Drawing.Size(709, 437);
+            this.flowLayoutPanelFriends.TabIndex = 1;
             // 
             // tabPagePictures
             // 
@@ -243,45 +261,66 @@
             this.tabPagePictures.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.tabPagePictures.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.tabPagePictures.Location = new System.Drawing.Point(4, 22);
-            this.tabPagePictures.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabPagePictures.Name = "tabPagePictures";
-            this.tabPagePictures.Size = new System.Drawing.Size(1074, 289);
+            this.tabPagePictures.Size = new System.Drawing.Size(713, 441);
             this.tabPagePictures.TabIndex = 3;
             this.tabPagePictures.Text = "Pictures";
             // 
-            // tabPageVideos
+            // tabPageLikedPages
             // 
-            this.tabPageVideos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(240)))), ((int)(((byte)(248)))));
-            this.tabPageVideos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.tabPageVideos.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.tabPageVideos.Location = new System.Drawing.Point(4, 22);
-            this.tabPageVideos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tabPageVideos.Name = "tabPageVideos";
-            this.tabPageVideos.Size = new System.Drawing.Size(1074, 289);
-            this.tabPageVideos.TabIndex = 4;
-            this.tabPageVideos.Text = "Videos";
+            this.tabPageLikedPages.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(240)))), ((int)(((byte)(248)))));
+            this.tabPageLikedPages.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tabPageLikedPages.Controls.Add(this.flowLayoutLikedPages);
+            this.tabPageLikedPages.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.tabPageLikedPages.Location = new System.Drawing.Point(4, 22);
+            this.tabPageLikedPages.Name = "tabPageLikedPages";
+            this.tabPageLikedPages.Size = new System.Drawing.Size(713, 441);
+            this.tabPageLikedPages.TabIndex = 4;
+            this.tabPageLikedPages.Text = "Liked Pages";
             // 
-            // flowLayoutPanelFriends
+            // tabPageTeams
             // 
-            this.flowLayoutPanelFriends.AutoScroll = true;
-            this.flowLayoutPanelFriends.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanelFriends.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanelFriends.Name = "flowLayoutPanelFriends";
-            this.flowLayoutPanelFriends.Size = new System.Drawing.Size(709, 419);
-            this.flowLayoutPanelFriends.TabIndex = 1;
+            this.tabPageTeams.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(240)))), ((int)(((byte)(248)))));
+            this.tabPageTeams.Controls.Add(this.flowLayoutPanelTeams);
+            this.tabPageTeams.Location = new System.Drawing.Point(4, 22);
+            this.tabPageTeams.Name = "tabPageTeams";
+            this.tabPageTeams.Size = new System.Drawing.Size(713, 441);
+            this.tabPageTeams.TabIndex = 5;
+            this.tabPageTeams.Text = "Teams";
+            // 
+            // flowLayoutLikedPages
+            // 
+            this.flowLayoutLikedPages.AutoScroll = true;
+            this.flowLayoutLikedPages.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutLikedPages.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutLikedPages.Margin = new System.Windows.Forms.Padding(2);
+            this.flowLayoutLikedPages.Name = "flowLayoutLikedPages";
+            this.flowLayoutLikedPages.Size = new System.Drawing.Size(709, 437);
+            this.flowLayoutLikedPages.TabIndex = 2;
+            // 
+            // flowLayoutPanelTeams
+            // 
+            this.flowLayoutPanelTeams.AutoScroll = true;
+            this.flowLayoutPanelTeams.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanelTeams.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanelTeams.Margin = new System.Windows.Forms.Padding(2);
+            this.flowLayoutPanelTeams.Name = "flowLayoutPanelTeams";
+            this.flowLayoutPanelTeams.Size = new System.Drawing.Size(713, 441);
+            this.flowLayoutPanelTeams.TabIndex = 2;
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(4)))), ((int)(((byte)(94)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(1148, 1038);
+            this.ClientSize = new System.Drawing.Size(765, 675);
             this.Controls.Add(this.tabControlFeed);
             this.Controls.Add(this.pictureBoxUserProfile);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.labelTitle);
-            this.MinimumSize = new System.Drawing.Size(1160, 1006);
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.MinimumSize = new System.Drawing.Size(779, 668);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Form1";
@@ -295,6 +334,8 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.tabPageFriends.ResumeLayout(false);
+            this.tabPageLikedPages.ResumeLayout(false);
+            this.tabPageTeams.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -314,10 +355,13 @@
         private System.Windows.Forms.TabPage tabPageAbout;
         private System.Windows.Forms.TabPage tabPageFriends;
         private System.Windows.Forms.TabPage tabPagePictures;
-        private System.Windows.Forms.TabPage tabPageVideos;
+        private System.Windows.Forms.TabPage tabPageLikedPages;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelPosts;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label labelInformation;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelFriends;
+        private System.Windows.Forms.TabPage tabPageTeams;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutLikedPages;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelTeams;
     }
 }
