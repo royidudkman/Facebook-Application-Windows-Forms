@@ -33,20 +33,22 @@ namespace BasicFacebookFeatures.controllers
 
 
 
-        public FacebookObjectCollection<Album> GetAllUserAlbums()
+        public async Task<FacebookObjectCollection<Album>> GetAllUserAlbumsAsync()
         {
-            return AuthRepository.LoginResult.LoggedInUser.Albums;
-            
-        }
-
-        public void GetAllUserImagesFromAlbum(Album i_UserAlbum)
-        {
-
-            foreach (var image in i_UserAlbum.Photos)
+            return await Task.Run(() =>
             {
-                userPhotos.Add(image);
-            }
-  
+                return AuthRepository.LoginResult.LoggedInUser.Albums;
+            });
+        }
+        public async Task GetAllUserImagesFromAlbumAsync(Album i_UserAlbum)
+        {
+            await Task.Run(() =>
+            {
+                foreach (var image in i_UserAlbum.Photos)
+                {
+                    userPhotos.Add(image);
+                }
+            });
         }
 
     }

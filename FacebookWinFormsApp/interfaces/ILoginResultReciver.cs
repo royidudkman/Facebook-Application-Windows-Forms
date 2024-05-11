@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace BasicFacebookFeatures.interfaces
 {
-    internal interface ILoginResultReciver
+    internal interface ILoader
     {
 
-        void OnLogin(FacebookWrapper.LoginResult i_LoginResult);
+        void IsFinishToLoad(bool isFinish);
 
     }
 }

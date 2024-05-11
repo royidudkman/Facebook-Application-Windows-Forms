@@ -25,9 +25,9 @@ namespace BasicFacebookFeatures
         }
 
 
-        private void AddAlbumsToComboBox()
+        private async void AddAlbumsToComboBox()
         {
-            FacebookObjectCollection<Album> userAlbums = AlbumController.GetAllUserAlbums();
+            FacebookObjectCollection<Album> userAlbums = await AlbumController.GetAllUserAlbumsAsync();
             if (userAlbums != null)
             {
                 comboBoxAlbumsNames.DisplayMember = "Name";
@@ -133,6 +133,7 @@ namespace BasicFacebookFeatures
                 AlbumController.LayoutCols = 2;
                 AlbumController.LayoutSize = eLayoutSize.TWO_ON_TWO;
                 CreateTableLayoutFromUserChoise();
+                buttonPostImage.Hide();
             }
         }
 
@@ -144,6 +145,7 @@ namespace BasicFacebookFeatures
                 AlbumController.LayoutCols = 2;
                 AlbumController.LayoutSize = eLayoutSize.ONE_ON_TWO;
                 CreateTableLayoutFromUserChoise();
+                buttonPostImage.Hide();
 
             }
         }
@@ -156,17 +158,19 @@ namespace BasicFacebookFeatures
                 AlbumController.LayoutCols = 3;
                 AlbumController.LayoutSize = eLayoutSize.THREE_ON_THREE;
                 CreateTableLayoutFromUserChoise();
+                buttonPostImage.Hide();
+
 
             }
         }
 
-        private void comboBoxAlbumsNames_SelectedIndexChanged(object sender, EventArgs e)
+        private async void comboBoxAlbumsNames_SelectedIndexChanged(object sender, EventArgs e)
         {
             AlbumController.userPhotos.Clear();
             Album choosenAlbum = comboBoxAlbumsNames.SelectedItem as Album;
-            AlbumController.GetAllUserImagesFromAlbum(choosenAlbum);
+            await AlbumController.GetAllUserImagesFromAlbumAsync(choosenAlbum);
             pictureBoxImagesFromAlbum.Image = choosenAlbum.ImageAlbum;
-            AlbumController.GetAllUserImagesFromAlbum(choosenAlbum);
+            await AlbumController.GetAllUserImagesFromAlbumAsync(choosenAlbum);
             AlbumController.IndexUserImages = 0;
         }
 
@@ -198,7 +202,8 @@ namespace BasicFacebookFeatures
             AlbumController.LayoutSize = eLayoutSize.TWO_ON_TWO;
             CreateTableLayoutFromUserChoise();
             buttonPostImage.Hide();
-
+            MainForm.LoadingSpinner.BringToFront();
+            MainForm.LoadingSpinner.Hide();
         }
 
         private void buttonPostImage_Click(object sender, EventArgs e)

@@ -196,7 +196,7 @@
             this.tabPageAbout.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabPageAbout.Name = "tabPageAbout";
             this.tabPageAbout.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tabPageAbout.Size = new System.Drawing.Size(1074, 142);
+            this.tabPageAbout.Size = new System.Drawing.Size(1074, 289);
             this.tabPageAbout.TabIndex = 1;
             this.tabPageAbout.Text = "About";
             // 
@@ -208,7 +208,7 @@
             this.tabPageFriends.Location = new System.Drawing.Point(4, 22);
             this.tabPageFriends.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabPageFriends.Name = "tabPageFriends";
-            this.tabPageFriends.Size = new System.Drawing.Size(1074, 142);
+            this.tabPageFriends.Size = new System.Drawing.Size(1074, 289);
             this.tabPageFriends.TabIndex = 2;
             this.tabPageFriends.Text = "Friends";
             // 
@@ -220,7 +220,7 @@
             this.tabPagePictures.Location = new System.Drawing.Point(4, 22);
             this.tabPagePictures.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabPagePictures.Name = "tabPagePictures";
-            this.tabPagePictures.Size = new System.Drawing.Size(1074, 142);
+            this.tabPagePictures.Size = new System.Drawing.Size(1074, 289);
             this.tabPagePictures.TabIndex = 3;
             this.tabPagePictures.Text = "Pictures";
             // 
@@ -232,7 +232,7 @@
             this.tabPageVideos.Location = new System.Drawing.Point(4, 22);
             this.tabPageVideos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabPageVideos.Name = "tabPageVideos";
-            this.tabPageVideos.Size = new System.Drawing.Size(1074, 142);
+            this.tabPageVideos.Size = new System.Drawing.Size(1074, 289);
             this.tabPageVideos.TabIndex = 4;
             this.tabPageVideos.Text = "Videos";
             // 
@@ -251,6 +251,7 @@
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUserProfile)).EndInit();

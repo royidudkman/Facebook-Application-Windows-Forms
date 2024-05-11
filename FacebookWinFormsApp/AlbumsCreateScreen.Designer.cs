@@ -32,16 +32,16 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AlbumsCreateScreen));
             this.labelTitle = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonPostImage = new System.Windows.Forms.Button();
+            this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.buttonNextImage = new System.Windows.Forms.Button();
+            this.buttonBackImage = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBoxImagesFromAlbum = new System.Windows.Forms.PictureBox();
             this.comboBoxAlbumsNames = new System.Windows.Forms.ComboBox();
             this.radioButtonThreeOnThree = new System.Windows.Forms.RadioButton();
             this.radioButtonOneOnTwo = new System.Windows.Forms.RadioButton();
             this.radioButtonTwoOnTwo = new System.Windows.Forms.RadioButton();
-            this.buttonBackImage = new System.Windows.Forms.Button();
-            this.buttonNextImage = new System.Windows.Forms.Button();
-            this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.buttonPostImage = new System.Windows.Forms.Button();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImagesFromAlbum)).BeginInit();
@@ -59,6 +59,9 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.buttonPostImage);
             this.panel1.Controls.Add(this.tableLayoutPanel);
             this.panel1.Controls.Add(this.buttonNextImage);
@@ -74,8 +77,71 @@
             this.panel1.Size = new System.Drawing.Size(984, 417);
             this.panel1.TabIndex = 5;
             // 
+            // buttonPostImage
+            // 
+            this.buttonPostImage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonPostImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(4)))), ((int)(((byte)(94)))));
+            this.buttonPostImage.Font = new System.Drawing.Font("Aharoni", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.buttonPostImage.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.buttonPostImage.Location = new System.Drawing.Point(637, 343);
+            this.buttonPostImage.Name = "buttonPostImage";
+            this.buttonPostImage.Size = new System.Drawing.Size(179, 54);
+            this.buttonPostImage.TabIndex = 6;
+            this.buttonPostImage.Text = "Post Image";
+            this.buttonPostImage.UseVisualStyleBackColor = false;
+            this.buttonPostImage.Click += new System.EventHandler(this.buttonPostImage_Click);
+            // 
+            // tableLayoutPanel
+            // 
+            this.tableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel.ColumnCount = 3;
+            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel.Location = new System.Drawing.Point(482, 3);
+            this.tableLayoutPanel.Name = "tableLayoutPanel";
+            this.tableLayoutPanel.RowCount = 3;
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel.Size = new System.Drawing.Size(497, 314);
+            this.tableLayoutPanel.TabIndex = 10;
+            // 
+            // buttonNextImage
+            // 
+            this.buttonNextImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(4)))), ((int)(((byte)(94)))));
+            this.buttonNextImage.Font = new System.Drawing.Font("Aharoni", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.buttonNextImage.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.buttonNextImage.Location = new System.Drawing.Point(344, 228);
+            this.buttonNextImage.Name = "buttonNextImage";
+            this.buttonNextImage.Size = new System.Drawing.Size(79, 40);
+            this.buttonNextImage.TabIndex = 9;
+            this.buttonNextImage.Text = "Next";
+            this.buttonNextImage.UseVisualStyleBackColor = false;
+            this.buttonNextImage.Click += new System.EventHandler(this.buttonNextImage_Click);
+            // 
+            // buttonBackImage
+            // 
+            this.buttonBackImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(4)))), ((int)(((byte)(94)))));
+            this.buttonBackImage.Font = new System.Drawing.Font("Aharoni", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.buttonBackImage.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.buttonBackImage.Location = new System.Drawing.Point(253, 228);
+            this.buttonBackImage.Name = "buttonBackImage";
+            this.buttonBackImage.Size = new System.Drawing.Size(79, 40);
+            this.buttonBackImage.TabIndex = 8;
+            this.buttonBackImage.Text = "Back";
+            this.buttonBackImage.UseVisualStyleBackColor = false;
+            this.buttonBackImage.Click += new System.EventHandler(this.buttonBackImage_Click);
+            // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.label1.Location = new System.Drawing.Point(3, 48);
@@ -107,6 +173,8 @@
             // 
             // radioButtonThreeOnThree
             // 
+            this.radioButtonThreeOnThree.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.radioButtonThreeOnThree.AutoSize = true;
             this.radioButtonThreeOnThree.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.radioButtonThreeOnThree.Image = ((System.Drawing.Image)(resources.GetObject("radioButtonThreeOnThree.Image")));
@@ -121,6 +189,8 @@
             // 
             // radioButtonOneOnTwo
             // 
+            this.radioButtonOneOnTwo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.radioButtonOneOnTwo.AutoSize = true;
             this.radioButtonOneOnTwo.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.radioButtonOneOnTwo.Image = ((System.Drawing.Image)(resources.GetObject("radioButtonOneOnTwo.Image")));
@@ -135,6 +205,8 @@
             // 
             // radioButtonTwoOnTwo
             // 
+            this.radioButtonTwoOnTwo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.radioButtonTwoOnTwo.AutoSize = true;
             this.radioButtonTwoOnTwo.Checked = true;
             this.radioButtonTwoOnTwo.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
@@ -149,62 +221,6 @@
             this.radioButtonTwoOnTwo.UseVisualStyleBackColor = true;
             this.radioButtonTwoOnTwo.CheckedChanged += new System.EventHandler(this.radioButtonTwoOnTwo_CheckedChanged);
             // 
-            // buttonBackImage
-            // 
-            this.buttonBackImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(4)))), ((int)(((byte)(94)))));
-            this.buttonBackImage.Font = new System.Drawing.Font("Aharoni", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.buttonBackImage.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.buttonBackImage.Location = new System.Drawing.Point(253, 228);
-            this.buttonBackImage.Name = "buttonBackImage";
-            this.buttonBackImage.Size = new System.Drawing.Size(79, 40);
-            this.buttonBackImage.TabIndex = 8;
-            this.buttonBackImage.Text = "Back";
-            this.buttonBackImage.UseVisualStyleBackColor = false;
-            this.buttonBackImage.Click += new System.EventHandler(this.buttonBackImage_Click);
-            // 
-            // buttonNextImage
-            // 
-            this.buttonNextImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(4)))), ((int)(((byte)(94)))));
-            this.buttonNextImage.Font = new System.Drawing.Font("Aharoni", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.buttonNextImage.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.buttonNextImage.Location = new System.Drawing.Point(344, 228);
-            this.buttonNextImage.Name = "buttonNextImage";
-            this.buttonNextImage.Size = new System.Drawing.Size(79, 40);
-            this.buttonNextImage.TabIndex = 9;
-            this.buttonNextImage.Text = "Next";
-            this.buttonNextImage.UseVisualStyleBackColor = false;
-            this.buttonNextImage.Click += new System.EventHandler(this.buttonNextImage_Click);
-            // 
-            // tableLayoutPanel
-            // 
-            this.tableLayoutPanel.ColumnCount = 3;
-            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel.Location = new System.Drawing.Point(482, 3);
-            this.tableLayoutPanel.Name = "tableLayoutPanel";
-            this.tableLayoutPanel.RowCount = 3;
-            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel.Size = new System.Drawing.Size(497, 314);
-            this.tableLayoutPanel.TabIndex = 10;
-            // 
-            // buttonPostImage
-            // 
-            this.buttonPostImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(4)))), ((int)(((byte)(94)))));
-            this.buttonPostImage.Font = new System.Drawing.Font("Aharoni", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.buttonPostImage.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.buttonPostImage.Location = new System.Drawing.Point(637, 343);
-            this.buttonPostImage.Name = "buttonPostImage";
-            this.buttonPostImage.Size = new System.Drawing.Size(179, 54);
-            this.buttonPostImage.TabIndex = 6;
-            this.buttonPostImage.Text = "Post Image";
-            this.buttonPostImage.UseVisualStyleBackColor = false;
-            this.buttonPostImage.Click += new System.EventHandler(this.buttonPostImage_Click);
-            // 
             // notifyIcon1
             // 
             this.notifyIcon1.Text = "notifyIcon1";
@@ -215,7 +231,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(202)))), ((int)(((byte)(228)))));
-            this.ClientSize = new System.Drawing.Size(1012, 516);
+            this.ClientSize = new System.Drawing.Size(1009, 516);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.labelTitle);
             this.Name = "AlbumsCreateScreen";
