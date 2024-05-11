@@ -28,7 +28,8 @@ namespace BasicFacebookFeatures
             BusinessCardScreen = new BusinessCardScreen();
             LoginResult = AuthRepository.LoginResult;
             SetTitleAndProfilePicture();
-            populateFlowLayoutPanel(flowLayoutPanelPosts, m_PostsController.FetchPosts());   
+            populateFlowLayoutPanel(flowLayoutPanelPosts, m_PostsController.FetchPosts());
+            displayAbout();
             populateFlowLayoutPanel(flowLayoutPanelFriends, m_FriendsController.FetchFriends());
 
         }
@@ -52,38 +53,6 @@ namespace BasicFacebookFeatures
             BdayScreen bdayScreen = new BdayScreen();
             bdayScreen.Show();
 
-        }
-
-
-
-        private void tabControlFeed_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //int selectedIndex = tabControlFeed.SelectedIndex;
-
-
-            //switch (selectedIndex)
-            //{
-            //    case 0: // Posts tab
-            //        //populatePosts(m_PostsController.FetchPosts());
-            //        break;
-            //    case 1: // About tab
-            //        displayAbout();
-            //        break;
-            //    case 2: // Friends tab
-            //        //populateFlowLayoutPanel(flowLayoutPanelFriends, m_FriendsController.FetchFriends());
-            //        break;
-            //    case 3: // Pictures tab
-            //            // Execute code for the Pictures tab
-            //        MessageBox.Show("Pictures tab selected");
-            //        break;
-            //    case 4: // Video tab
-            //            // Execute code for the Video tab
-            //        MessageBox.Show("Video tab selected");
-            //        break;
-            //    default:
-            //        // Handle other tabs or unexpected cases
-            //        break;
-            //}
         }
 
         private void displayAbout()
