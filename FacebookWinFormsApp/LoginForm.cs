@@ -41,23 +41,65 @@ namespace BasicFacebookFeatures
             });
         }
 
+        //private async void buttonLogin_Clicked(object sender, EventArgs e)
+        //{
+        //    if (AuthRepository.LoginResult == null)
+        //    {
+        //        LoadingScreen loadingScreen = new LoadingScreen();
+        //        loadingScreen.Show();
+
+        //        await Task.Run(() =>
+        //        {
+        //            m_auth.Login();
+        //        });
+        //        if (string.IsNullOrEmpty(AuthRepository.LoginResult.ErrorMessage))
+        //        {
+        //            this.Hide();
+        //        }
+        //    }
+        //}
+
         private async void buttonLogin_Clicked(object sender, EventArgs e)
         {
             if (AuthRepository.LoginResult == null)
             {
                 LoadingScreen loadingScreen = new LoadingScreen();
-                loadingScreen.Show();
-                    await Task.Run(() =>
+
+                // Show the loading screen in a separate thread
+                Thread loadingThread = new Thread(() =>
+                {
+                    Application.Run(loadingScreen);
+                });
+                loadingThread.Start();
+
+                // Start the login task
+                Task loginTask = Task.Run(() =>
+                {
+                    m_auth.Login();
+                });
+
+                // Wait for the login task to complete asynchronously
+                await loginTask;
+
+                // Check if login was successful
+                if (string.IsNullOrEmpty(AuthRepository.LoginResult.ErrorMessage))
+                {
+                    // Hide the loading screen when MainForm is ready
+                    loadingScreen.Invoke(new MethodInvoker(delegate
                     {
-                        m_auth.Login();
-                    });
-                    if (string.IsNullOrEmpty(AuthRepository.LoginResult.ErrorMessage))
-                    {
-                        this.Hide();
-                    }
+                        loadingScreen.Close();
+                    }));
+
+                    // Show the main form
+                    m_MainForm = new MainForm();
+                    m_MainForm.Show();
+                    this.Hide();
                 }
+            }
         }
-        }
+
+
     }
+}
 
 
