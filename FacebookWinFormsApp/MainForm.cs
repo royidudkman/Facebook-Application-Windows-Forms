@@ -10,6 +10,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -21,6 +22,7 @@ namespace BasicFacebookFeatures
         private BusinessCardScreen BusinessCardScreen { get; set; }
         private PostsController m_PostsController = new PostsController();
         private FriendsController m_FriendsController = new FriendsController();
+        public static LoadingSpinner LoadingSpinner { get; set; } = new LoadingSpinner();
 
         public MainForm()
         {
@@ -100,6 +102,21 @@ namespace BasicFacebookFeatures
                     i_FlowLayoutPanel.Controls.Add(i_Items[i]);
                 }
             }
-        }    
+        }
+
+  
+
+        private async void buttonCreateNewAlbum_Click_1(object sender, EventArgs e)
+        {
+            LoadingSpinner = new LoadingSpinner();
+            this.Hide();
+            AlbumsCreateScreen albumsCreateScreen = new AlbumsCreateScreen();
+            LoadingSpinner.Show();
+            albumsCreateScreen.Show();
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+        }
     }
 }

@@ -36,7 +36,7 @@ namespace BasicFacebookFeatures
             this.labelName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelName.Location = new System.Drawing.Point(56, 10);
             this.labelName.Name = "labelName";
-            this.labelName.Size = new System.Drawing.Size(111, 20);
+            this.labelName.Size = new System.Drawing.Size(166, 29);
             this.labelName.TabIndex = 1;
             this.labelName.Text = "Profile Name";
             // 
@@ -48,7 +48,7 @@ namespace BasicFacebookFeatures
             this.labelPostText.Location = new System.Drawing.Point(44, 66);
             this.labelPostText.MaximumSize = new System.Drawing.Size(600, 500);
             this.labelPostText.Name = "labelPostText";
-            this.labelPostText.Size = new System.Drawing.Size(123, 24);
+            this.labelPostText.Size = new System.Drawing.Size(192, 33);
             this.labelPostText.TabIndex = 2;
             this.labelPostText.Text = "labelPostText";
             // 

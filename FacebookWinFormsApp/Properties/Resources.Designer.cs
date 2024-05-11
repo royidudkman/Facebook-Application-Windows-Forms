@@ -61,16 +61,6 @@ namespace BasicFacebookFeatures.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap facebook_logo {
-            get {
-                object obj = ResourceManager.GetObject("facebook_logo", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Happy Birthday! 🎉🎂 Wishing you a day filled with joy, laughter, and all the things that make you smile. May this year be filled with unforgettable moments, cherished memories, and endless possibilities. Here&apos;s to you, and to all the amazing adventures that lie ahead! Cheers to another fantastic year of life!.
         /// </summary>
         internal static string GreetType1 {
@@ -95,6 +85,46 @@ namespace BasicFacebookFeatures.Properties {
         internal static string GreetType3 {
             get {
                 return ResourceManager.GetString("GreetType3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap spinner {
+            get {
+                object obj = ResourceManager.GetObject("spinner", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Spinner_1x_1_0s_200px_200px__2_ {
+            get {
+                object obj = ResourceManager.GetObject("Spinner_1x_1_0s_200px_200px__2_", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Spinner_1x_1_0s_200px_200px__3_ {
+            get {
+                object obj = ResourceManager.GetObject("Spinner_1x_1_0s_200px_200px__3_", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap spinnerColored {
+            get {
+                object obj = ResourceManager.GetObject("spinnerColored", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }
