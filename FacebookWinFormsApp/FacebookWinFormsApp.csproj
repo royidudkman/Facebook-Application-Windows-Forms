@@ -111,6 +111,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlbumItemControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="AlbumsCreateScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +136,7 @@
     <Compile Include="controllers\BusinessCardController.cs" />
     <Compile Include="controllers\FriendsController.cs" />
     <Compile Include="controllers\CreateAlbumController.cs" />
+    <Compile Include="controllers\PictureTabController.cs" />
     <Compile Include="controllers\PostsController.cs" />
     <Compile Include="Data\AuthRepository.cs" />
     <Compile Include="Data\BusinessCard.cs" />

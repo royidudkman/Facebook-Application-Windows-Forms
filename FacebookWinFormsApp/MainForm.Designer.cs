@@ -43,9 +43,10 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.labelInformation = new System.Windows.Forms.Label();
             this.tabPageFriends = new System.Windows.Forms.TabPage();
+            this.flowLayoutPanelFriends = new System.Windows.Forms.FlowLayoutPanel();
             this.tabPagePictures = new System.Windows.Forms.TabPage();
             this.tabPageVideos = new System.Windows.Forms.TabPage();
-            this.flowLayoutPanelFriends = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanelPictures = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUserProfile)).BeginInit();
             this.tabControlFeed.SuspendLayout();
@@ -53,6 +54,7 @@
             this.tabPageAbout.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tabPageFriends.SuspendLayout();
+            this.tabPagePictures.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelTitle
@@ -186,9 +188,9 @@
             // 
             this.flowLayoutPanelPosts.AutoScroll = true;
             this.flowLayoutPanelPosts.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanelPosts.Location = new System.Drawing.Point(3, 3);
+            this.flowLayoutPanelPosts.Location = new System.Drawing.Point(4, 5);
             this.flowLayoutPanelPosts.Name = "flowLayoutPanelPosts";
-            this.flowLayoutPanelPosts.Size = new System.Drawing.Size(703, 413);
+            this.flowLayoutPanelPosts.Size = new System.Drawing.Size(1062, 275);
             this.flowLayoutPanelPosts.TabIndex = 0;
             // 
             // tabPageAbout
@@ -209,9 +211,9 @@
             // 
             this.panel2.Controls.Add(this.labelInformation);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(3, 3);
+            this.panel2.Location = new System.Drawing.Point(4, 5);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(703, 413);
+            this.panel2.Size = new System.Drawing.Size(1062, 275);
             this.panel2.TabIndex = 0;
             // 
             // labelInformation
@@ -220,7 +222,7 @@
             this.labelInformation.Font = new System.Drawing.Font("Microsoft JhengHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelInformation.Location = new System.Drawing.Point(21, 37);
             this.labelInformation.Name = "labelInformation";
-            this.labelInformation.Size = new System.Drawing.Size(64, 24);
+            this.labelInformation.Size = new System.Drawing.Size(100, 37);
             this.labelInformation.TabIndex = 5;
             this.labelInformation.Text = "label1";
             // 
@@ -237,10 +239,20 @@
             this.tabPageFriends.TabIndex = 2;
             this.tabPageFriends.Text = "Friends";
             // 
+            // flowLayoutPanelFriends
+            // 
+            this.flowLayoutPanelFriends.AutoScroll = true;
+            this.flowLayoutPanelFriends.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanelFriends.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanelFriends.Name = "flowLayoutPanelFriends";
+            this.flowLayoutPanelFriends.Size = new System.Drawing.Size(1070, 285);
+            this.flowLayoutPanelFriends.TabIndex = 1;
+            // 
             // tabPagePictures
             // 
             this.tabPagePictures.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(240)))), ((int)(((byte)(248)))));
             this.tabPagePictures.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tabPagePictures.Controls.Add(this.flowLayoutPanelPictures);
             this.tabPagePictures.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.tabPagePictures.Location = new System.Drawing.Point(4, 22);
             this.tabPagePictures.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -261,14 +273,14 @@
             this.tabPageVideos.TabIndex = 4;
             this.tabPageVideos.Text = "Videos";
             // 
-            // flowLayoutPanelFriends
+            // flowLayoutPanelPictures
             // 
-            this.flowLayoutPanelFriends.AutoScroll = true;
-            this.flowLayoutPanelFriends.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanelFriends.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanelFriends.Name = "flowLayoutPanelFriends";
-            this.flowLayoutPanelFriends.Size = new System.Drawing.Size(709, 419);
-            this.flowLayoutPanelFriends.TabIndex = 1;
+            this.flowLayoutPanelPictures.AutoScroll = true;
+            this.flowLayoutPanelPictures.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanelPictures.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanelPictures.Name = "flowLayoutPanelPictures";
+            this.flowLayoutPanelPictures.Size = new System.Drawing.Size(1070, 285);
+            this.flowLayoutPanelPictures.TabIndex = 0;
             // 
             // MainForm
             // 
@@ -295,6 +307,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.tabPageFriends.ResumeLayout(false);
+            this.tabPagePictures.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -319,5 +332,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label labelInformation;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelFriends;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelPictures;
     }
 }

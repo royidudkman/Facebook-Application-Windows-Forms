@@ -22,6 +22,7 @@ namespace BasicFacebookFeatures
         private BusinessCardScreen BusinessCardScreen { get; set; }
         private PostsController m_PostsController = new PostsController();
         private FriendsController m_FriendsController = new FriendsController();
+        private PictureTabController pictureTabController { get; set; }
         public static LoadingSpinner LoadingSpinner { get; set; } = new LoadingSpinner();
 
         public MainForm()
@@ -29,6 +30,7 @@ namespace BasicFacebookFeatures
             InitializeComponent();
             BusinessCardScreen = new BusinessCardScreen();
             LoginResult = AuthRepository.LoginResult;
+            pictureTabController = new PictureTabController();
             SetTitleAndProfilePicture();
             populateFlowLayoutPanel(flowLayoutPanelPosts, m_PostsController.FetchPosts());
             displayAbout();
@@ -115,8 +117,87 @@ namespace BasicFacebookFeatures
             albumsCreateScreen.Show();
         }
 
+
+
+
         private void MainForm_Load(object sender, EventArgs e)
         {
+            ShowAlbumsOnTheFlowPanel();
+        }
+
+        /// <summary>
+        /// Picture Tab
+        /// </summary>
+
+        private async void ShowAlbumsOnTheFlowPanel()
+        {
+            await pictureTabController.InitializeAsync();
+
+            foreach (var album in pictureTabController.UserAlbums)
+            {
+                var albumItem = new AlbumItemControl();
+                albumItem.PictureBox.Image = album.ImageAlbum;
+                albumItem.PictureBox.Tag = album;
+                albumItem.PictureBox.Click += Album_Click;
+                albumItem.Label.Text = album.Name;
+                flowLayoutPanelPictures.Controls.Add(albumItem);
+            }
+        }
+
+        private void Album_Click(object sender, EventArgs e)
+        {
+            clearFlowPanel();
+            PictureBox pictureBox = sender as PictureBox;
+            if (pictureBox != null)
+            {
+                Album selectedAlbum = pictureBox.Tag as Album; // Retrieve the associated album
+                if (selectedAlbum != null)
+                {
+                    ShowAllImagesFromSelcetAlbum(selectedAlbum);
+                    pictureTabController.UserAlbums.Clear();
+                }
+            }
+        }
+        private void Image_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Do you want to go back to albums?", "Information", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+            if (result == DialogResult.OK)
+            {
+                clearFlowPanel();
+                pictureTabController.UserPhotos.Clear();
+                ShowAlbumsOnTheFlowPanel();
+            }
+        }
+        private async void ShowAllImagesFromSelcetAlbum(Album selectedAlbum)
+        {
+            await pictureTabController.GetAllUserImagesFromAlbumAsync(selectedAlbum);
+            if(pictureTabController.UserPhotos.Count == 0)
+            {
+                DialogResult result =  MessageBox.Show("There Not Photos In This Album","Eror",MessageBoxButtons.OK);
+                if(result == DialogResult.OK)
+                {
+                    ShowAlbumsOnTheFlowPanel();
+                }
+            }
+            else
+            {
+                LoadingSpinner.Show();
+                foreach (var photo in pictureTabController.UserPhotos)
+                {
+                    var photoItem = new AlbumItemControl(); //TODO : Change the name of this class
+                    photoItem.PictureBox.Image = photo.ImageAlbum;
+                    photoItem.PictureBox.Click += Image_Click;
+                    photoItem.Label.Text = photo.Name;
+                    flowLayoutPanelPictures.Controls.Add(photoItem);
+                }
+                LoadingSpinner.Hide();
+            }
+          
+        }
+        private void clearFlowPanel()
+        {
+            flowLayoutPanelPictures.Controls.Clear();
         }
     }
 }
