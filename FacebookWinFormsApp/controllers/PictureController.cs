@@ -5,14 +5,14 @@ using System.Threading.Tasks;
 
 namespace BasicFacebookFeatures.controllers
 {
-    internal class PictureTabController
+    internal class PictureController
     {
         public int AlbumsCount { get; set; }
         public string Title { get; set; }
         public FacebookObjectCollection<Album> UserAlbums { get; private set; }
         public FacebookObjectCollection<Photo> UserPhotos { get; private set; }
 
-        public PictureTabController()
+        public PictureController()
         {
             AlbumsCount = 0;
             Title = "";

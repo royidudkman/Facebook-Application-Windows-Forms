@@ -15,11 +15,6 @@ namespace BasicFacebookFeatures.Tabs
 
         public FriendsTabController(FlowLayoutPanel flowLayoutPanel) : base(flowLayoutPanel) { }
 
-        public override void Initialize()
-        {
-            // Initialization logic for friends
-        }
-
         public override void Populate()
         {
             var friends = m_DataToCard.FetchFriends();

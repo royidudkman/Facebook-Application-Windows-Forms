@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace BasicFacebookFeatures.interfaces
 {
-    internal interface ILoader
+    public interface IPopulateable
     {
-
-        void IsFinishToLoad(bool isFinish);
-
+        void Populate();
     }
 }

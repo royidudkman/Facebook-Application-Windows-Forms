@@ -41,23 +41,7 @@ namespace BasicFacebookFeatures
             });
         }
 
-        //private async void buttonLogin_Clicked(object sender, EventArgs e)
-        //{
-        //    if (AuthRepository.LoginResult == null)
-        //    {
-        //        LoadingScreen loadingScreen = new LoadingScreen();
-        //        loadingScreen.Show();
-
-        //        await Task.Run(() =>
-        //        {
-        //            m_auth.Login();
-        //        });
-        //        if (string.IsNullOrEmpty(AuthRepository.LoginResult.ErrorMessage))
-        //        {
-        //            this.Hide();
-        //        }
-        //    }
-        //}
+     
 
         private async void buttonLogin_Clicked(object sender, EventArgs e)
         {
@@ -71,7 +55,7 @@ namespace BasicFacebookFeatures
                 });
                 if (string.IsNullOrEmpty(AuthRepository.LoginResult.ErrorMessage))
                 {
-                    this.Hide();
+                    this.Hide();                  
                 }
             }
         }

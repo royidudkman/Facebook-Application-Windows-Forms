@@ -11,19 +11,16 @@ namespace BasicFacebookFeatures.Tabs
 {
     public class PicturesTabController : BaseTabController
     {
-        private PictureTabController pictureTabController = new PictureTabController();
+        private PictureController pictureTabController = new PictureController();
 
         public PicturesTabController(FlowLayoutPanel flowLayoutPanel) : base(flowLayoutPanel) { }
 
-        public override void Initialize()
-        {
-            // Initialization logic for pictures
-            ShowAlbumsOnTheFlowPanel();
-        }
+        private FlowLayoutPanel FlowLayoutPanelGallery = new FlowLayoutPanel();
 
+ 
         public override void Populate()
         {
-            // This method could be used to populate any additional data if needed
+            ShowAlbumsOnTheFlowPanel();
         }
 
         private  void ShowAlbumsOnTheFlowPanel()
@@ -42,8 +39,7 @@ namespace BasicFacebookFeatures.Tabs
         }
 
         private void Album_Click(object sender, EventArgs e)
-        {
-            clearFlowPanel();
+        {             
             PictureBox pictureBox = sender as PictureBox;
             if (pictureBox != null)
             {
@@ -56,21 +52,15 @@ namespace BasicFacebookFeatures.Tabs
             }
         }
 
-        private void Image_Click(object sender, EventArgs e)
-        {
-            DialogResult result = MessageBox.Show("Do you want to go back to albums?", "Information", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+    
 
-            if (result == DialogResult.OK)
-            {
-                clearFlowPanel();
-                pictureTabController.UserPhotos.Clear();
-                ShowAlbumsOnTheFlowPanel();
-            }
-        }
-
-        private  void ShowAllImagesFromSelcetAlbum(Album selectedAlbum)
+        private void ShowAllImagesFromSelcetAlbum(Album selectedAlbum)
         {
-             pictureTabController.GetAllUserImagesFromAlbum(selectedAlbum);
+            List<AlbumItemControl> allPhotos = new List<AlbumItemControl>();
+            ImageGalleryForm galleryForm = new ImageGalleryForm();
+            galleryForm.Show();
+
+            pictureTabController.GetAllUserImagesFromAlbum(selectedAlbum);
             if (pictureTabController.UserPhotos.Count == 0)
             {
                 DialogResult result = MessageBox.Show("There Not Photos In This Album", "Error", MessageBoxButtons.OK);
@@ -79,23 +69,20 @@ namespace BasicFacebookFeatures.Tabs
                     ShowAlbumsOnTheFlowPanel();
                 }
             }
+
             else
             {
                 foreach (var photo in pictureTabController.UserPhotos)
                 {
                     var photoItem = new AlbumItemControl(); //TODO : Change the name of this class
-                    photoItem.PictureBox.Image = photo.ImageAlbum;
-                    photoItem.PictureBox.Click += Image_Click;
+                    photoItem.PictureBox.Image = photo.ImageAlbum;          
                     photoItem.Label.Text = photo.Name;
-                    FlowLayoutPanel.Controls.Add(photoItem);
+                    allPhotos.Add(photoItem);
+                    galleryForm.populateGallery(allPhotos);
+  
                 }
             }
-        }
-
-        private void clearFlowPanel()
-        {
-            FlowLayoutPanel.Controls.Clear();
-        }
+        }   
     }
 
 }

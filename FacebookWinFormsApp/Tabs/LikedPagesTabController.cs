@@ -14,11 +14,6 @@ namespace BasicFacebookFeatures.Tabs
 
         public LikedPagesTabController(FlowLayoutPanel flowLayoutPanel) : base(flowLayoutPanel) { }
 
-        public override void Initialize()
-        {
-            // Initialization logic for friends
-        }
-
         public override void Populate()
         {
             var likedPages = m_DataToCard.FetchLikedPages();

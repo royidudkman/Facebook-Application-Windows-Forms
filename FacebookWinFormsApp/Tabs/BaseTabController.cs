@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BasicFacebookFeatures.interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,12 +8,8 @@ using System.Windows.Forms;
 
 namespace BasicFacebookFeatures.Tabs
 {
-    public interface ITabController
-    {
-        void Initialize();
-        void Populate();
-    }
-    public abstract class BaseTabController : ITabController
+    
+    public abstract class BaseTabController : IPopulateable
     {
         protected FlowLayoutPanel FlowLayoutPanel { get; set; }
 
@@ -21,7 +18,7 @@ namespace BasicFacebookFeatures.Tabs
             FlowLayoutPanel = flowLayoutPanel;
         }
 
-        public abstract void Initialize();
+
         public abstract void Populate();
     }
 }

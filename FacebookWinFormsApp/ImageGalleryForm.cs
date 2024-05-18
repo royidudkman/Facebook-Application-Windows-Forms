@@ -11,24 +11,22 @@ using System.Windows.Forms;
 namespace BasicFacebookFeatures
 {
     public partial class ImageGalleryForm : Form
-    { 
+    {
         public ImageGalleryForm()
-        {          
+        {
             InitializeComponent();
         }
 
-        public void populateGallery(ImageAndTitleCardItem[] i_allPhotos) 
+        public void populateGallery(List<AlbumItemControl> i_allPhotos)
         {
-            for (int i = 0; i < i_allPhotos.Length; i++)
+            if (flowLayoutPanelGallery.Controls.Count > 0)
             {
-                if (flowLayoutPanelGallery.Controls.Count < 0)
-                {
-                    flowLayoutPanelGallery.Controls.Clear();
-                }
-                else
-                {
-                    flowLayoutPanelGallery.Controls.Add(i_allPhotos[i]);
-                }
+                flowLayoutPanelGallery.Controls.Clear();
+            }
+
+            foreach (var photo in i_allPhotos)
+            {
+                flowLayoutPanelGallery.Controls.Add(photo);
             }
         }
     }

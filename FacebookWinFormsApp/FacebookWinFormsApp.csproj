@@ -136,7 +136,7 @@
     <Compile Include="controllers\BusinessCardController.cs" />
     <Compile Include="controllers\DataToCardsFetcher.cs" />
     <Compile Include="controllers\CreateAlbumController.cs" />
-    <Compile Include="controllers\PictureTabController.cs" />
+    <Compile Include="controllers\PictureController.cs" />
     <Compile Include="controllers\PostsController.cs" />
     <Compile Include="Data\AlbumManager.cs" />
     <Compile Include="Data\AuthRepository.cs" />
@@ -154,7 +154,7 @@
     <Compile Include="ImageGalleryForm.Designer.cs">
       <DependentUpon>ImageGalleryForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="interfaces\IClickableItem.cs" />
+    <Compile Include="interfaces\IPopulateable.cs" />
     <Compile Include="LoadingScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -193,6 +193,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tabs\AboutTabController.cs" />
     <Compile Include="Tabs\BaseTabController.cs" />
     <Compile Include="Tabs\FriendsTabController .cs" />
     <Compile Include="Tabs\LikedPagesTabController.cs" />

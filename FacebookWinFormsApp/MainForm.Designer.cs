@@ -41,15 +41,15 @@
             this.flowLayoutPanelPosts = new System.Windows.Forms.FlowLayoutPanel();
             this.tabPageAbout = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.labelInformation = new System.Windows.Forms.Label();
             this.tabPageFriends = new System.Windows.Forms.TabPage();
             this.flowLayoutPanelFriends = new System.Windows.Forms.FlowLayoutPanel();
             this.tabPagePictures = new System.Windows.Forms.TabPage();
             this.flowLayoutPanelPictures = new System.Windows.Forms.FlowLayoutPanel();
             this.tabPageLikedPages = new System.Windows.Forms.TabPage();
-            this.tabPageTeams = new System.Windows.Forms.TabPage();
             this.flowLayoutLikedPages = new System.Windows.Forms.FlowLayoutPanel();
+            this.tabPageTeams = new System.Windows.Forms.TabPage();
             this.flowLayoutPanelTeams = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanelAbout = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUserProfile)).BeginInit();
             this.tabControlFeed.SuspendLayout();
@@ -118,6 +118,7 @@
             this.buttonLogout.TabIndex = 4;
             this.buttonLogout.Text = "Logout";
             this.buttonLogout.UseVisualStyleBackColor = false;
+            this.buttonLogout.Click += new System.EventHandler(this.buttonLogout_Click);
             // 
             // buttonCreateNewAlbum
             // 
@@ -132,7 +133,7 @@
             this.buttonCreateNewAlbum.TabIndex = 3;
             this.buttonCreateNewAlbum.Text = "Create new Album";
             this.buttonCreateNewAlbum.UseVisualStyleBackColor = false;
-            this.buttonCreateNewAlbum.Click += new System.EventHandler(this.buttonCreateNewAlbum_Click_1);
+            this.buttonCreateNewAlbum.Click += new System.EventHandler(this.buttonCreateNewAlbum_Click);
             // 
             // ButtonCreateBusinessCard
             // 
@@ -195,11 +196,9 @@
             // 
             this.flowLayoutPanelPosts.AutoScroll = true;
             this.flowLayoutPanelPosts.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanelPosts.Location = new System.Drawing.Point(4, 5);
             this.flowLayoutPanelPosts.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanelPosts.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanelPosts.Name = "flowLayoutPanelPosts";
-            this.flowLayoutPanelPosts.Size = new System.Drawing.Size(1062, 275);
             this.flowLayoutPanelPosts.Size = new System.Drawing.Size(703, 431);
             this.flowLayoutPanelPosts.TabIndex = 0;
             // 
@@ -218,26 +217,13 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.labelInformation);
+            this.panel2.Controls.Add(this.flowLayoutPanelAbout);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(4, 5);
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1062, 275);
             this.panel2.Size = new System.Drawing.Size(703, 431);
             this.panel2.TabIndex = 0;
-            // 
-            // labelInformation
-            // 
-            this.labelInformation.AutoSize = true;
-            this.labelInformation.Font = new System.Drawing.Font("Microsoft JhengHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelInformation.Location = new System.Drawing.Point(14, 24);
-            this.labelInformation.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelInformation.Name = "labelInformation";
-            this.labelInformation.Size = new System.Drawing.Size(100, 37);
-            this.labelInformation.TabIndex = 5;
-            this.labelInformation.Text = "label1";
             // 
             // tabPageFriends
             // 
@@ -250,15 +236,6 @@
             this.tabPageFriends.Size = new System.Drawing.Size(713, 441);
             this.tabPageFriends.TabIndex = 2;
             this.tabPageFriends.Text = "Friends";
-            // 
-            // flowLayoutPanelFriends
-            // 
-            this.flowLayoutPanelFriends.AutoScroll = true;
-            this.flowLayoutPanelFriends.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanelFriends.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanelFriends.Name = "flowLayoutPanelFriends";
-            this.flowLayoutPanelFriends.Size = new System.Drawing.Size(1070, 285);
-            this.flowLayoutPanelFriends.TabIndex = 1;
             // 
             // flowLayoutPanelFriends
             // 
@@ -282,6 +259,15 @@
             this.tabPagePictures.TabIndex = 3;
             this.tabPagePictures.Text = "Pictures";
             // 
+            // flowLayoutPanelPictures
+            // 
+            this.flowLayoutPanelPictures.AutoScroll = true;
+            this.flowLayoutPanelPictures.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanelPictures.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanelPictures.Name = "flowLayoutPanelPictures";
+            this.flowLayoutPanelPictures.Size = new System.Drawing.Size(709, 437);
+            this.flowLayoutPanelPictures.TabIndex = 0;
+            // 
             // tabPageLikedPages
             // 
             this.tabPageLikedPages.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(240)))), ((int)(((byte)(248)))));
@@ -294,16 +280,6 @@
             this.tabPageLikedPages.TabIndex = 4;
             this.tabPageLikedPages.Text = "Liked Pages";
             // 
-            // tabPageTeams
-            // 
-            this.tabPageTeams.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(240)))), ((int)(((byte)(248)))));
-            this.tabPageTeams.Controls.Add(this.flowLayoutPanelTeams);
-            this.tabPageTeams.Location = new System.Drawing.Point(4, 22);
-            this.tabPageTeams.Name = "tabPageTeams";
-            this.tabPageTeams.Size = new System.Drawing.Size(713, 441);
-            this.tabPageTeams.TabIndex = 5;
-            this.tabPageTeams.Text = "Teams";
-            // 
             // flowLayoutLikedPages
             // 
             this.flowLayoutLikedPages.AutoScroll = true;
@@ -314,15 +290,18 @@
             this.flowLayoutLikedPages.Size = new System.Drawing.Size(709, 437);
             this.flowLayoutLikedPages.TabIndex = 2;
             // 
-            // flowLayoutPanelPictures
+            // tabPageTeams
+            // 
+            this.tabPageTeams.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(240)))), ((int)(((byte)(248)))));
+            this.tabPageTeams.Controls.Add(this.flowLayoutPanelTeams);
+            this.tabPageTeams.Location = new System.Drawing.Point(4, 22);
+            this.tabPageTeams.Name = "tabPageTeams";
+            this.tabPageTeams.Size = new System.Drawing.Size(713, 441);
+            this.tabPageTeams.TabIndex = 5;
+            this.tabPageTeams.Text = "Teams";
+            // 
             // flowLayoutPanelTeams
             // 
-            this.flowLayoutPanelPictures.AutoScroll = true;
-            this.flowLayoutPanelPictures.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanelPictures.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanelPictures.Name = "flowLayoutPanelPictures";
-            this.flowLayoutPanelPictures.Size = new System.Drawing.Size(1070, 285);
-            this.flowLayoutPanelPictures.TabIndex = 0;
             this.flowLayoutPanelTeams.AutoScroll = true;
             this.flowLayoutPanelTeams.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanelTeams.Location = new System.Drawing.Point(0, 0);
@@ -330,6 +309,16 @@
             this.flowLayoutPanelTeams.Name = "flowLayoutPanelTeams";
             this.flowLayoutPanelTeams.Size = new System.Drawing.Size(713, 441);
             this.flowLayoutPanelTeams.TabIndex = 2;
+            // 
+            // flowLayoutPanelAbout
+            // 
+            this.flowLayoutPanelAbout.AutoScroll = true;
+            this.flowLayoutPanelAbout.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanelAbout.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanelAbout.Margin = new System.Windows.Forms.Padding(2);
+            this.flowLayoutPanelAbout.Name = "flowLayoutPanelAbout";
+            this.flowLayoutPanelAbout.Size = new System.Drawing.Size(703, 431);
+            this.flowLayoutPanelAbout.TabIndex = 6;
             // 
             // MainForm
             // 
@@ -355,7 +344,6 @@
             this.tabPagePosts.ResumeLayout(false);
             this.tabPageAbout.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.tabPageFriends.ResumeLayout(false);
             this.tabPagePictures.ResumeLayout(false);
             this.tabPageLikedPages.ResumeLayout(false);
@@ -382,11 +370,11 @@
         private System.Windows.Forms.TabPage tabPageLikedPages;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelPosts;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label labelInformation;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelFriends;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelPictures;
         private System.Windows.Forms.TabPage tabPageTeams;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutLikedPages;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelTeams;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelAbout;
     }
 }

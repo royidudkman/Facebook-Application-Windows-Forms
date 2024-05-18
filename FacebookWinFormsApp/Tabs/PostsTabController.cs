@@ -14,11 +14,6 @@ namespace BasicFacebookFeatures.Tabs
 
         public PostsTabController(FlowLayoutPanel flowLayoutPanel) : base(flowLayoutPanel) { }
 
-        public override void Initialize()
-        {
-            // Initialization logic for posts
-        }
-
         public override void Populate()
         {
             var posts = m_PostsController.FetchPosts();

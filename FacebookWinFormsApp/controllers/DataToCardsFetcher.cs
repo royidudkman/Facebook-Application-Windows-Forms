@@ -107,7 +107,7 @@ namespace BasicFacebookFeatures.controllers
             ImageAndTitleCardItem album = sender as ImageAndTitleCardItem;
             ImageGalleryForm galleryForm = new ImageGalleryForm();
             galleryForm.Show();
-            galleryForm.populateGallery(getAllImagesFromAlbum(album.Tag as Album));
+            //galleryForm.populateGallery(getAllImagesFromAlbum(album.Tag as Album));
         }
     }
 }
