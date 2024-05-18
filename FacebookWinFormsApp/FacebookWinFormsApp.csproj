@@ -193,6 +193,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tabs\BaseTabController.cs" />
+    <Compile Include="Tabs\FriendsTabController .cs" />
+    <Compile Include="Tabs\LikedPagesTabController.cs" />
+    <Compile Include="Tabs\PicturesTabController .cs" />
+    <Compile Include="Tabs\PostsTabController.cs" />
+    <Compile Include="Tabs\TeamsTabController.cs" />
     <EmbeddedResource Include="AlbumsCreateScreen.resx">
       <DependentUpon>AlbumsCreateScreen.cs</DependentUpon>
     </EmbeddedResource>

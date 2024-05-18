@@ -1,6 +1,7 @@
 ﻿using BasicFacebookFeatures.controllers;
 using BasicFacebookFeatures.Data;
 using BasicFacebookFeatures.interfaces;
+using BasicFacebookFeatures.Tabs;
 using FacebookWrapper;
 using FacebookWrapper.ObjectModel;
 using System;
@@ -19,33 +20,30 @@ namespace BasicFacebookFeatures
     public partial class MainForm : Form
     {
         private FacebookWrapper.LoginResult LoginResult { get; set; }
-
-        private PostsController m_PostsController = new PostsController();
-        private DataToCardsFetcher m_DataToCard = new DataToCardsFetcher();
+        private BusinessCardScreen BusinessCardScreen { get; set; }
+        private PostsTabController postsTabController { get; set; }
+        private FriendsTabController friendsTabController { get; set; }
+        private PicturesTabController picturesTabController { get; set; }
+        private LikedPagesTabController LikedPagesTabController { get; set; }
+        private TeamsTabController TeamsTabController { get; set; }
         public static LoadingSpinner LoadingSpinner { get; set; } = new LoadingSpinner();
 
         public MainForm()
         {
             InitializeComponent();
-            LoginResult = AuthRepository.LoginResult;    
-        }
-
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-            SetTitleAndProfilePicture();
-            populateFlowLayoutPanel(flowLayoutPanelPosts, m_PostsController.FetchPosts());
-            displayAbout();
-            populateFlowLayoutPanel(flowLayoutPanelFriends, m_DataToCard.FetchFriends());
-            populateFlowLayoutPanel(flowLayoutLikedPages, m_DataToCard.FetchLikedPages());
-            populateFlowLayoutPanel(flowLayoutPanelTeams, m_DataToCard.FetchTeams());
-            populateFlowLayoutPanel(flowLayoutPanelPictures, m_DataToCard.FetchAlbums());
+            BusinessCardScreen = new BusinessCardScreen();
+            LoginResult = AuthRepository.LoginResult;
+            postsTabController = new PostsTabController(flowLayoutPanelPosts);
+            friendsTabController = new FriendsTabController(flowLayoutPanelFriends);
+            picturesTabController = new PicturesTabController(flowLayoutPanelPictures);
+            LikedPagesTabController = new LikedPagesTabController(flowLayoutLikedPages);
+            TeamsTabController = new TeamsTabController(flowLayoutPanelTeams);
         }
 
         public void SetTitleAndProfilePicture()
         {
             labelTitle.Text = $"Welcome {LoginResult.LoggedInUser.FirstName}";
             pictureBoxUserProfile.Image = LoginResult.LoggedInUser.ImageNormal;
-
         }
 
         private void ButtonCreateBusinessCard_Click(object sender, EventArgs e)
@@ -59,19 +57,9 @@ namespace BasicFacebookFeatures
           
             BdayScreen bdayScreen = new BdayScreen();
             bdayScreen.Show();
-
         }
 
         private async void buttonCreateNewAlbum_Click_1(object sender, EventArgs e)
-        {
-            LoadingSpinner = new LoadingSpinner();
-            this.Hide();
-            AlbumsCreateScreen albumsCreateScreen = new AlbumsCreateScreen();
-            LoadingSpinner.Show();
-            albumsCreateScreen.Show();
-        }
-
-        private void displayAbout()
         {
             StringBuilder stringBuilder = new StringBuilder();
             stringBuilder.Append($"First Name: {LoginResult.LoggedInUser.FirstName}\n");
@@ -81,22 +69,28 @@ namespace BasicFacebookFeatures
             stringBuilder.Append($"Gender: {LoginResult.LoggedInUser.Gender}\n");
 
             labelInformation.Text = stringBuilder.ToString();
-        }  
-  
-       
-        private void populateFlowLayoutPanel(FlowLayoutPanel i_FlowLayoutPanel, UserControl[] i_Items)
+        }
+
+        private  void buttonCreateNewAlbum_Click_1(object sender, EventArgs e)
         {
-            for (int i = 0; i < i_Items.Length; i++)
-            {
-                if (i_FlowLayoutPanel.Controls.Count < 0)
-                {
-                    i_FlowLayoutPanel.Controls.Clear();
-                }
-                else
-                {
-                    i_FlowLayoutPanel.Controls.Add(i_Items[i]);
-                }
-            }
+            LoadingSpinner = new LoadingSpinner();
+            this.Hide();
+            AlbumsCreateScreen albumsCreateScreen = new AlbumsCreateScreen();
+            LoadingSpinner.Show();
+            albumsCreateScreen.Show();
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            picturesTabController.Initialize();
+            SetTitleAndProfilePicture();
+            postsTabController.Populate();
+            displayAbout();
+            friendsTabController.Populate();
+            picturesTabController.Initialize();
+            LikedPagesTabController.Populate();
+            TeamsTabController.Populate();
         }
     }
+
 }
