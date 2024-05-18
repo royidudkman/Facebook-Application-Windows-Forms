@@ -21,7 +21,7 @@ namespace BasicFacebookFeatures
             set 
             {
                 m_Image = value; 
-                pictureBoxProfilePicture.Image = m_Image;
+                pictureBoxImage.Image = m_Image;        
             }
         }
 

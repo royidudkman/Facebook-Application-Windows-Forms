@@ -28,18 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBoxProfilePicture = new System.Windows.Forms.PictureBox();
+            this.pictureBoxImage = new System.Windows.Forms.PictureBox();
             this.labelName = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfilePicture)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImage)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBoxProfilePicture
+            // pictureBoxImage
             // 
-            this.pictureBoxProfilePicture.Location = new System.Drawing.Point(27, 18);
-            this.pictureBoxProfilePicture.Name = "pictureBoxProfilePicture";
-            this.pictureBoxProfilePicture.Size = new System.Drawing.Size(73, 63);
-            this.pictureBoxProfilePicture.TabIndex = 0;
-            this.pictureBoxProfilePicture.TabStop = false;
+            this.pictureBoxImage.Location = new System.Drawing.Point(27, 18);
+            this.pictureBoxImage.Name = "pictureBoxImage";
+            this.pictureBoxImage.Size = new System.Drawing.Size(73, 63);
+            this.pictureBoxImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxImage.TabIndex = 0;
+            this.pictureBoxImage.TabStop = false;
             // 
             // labelName
             // 
@@ -57,10 +58,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.labelName);
-            this.Controls.Add(this.pictureBoxProfilePicture);
+            this.Controls.Add(this.pictureBoxImage);
             this.Name = "ImageAndTitleCardItem";
             this.Size = new System.Drawing.Size(364, 99);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfilePicture)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -68,7 +69,7 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBoxProfilePicture;
+        private System.Windows.Forms.PictureBox pictureBoxImage;
         private System.Windows.Forms.Label labelName;
     }
 }
