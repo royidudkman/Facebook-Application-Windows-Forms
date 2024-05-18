@@ -19,19 +19,15 @@ namespace BasicFacebookFeatures
     public partial class MainForm : Form
     {
         private FacebookWrapper.LoginResult LoginResult { get; set; }
-        private BusinessCardScreen BusinessCardScreen { get; set; }
+
         private PostsController m_PostsController = new PostsController();
-        private PictureTabController pictureTabController { get; set; }
         private DataToCardsFetcher m_DataToCard = new DataToCardsFetcher();
-     
         public static LoadingSpinner LoadingSpinner { get; set; } = new LoadingSpinner();
 
         public MainForm()
         {
             InitializeComponent();
-            BusinessCardScreen = new BusinessCardScreen();
-            LoginResult = AuthRepository.LoginResult;
-            pictureTabController = new PictureTabController();      
+            LoginResult = AuthRepository.LoginResult;    
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -42,7 +38,6 @@ namespace BasicFacebookFeatures
             populateFlowLayoutPanel(flowLayoutPanelFriends, m_DataToCard.FetchFriends());
             populateFlowLayoutPanel(flowLayoutLikedPages, m_DataToCard.FetchLikedPages());
             populateFlowLayoutPanel(flowLayoutPanelTeams, m_DataToCard.FetchTeams());
-            //ShowAlbumsOnTheFlowPanel();
             populateFlowLayoutPanel(flowLayoutPanelPictures, m_DataToCard.FetchAlbums());
         }
 
@@ -55,16 +50,25 @@ namespace BasicFacebookFeatures
 
         private void ButtonCreateBusinessCard_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            BusinessCardScreen.Show();
+            BusinessCardScreen businessCardScreen = new BusinessCardScreen();
+            businessCardScreen.Show();
         }
 
         private void buttonSendHappyBirthday_Click(object sender, EventArgs e)
         {
-            this.Hide();
+          
             BdayScreen bdayScreen = new BdayScreen();
             bdayScreen.Show();
 
+        }
+
+        private async void buttonCreateNewAlbum_Click_1(object sender, EventArgs e)
+        {
+            LoadingSpinner = new LoadingSpinner();
+            this.Hide();
+            AlbumsCreateScreen albumsCreateScreen = new AlbumsCreateScreen();
+            LoadingSpinner.Show();
+            albumsCreateScreen.Show();
         }
 
         private void displayAbout()
@@ -77,9 +81,9 @@ namespace BasicFacebookFeatures
             stringBuilder.Append($"Gender: {LoginResult.LoggedInUser.Gender}\n");
 
             labelInformation.Text = stringBuilder.ToString();
-        }
-
-
+        }  
+  
+       
         private void populateFlowLayoutPanel(FlowLayoutPanel i_FlowLayoutPanel, UserControl[] i_Items)
         {
             for (int i = 0; i < i_Items.Length; i++)
@@ -94,114 +98,5 @@ namespace BasicFacebookFeatures
                 }
             }
         }
-        //private void populateFlowLayoutPanel<T>(FlowLayoutPanel i_FlowLayoutPanel, T[] i_Items) where T : Control
-        //{
-        //    if (i_Items == null || i_Items.Length == 0)
-        //    {
-        //        return;
-        //    }
-
-        //    if (i_FlowLayoutPanel.Controls.Count > 0)
-        //    {
-        //        i_FlowLayoutPanel.Controls.Clear();
-        //    }
-
-        //    foreach (T item in i_Items)
-        //    {
-        //        i_FlowLayoutPanel.Controls.Add(item);
-        //    }
-        //}
-
-
-
-
-        private async void buttonCreateNewAlbum_Click_1(object sender, EventArgs e)
-        {
-            LoadingSpinner = new LoadingSpinner();
-            this.Hide();
-            AlbumsCreateScreen albumsCreateScreen = new AlbumsCreateScreen();
-            LoadingSpinner.Show();
-            albumsCreateScreen.Show();
-        }
-
-
-
-
-       
-
-        /// <summary>
-        /// Picture Tab
-        /// </summary>
-
-        //private async void ShowAlbumsOnTheFlowPanel()
-        //{
-        //    await pictureTabController.InitializeAsync();
-
-        //    foreach (var album in pictureTabController.UserAlbums)
-        //    {
-        //        var albumItem = new AlbumItemControl();
-        //        albumItem.PictureBox.Image = album.ImageAlbum;
-        //        albumItem.PictureBox.Tag = album;
-        //        albumItem.PictureBox.Click += Album_Click;
-        //        albumItem.Label.Text = album.Name;
-        //        flowLayoutPanelPictures.Controls.Add(albumItem);
-        //    }
-        //}
-
-        //private void Album_Click(object sender, EventArgs e)
-        //{
-        //    clearFlowPanel();
-        //    PictureBox pictureBox = sender as PictureBox;
-        //    if (pictureBox != null)
-        //    {
-        //        Album selectedAlbum = pictureBox.Tag as Album; // Retrieve the associated album
-        //        if (selectedAlbum != null)
-        //        {
-        //            ShowAllImagesFromSelcetAlbum(selectedAlbum);
-        //            pictureTabController.UserAlbums.Clear();
-        //        }
-        //    }
-        //}
-        //private void Image_Click(object sender, EventArgs e)
-        //{
-        //    DialogResult result = MessageBox.Show("Do you want to go back to albums?", "Information", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-
-        //    if (result == DialogResult.OK)
-        //    {
-        //        clearFlowPanel();
-        //        pictureTabController.UserPhotos.Clear();
-        //        ShowAlbumsOnTheFlowPanel();
-        //    }
-        //}
-        //private async void ShowAllImagesFromSelcetAlbum(Album selectedAlbum)
-        //{
-        //    await pictureTabController.GetAllUserImagesFromAlbumAsync(selectedAlbum);
-        //    if(pictureTabController.UserPhotos.Count == 0)
-        //    {
-        //        DialogResult result =  MessageBox.Show("There Not Photos In This Album","Eror",MessageBoxButtons.OK);
-        //        if(result == DialogResult.OK)
-        //        {
-        //            ShowAlbumsOnTheFlowPanel();
-        //        }
-        //    }
-        //    else
-        //    {
-        //        LoadingSpinner.Show();
-        //        foreach (var photo in pictureTabController.UserPhotos)
-        //        {
-        //            var photoItem = new AlbumItemControl(); //TODO : Change the name of this class
-        //            photoItem.PictureBox.Image = photo.ImageAlbum;
-        //            photoItem.PictureBox.Click += Image_Click;
-        //            photoItem.Label.Text = photo.Name;
-        //            flowLayoutPanelPictures.Controls.Add(photoItem);
-        //        }
-        //        LoadingSpinner.Hide();
-        //    }
-          
-        //}
-        //private void clearFlowPanel()
-        //{
-        //    flowLayoutPanelPictures.Controls.Clear();
-        //}
     }
 }

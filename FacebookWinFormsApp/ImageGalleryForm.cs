@@ -15,7 +15,6 @@ namespace BasicFacebookFeatures
         public ImageGalleryForm()
         {          
             InitializeComponent();
-            labelLoading.Text = "Loading images, please wait";
         }
 
         public void populateGallery(ImageAndTitleCardItem[] i_allPhotos) 
@@ -31,7 +30,6 @@ namespace BasicFacebookFeatures
                     flowLayoutPanelGallery.Controls.Add(i_allPhotos[i]);
                 }
             }
-            labelLoading.Visible = false;
         }
     }
 }
