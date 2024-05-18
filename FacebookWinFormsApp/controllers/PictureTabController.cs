@@ -20,33 +20,28 @@ namespace BasicFacebookFeatures.controllers
             UserPhotos = new FacebookObjectCollection<Photo>();
         }
 
-        public async Task InitializeAsync()
+        public void InitializeAsync()
         {
-            await GetAllUserAlbumsAsync();
+             GetAllUserAlbums();
             // Perform any other initialization tasks here if needed
         }
 
         //TODO : export this function to new class (AlbumService)
-        private async Task GetAllUserAlbumsAsync()
+        public void GetAllUserAlbums()
         {
-            await Task.Run(() =>
+            foreach (var album in AuthRepository.LoginResult.LoggedInUser.Albums)
             {
-                foreach (var album in AuthRepository.LoginResult.LoggedInUser.Albums)
-                {
-                    UserAlbums.Add(album);
-                }
-            });
+                UserAlbums.Add(album);
+            }
         }
 
-        public async Task GetAllUserImagesFromAlbumAsync(Album i_UserAlbum)
+
+        public void GetAllUserImagesFromAlbum(Album i_UserAlbum)
         {
-            await Task.Run(() =>
+            foreach (var image in i_UserAlbum.Photos)
             {
-                foreach (var image in i_UserAlbum.Photos)
-                {
-                    UserPhotos.Add(image);
-                }
-            });
+                UserPhotos.Add(image);
+            }
         }
     }
 }
