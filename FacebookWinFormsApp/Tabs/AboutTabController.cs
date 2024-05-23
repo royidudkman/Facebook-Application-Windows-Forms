@@ -1,5 +1,6 @@
 ﻿using BasicFacebookFeatures.Data;
 using FacebookWrapper;
+using FacebookWrapper.ObjectModel;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -20,18 +21,19 @@ namespace BasicFacebookFeatures.Tabs
 
         public override void Populate()
         {
-            StringBuilder stringBuilder = new StringBuilder();
-            stringBuilder.Append($"First Name: {LoginResult.LoggedInUser.FirstName}{Environment.NewLine}");
-            stringBuilder.Append($"Last Name: {LoginResult.LoggedInUser.LastName}{Environment.NewLine}");
-            stringBuilder.Append($"City: {LoginResult.LoggedInUser.Location.Name}{Environment.NewLine}");
-            stringBuilder.Append($"Email: {LoginResult.LoggedInUser.Email}{Environment.NewLine}");
-            stringBuilder.Append($"Gender: {LoginResult.LoggedInUser.Gender}{Environment.NewLine}");
+            User user = LoginResult.LoggedInUser;
+
+            string info = $"{(user?.FirstName != null ? $"First Name: {user.FirstName}{Environment.NewLine}" : string.Empty)}" +
+            $"{(user?.LastName != null ? $"Last Name: {user.LastName}{Environment.NewLine}" : string.Empty)}" +
+            $"{(user?.Location?.Name != null ? $"City: {user.Location.Name}{Environment.NewLine}" : string.Empty)}" +
+            $"{(user?.Email != null ? $"Email: {user.Email}{Environment.NewLine}" : string.Empty)}" +
+            $"{(user?.Gender != null ? $"Gender: {user.Gender}{Environment.NewLine}" : string.Empty)}";
 
             Label aboutInfoLabel = new Label
             {
-                Text = stringBuilder.ToString(),
+                Text = info,
                 AutoSize = true,
-                Font = new Font("Arial", 16) 
+                Font = new Font("Arial", 16)
             };
 
             FlowLayoutPanel.Controls.Add(aboutInfoLabel);

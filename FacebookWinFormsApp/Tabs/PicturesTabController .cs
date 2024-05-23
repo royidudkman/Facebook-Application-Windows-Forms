@@ -11,7 +11,7 @@ namespace BasicFacebookFeatures.Tabs
 {
     public class PicturesTabController : BaseTabController
     {
-        private PictureController pictureTabController = new PictureController();
+        private PictureController pictureController = new PictureController();
 
         public PicturesTabController(FlowLayoutPanel flowLayoutPanel) : base(flowLayoutPanel) { }
 
@@ -25,9 +25,9 @@ namespace BasicFacebookFeatures.Tabs
 
         private  void ShowAlbumsOnTheFlowPanel()
         {
-             pictureTabController.InitializeAsync();
+             pictureController.InitializeAsync();
 
-            foreach (var album in pictureTabController.UserAlbums)
+            foreach (var album in pictureController.UserAlbums)
             {
                 var albumItem = new AlbumItemControl();
                 albumItem.PictureBox.Image = album.ImageAlbum;
@@ -47,7 +47,7 @@ namespace BasicFacebookFeatures.Tabs
                 if (selectedAlbum != null)
                 {
                     ShowAllImagesFromSelcetAlbum(selectedAlbum);
-                    pictureTabController.UserAlbums.Clear();
+                    pictureController.UserAlbums.Clear();
                 }
             }
         }
@@ -60,8 +60,8 @@ namespace BasicFacebookFeatures.Tabs
             ImageGalleryForm galleryForm = new ImageGalleryForm();
             galleryForm.Show();
 
-            pictureTabController.GetAllUserImagesFromAlbum(selectedAlbum);
-            if (pictureTabController.UserPhotos.Count == 0)
+            pictureController.GetAllUserImagesFromAlbum(selectedAlbum);
+            if (pictureController.UserPhotos.Count == 0)
             {
                 DialogResult result = MessageBox.Show("There Not Photos In This Album", "Error", MessageBoxButtons.OK);
                 if (result == DialogResult.OK)
@@ -72,15 +72,15 @@ namespace BasicFacebookFeatures.Tabs
 
             else
             {
-                foreach (var photo in pictureTabController.UserPhotos)
+                foreach (var photo in pictureController.UserPhotos)
                 {
                     var photoItem = new AlbumItemControl(); //TODO : Change the name of this class
                     photoItem.PictureBox.Image = photo.ImageAlbum;          
                     photoItem.Label.Text = photo.Name;
-                    allPhotos.Add(photoItem);
-                    galleryForm.populateGallery(allPhotos);
-  
+                    allPhotos.Add(photoItem);                  
                 }
+                galleryForm.populateGallery(allPhotos);
+                pictureController.UserPhotos.Clear();
             }
         }   
     }

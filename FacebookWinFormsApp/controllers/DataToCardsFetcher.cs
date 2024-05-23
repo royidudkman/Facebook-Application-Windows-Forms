@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace BasicFacebookFeatures.controllers
 {
-    internal class DataToCardsFetcher 
+    internal class DataToCardsFetcher
     {
         private FacebookWrapper.LoginResult LoginResult { get; set; }
         private FacebookObjectCollection<User> AllFriends { get; set; }
@@ -27,87 +27,123 @@ namespace BasicFacebookFeatures.controllers
         public ImageAndTitleCardItem[] FetchFriends()
         {
             AllFriends = LoginResult.LoggedInUser.Friends;
+            ImageAndTitleCardItem[] friendItems;
 
-            ImageAndTitleCardItem[] friendItems = new ImageAndTitleCardItem[AllFriends.Count];
-            for (int i = 0; i < friendItems.Length; i++)
+            if (AllFriends == null || AllFriends.Count == 0)
             {
-                friendItems[i] = new ImageAndTitleCardItem();
-                friendItems[i].Title = AllFriends[i].Name;
-                friendItems[i].Image = AllFriends[i].ImageSquare;
+                friendItems = new ImageAndTitleCardItem[0];
             }
 
-            return friendItems;         
+            else
+            {
+                friendItems = new ImageAndTitleCardItem[AllFriends.Count];
+                for (int i = 0; i < friendItems.Length; i++)
+                {
+                    friendItems[i] = new ImageAndTitleCardItem();
+                    friendItems[i].Title = AllFriends[i].Name;
+                    friendItems[i].Image = AllFriends[i].ImageSquare;
+                }
+            }
+
+
+            return friendItems;
         }
 
         public ImageAndTitleCardItem[] FetchLikedPages()
         {
             AllLikedPages = LoginResult.LoggedInUser.LikedPages;
+            ImageAndTitleCardItem[] likedPagesItems;
 
-            ImageAndTitleCardItem[] likedPagesItems = new ImageAndTitleCardItem[AllLikedPages.Count];
-            for (int i = 0; i < likedPagesItems.Length; i++)
+            if(AllLikedPages == null || AllLikedPages.Count == 0)
             {
-                likedPagesItems[i] = new ImageAndTitleCardItem();
-                likedPagesItems[i].Title = AllLikedPages[i].Name;
-                likedPagesItems[i].Image = AllLikedPages[i].ImageSquare;
+                likedPagesItems = new ImageAndTitleCardItem[0];
             }
 
+            else
+            {
+                likedPagesItems = new ImageAndTitleCardItem[AllLikedPages.Count];
+                for (int i = 0; i < likedPagesItems.Length; i++)
+                {
+                    likedPagesItems[i] = new ImageAndTitleCardItem();
+                    likedPagesItems[i].Title = AllLikedPages[i].Name;
+                    likedPagesItems[i].Image = AllLikedPages[i].ImageSquare;
+                }
+            }
+          
             return likedPagesItems;
         }
 
         public ImageAndTitleCardItem[] FetchTeams()
         {
             AllTeams = LoginResult.LoggedInUser.FavofriteTeams;
+            ImageAndTitleCardItem[] teamsItems;
 
-            ImageAndTitleCardItem[] teamsItems = new ImageAndTitleCardItem[AllTeams.Count()];
-            for (int i = 0; i < teamsItems.Length; i++)
+            if(AllTeams == null || AllTeams.Length == 0)
             {
-                teamsItems[i] = new ImageAndTitleCardItem();
-                teamsItems[i].Title = AllTeams[i].Name;
-                teamsItems[i].Image = AllTeams[i].ImageSquare;
+                teamsItems = new ImageAndTitleCardItem[0];
             }
 
+            else
+            {
+                teamsItems = new ImageAndTitleCardItem[AllTeams.Count()];
+                for (int i = 0; i < teamsItems.Length; i++)
+                {
+                    teamsItems[i] = new ImageAndTitleCardItem();
+                    teamsItems[i].Title = AllTeams[i].Name;
+                    teamsItems[i].Image = AllTeams[i].ImageSquare;
+                }
+            }
+         
             return teamsItems;
         }
 
-        public ImageAndTitleCardItem[] FetchAlbums()
-        {
-            AllAlbums = LoginResult.LoggedInUser.Albums;
+        //public ImageAndTitleCardItem[] FetchAlbums()
+        //{
+        //    AllAlbums = LoginResult.LoggedInUser.Albums;
+        //    ImageAndTitleCardItem[] AlbumsImages;
 
-            ImageAndTitleCardItem[] AlbumsImages = new ImageAndTitleCardItem[AllAlbums.Count()];
-            for (int i = 0; i < AlbumsImages.Length; i++)
-            {
-                AlbumsImages[i] = new ImageAndTitleCardItem();
-                AlbumsImages[i].Image = AllAlbums[i].ImageAlbum;
-                AlbumsImages[i].Title = AllAlbums[i].Name;
-                AlbumsImages[i].Tag = AllAlbums[i];
-                AlbumsImages[i].Click += AlbumsImages_Click;
-            }
+        //    if(AllAlbums == null || AllAlbums.Count == 0)
+        //    {
+        //        AlbumsImages = new ImageAndTitleCardItem[0];
+        //    }
 
-            return AlbumsImages;
-        }
+        //    else
+        //    {
+        //        AlbumsImages = new ImageAndTitleCardItem[AllAlbums.Count()];
+        //        for (int i = 0; i < AlbumsImages.Length; i++)
+        //        {
+        //            AlbumsImages[i] = new ImageAndTitleCardItem();
+        //            AlbumsImages[i].Image = AllAlbums[i].ImageAlbum;
+        //            AlbumsImages[i].Title = AllAlbums[i].Name;
+        //            AlbumsImages[i].Tag = AllAlbums[i];
+        //            AlbumsImages[i].Click += AlbumsImages_Click;
+        //        }
+        //    }
+            
+        //    return AlbumsImages;
+        //}
 
-        private ImageAndTitleCardItem[] getAllImagesFromAlbum(Album i_selectedAlbum)
-        {
-            FacebookObjectCollection<Photo> allPhotos = i_selectedAlbum.Photos; 
+        //private ImageAndTitleCardItem[] getAllImagesFromAlbum(Album i_selectedAlbum)
+        //{
+        //    FacebookObjectCollection<Photo> allPhotos = i_selectedAlbum.Photos;
 
-            ImageAndTitleCardItem[] AllImages = new ImageAndTitleCardItem[i_selectedAlbum.Photos.Count];
+        //    ImageAndTitleCardItem[] AllImages = new ImageAndTitleCardItem[i_selectedAlbum.Photos.Count];
 
-            for (int i = 0; i < allPhotos.Count; i++)
-            {
-                AllImages[i] = new ImageAndTitleCardItem();
-                AllImages[i].Image = allPhotos[i].ImageAlbum;
-                AllImages[i].Title = allPhotos[i].Name;
-            }
+        //    for (int i = 0; i < allPhotos.Count; i++)
+        //    {
+        //        AllImages[i] = new ImageAndTitleCardItem();
+        //        AllImages[i].Image = allPhotos[i].ImageAlbum;
+        //        AllImages[i].Title = allPhotos[i].Name;
+        //    }
 
-            return AllImages;
-        }
+        //    return AllImages;
+        //}
 
-        private void AlbumsImages_Click(object sender, EventArgs e)
-        {
-            ImageAndTitleCardItem album = sender as ImageAndTitleCardItem;
-            ImageGalleryForm galleryForm = new ImageGalleryForm();
-            galleryForm.Show();
-            //galleryForm.populateGallery(getAllImagesFromAlbum(album.Tag as Album));
-        }
+        //private void AlbumsImages_Click(object sender, EventArgs e)
+        //{
+        //    ImageAndTitleCardItem album = sender as ImageAndTitleCardItem;
+        //    ImageGalleryForm galleryForm = new ImageGalleryForm();
+        //    galleryForm.Show();
+        //}
     }
 }

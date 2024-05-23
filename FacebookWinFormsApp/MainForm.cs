@@ -70,18 +70,6 @@ namespace BasicFacebookFeatures
             bdayScreen.Show();
         }
 
-        //private void displayAbout()
-        //{
-        //    StringBuilder stringBuilder = new StringBuilder();
-        //    stringBuilder.Append($"First Name: {LoginResult.LoggedInUser.FirstName}\n");
-        //    stringBuilder.Append($"Last Name: {LoginResult.LoggedInUser.LastName}\n");
-        //    stringBuilder.Append($"City: {LoginResult.LoggedInUser.Location.Name}\n");
-        //    stringBuilder.Append($"Email: {LoginResult.LoggedInUser.Email}\n");
-        //    stringBuilder.Append($"Gender: {LoginResult.LoggedInUser.Gender}\n");
-
-        //    labelInformation.Text = stringBuilder.ToString();
-        //}
-
         private void buttonCreateNewAlbum_Click(object sender, EventArgs e)
         {
             LoadingSpinner = new LoadingSpinner();
