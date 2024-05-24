@@ -33,7 +33,7 @@
             this.buttonSendHappyBirthday = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.buttonLogout = new System.Windows.Forms.Button();
-            this.buttonCreateNewAlbum = new System.Windows.Forms.Button();
+            this.buttonCreateCanvas = new System.Windows.Forms.Button();
             this.ButtonCreateBusinessCard = new System.Windows.Forms.Button();
             this.pictureBoxUserProfile = new System.Windows.Forms.PictureBox();
             this.tabControlFeed = new System.Windows.Forms.TabControl();
@@ -41,6 +41,7 @@
             this.flowLayoutPanelPosts = new System.Windows.Forms.FlowLayoutPanel();
             this.tabPageAbout = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.flowLayoutPanelAbout = new System.Windows.Forms.FlowLayoutPanel();
             this.tabPageFriends = new System.Windows.Forms.TabPage();
             this.flowLayoutPanelFriends = new System.Windows.Forms.FlowLayoutPanel();
             this.tabPagePictures = new System.Windows.Forms.TabPage();
@@ -49,7 +50,6 @@
             this.flowLayoutLikedPages = new System.Windows.Forms.FlowLayoutPanel();
             this.tabPageTeams = new System.Windows.Forms.TabPage();
             this.flowLayoutPanelTeams = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowLayoutPanelAbout = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUserProfile)).BeginInit();
             this.tabControlFeed.SuspendLayout();
@@ -83,7 +83,7 @@
             this.buttonSendHappyBirthday.Location = new System.Drawing.Point(7, 31);
             this.buttonSendHappyBirthday.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.buttonSendHappyBirthday.Name = "buttonSendHappyBirthday";
-            this.buttonSendHappyBirthday.Size = new System.Drawing.Size(131, 25);
+            this.buttonSendHappyBirthday.Size = new System.Drawing.Size(145, 30);
             this.buttonSendHappyBirthday.TabIndex = 1;
             this.buttonSendHappyBirthday.Text = "send happy Bday";
             this.buttonSendHappyBirthday.UseVisualStyleBackColor = false;
@@ -94,7 +94,7 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(202)))), ((int)(((byte)(228)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.buttonLogout);
-            this.panel1.Controls.Add(this.buttonCreateNewAlbum);
+            this.panel1.Controls.Add(this.buttonCreateCanvas);
             this.panel1.Controls.Add(this.ButtonCreateBusinessCard);
             this.panel1.Controls.Add(this.buttonSendHappyBirthday);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -120,20 +120,20 @@
             this.buttonLogout.UseVisualStyleBackColor = false;
             this.buttonLogout.Click += new System.EventHandler(this.buttonLogout_Click);
             // 
-            // buttonCreateNewAlbum
+            // buttonCreateCanvas
             // 
-            this.buttonCreateNewAlbum.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.buttonCreateNewAlbum.AutoSize = true;
-            this.buttonCreateNewAlbum.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(240)))), ((int)(((byte)(248)))));
-            this.buttonCreateNewAlbum.Font = new System.Drawing.Font("Aharoni", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.buttonCreateNewAlbum.Location = new System.Drawing.Point(408, 28);
-            this.buttonCreateNewAlbum.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
-            this.buttonCreateNewAlbum.Name = "buttonCreateNewAlbum";
-            this.buttonCreateNewAlbum.Size = new System.Drawing.Size(194, 30);
-            this.buttonCreateNewAlbum.TabIndex = 3;
-            this.buttonCreateNewAlbum.Text = "Create new Album";
-            this.buttonCreateNewAlbum.UseVisualStyleBackColor = false;
-            this.buttonCreateNewAlbum.Click += new System.EventHandler(this.buttonCreateNewAlbum_Click);
+            this.buttonCreateCanvas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.buttonCreateCanvas.AutoSize = true;
+            this.buttonCreateCanvas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(240)))), ((int)(((byte)(248)))));
+            this.buttonCreateCanvas.Font = new System.Drawing.Font("Aharoni", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.buttonCreateCanvas.Location = new System.Drawing.Point(408, 28);
+            this.buttonCreateCanvas.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.buttonCreateCanvas.Name = "buttonCreateCanvas";
+            this.buttonCreateCanvas.Size = new System.Drawing.Size(194, 30);
+            this.buttonCreateCanvas.TabIndex = 3;
+            this.buttonCreateCanvas.Text = "Create Canvas";
+            this.buttonCreateCanvas.UseVisualStyleBackColor = false;
+            this.buttonCreateCanvas.Click += new System.EventHandler(this.buttonCreateNewAlbum_Click);
             // 
             // ButtonCreateBusinessCard
             // 
@@ -225,6 +225,16 @@
             this.panel2.Size = new System.Drawing.Size(703, 431);
             this.panel2.TabIndex = 0;
             // 
+            // flowLayoutPanelAbout
+            // 
+            this.flowLayoutPanelAbout.AutoScroll = true;
+            this.flowLayoutPanelAbout.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanelAbout.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanelAbout.Margin = new System.Windows.Forms.Padding(2);
+            this.flowLayoutPanelAbout.Name = "flowLayoutPanelAbout";
+            this.flowLayoutPanelAbout.Size = new System.Drawing.Size(703, 431);
+            this.flowLayoutPanelAbout.TabIndex = 6;
+            // 
             // tabPageFriends
             // 
             this.tabPageFriends.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(240)))), ((int)(((byte)(248)))));
@@ -310,16 +320,6 @@
             this.flowLayoutPanelTeams.Size = new System.Drawing.Size(713, 441);
             this.flowLayoutPanelTeams.TabIndex = 2;
             // 
-            // flowLayoutPanelAbout
-            // 
-            this.flowLayoutPanelAbout.AutoScroll = true;
-            this.flowLayoutPanelAbout.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanelAbout.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanelAbout.Margin = new System.Windows.Forms.Padding(2);
-            this.flowLayoutPanelAbout.Name = "flowLayoutPanelAbout";
-            this.flowLayoutPanelAbout.Size = new System.Drawing.Size(703, 431);
-            this.flowLayoutPanelAbout.TabIndex = 6;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -358,7 +358,7 @@
         private System.Windows.Forms.Label labelTitle;
         private System.Windows.Forms.Button buttonSendHappyBirthday;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button buttonCreateNewAlbum;
+        private System.Windows.Forms.Button buttonCreateCanvas;
         private System.Windows.Forms.Button ButtonCreateBusinessCard;
         private System.Windows.Forms.PictureBox pictureBoxUserProfile;
         private System.Windows.Forms.Button buttonLogout;

@@ -114,11 +114,11 @@
     <Compile Include="AlbumItemControl.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="AlbumsCreateScreen.cs">
+    <Compile Include="CreateCanvasScreen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AlbumsCreateScreen.Designer.cs">
-      <DependentUpon>AlbumsCreateScreen.cs</DependentUpon>
+    <Compile Include="CreateCanvasScreen.Designer.cs">
+      <DependentUpon>CreateCanvasScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="BdayScreen.cs">
       <SubType>Form</SubType>
@@ -200,8 +200,8 @@
     <Compile Include="Tabs\PicturesTabController .cs" />
     <Compile Include="Tabs\PostsTabController.cs" />
     <Compile Include="Tabs\TeamsTabController.cs" />
-    <EmbeddedResource Include="AlbumsCreateScreen.resx">
-      <DependentUpon>AlbumsCreateScreen.cs</DependentUpon>
+    <EmbeddedResource Include="CreateCanvasScreen.resx">
+      <DependentUpon>CreateCanvasScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BdayScreen.resx">
       <DependentUpon>BdayScreen.cs</DependentUpon>

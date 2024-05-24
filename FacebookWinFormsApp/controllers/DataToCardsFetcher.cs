@@ -96,54 +96,5 @@ namespace BasicFacebookFeatures.controllers
          
             return teamsItems;
         }
-
-        //public ImageAndTitleCardItem[] FetchAlbums()
-        //{
-        //    AllAlbums = LoginResult.LoggedInUser.Albums;
-        //    ImageAndTitleCardItem[] AlbumsImages;
-
-        //    if(AllAlbums == null || AllAlbums.Count == 0)
-        //    {
-        //        AlbumsImages = new ImageAndTitleCardItem[0];
-        //    }
-
-        //    else
-        //    {
-        //        AlbumsImages = new ImageAndTitleCardItem[AllAlbums.Count()];
-        //        for (int i = 0; i < AlbumsImages.Length; i++)
-        //        {
-        //            AlbumsImages[i] = new ImageAndTitleCardItem();
-        //            AlbumsImages[i].Image = AllAlbums[i].ImageAlbum;
-        //            AlbumsImages[i].Title = AllAlbums[i].Name;
-        //            AlbumsImages[i].Tag = AllAlbums[i];
-        //            AlbumsImages[i].Click += AlbumsImages_Click;
-        //        }
-        //    }
-            
-        //    return AlbumsImages;
-        //}
-
-        //private ImageAndTitleCardItem[] getAllImagesFromAlbum(Album i_selectedAlbum)
-        //{
-        //    FacebookObjectCollection<Photo> allPhotos = i_selectedAlbum.Photos;
-
-        //    ImageAndTitleCardItem[] AllImages = new ImageAndTitleCardItem[i_selectedAlbum.Photos.Count];
-
-        //    for (int i = 0; i < allPhotos.Count; i++)
-        //    {
-        //        AllImages[i] = new ImageAndTitleCardItem();
-        //        AllImages[i].Image = allPhotos[i].ImageAlbum;
-        //        AllImages[i].Title = allPhotos[i].Name;
-        //    }
-
-        //    return AllImages;
-        //}
-
-        //private void AlbumsImages_Click(object sender, EventArgs e)
-        //{
-        //    ImageAndTitleCardItem album = sender as ImageAndTitleCardItem;
-        //    ImageGalleryForm galleryForm = new ImageGalleryForm();
-        //    galleryForm.Show();
-        //}
     }
 }
