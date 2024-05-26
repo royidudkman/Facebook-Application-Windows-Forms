@@ -22,7 +22,7 @@ namespace BasicFacebookFeatures
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            progressBar.Value += 5;
+            progressBar.Value += 1;
             labelPrecent.Text = progressBar.Value.ToString() + "%";
             if (progressBar.Value == 100)
             {

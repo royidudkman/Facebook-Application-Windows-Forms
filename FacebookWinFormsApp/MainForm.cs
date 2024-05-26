@@ -81,7 +81,7 @@ namespace BasicFacebookFeatures
         private void buttonLogout_Click(object sender, EventArgs e)
         {
             Close();
-            AuthRepository.LoginResult = null;
+            AuthRepository.Logout();
             LoginForm loginForm = new LoginForm();
             loginForm.Show();
         }

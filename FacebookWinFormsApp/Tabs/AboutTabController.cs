@@ -13,15 +13,11 @@ namespace BasicFacebookFeatures.Tabs
 {
     internal class AboutTabController : BaseTabController
     {
-        private FacebookWrapper.LoginResult LoginResult { get; set; }
-        public AboutTabController(FlowLayoutPanel flowLayoutPanel) : base(flowLayoutPanel)
-        {
-            LoginResult = AuthRepository.LoginResult;
-        }
+        public AboutTabController(FlowLayoutPanel flowLayoutPanel) : base(flowLayoutPanel) { }
 
         public override void Populate()
         {
-            User user = LoginResult.LoggedInUser;
+            UserAbout user = FacebookFetcherService.FetchAbout();
 
             string info = $"{(user?.FirstName != null ? $"First Name: {user.FirstName}{Environment.NewLine}" : string.Empty)}" +
             $"{(user?.LastName != null ? $"Last Name: {user.LastName}{Environment.NewLine}" : string.Empty)}" +

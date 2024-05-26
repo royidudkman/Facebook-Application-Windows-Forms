@@ -8,22 +8,28 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace BasicFacebookFeatures.controllers
-{ 
-    
-    internal class CreateCanvasController
+{
+
+    internal class CreateCanvasController : AlbumController
     {
         public int LayoutRaws { get; set; } = 0;
         public int LayoutCols { get; set; } = 0;
         public eLayoutSize LayoutSize { get; set; }
 
-        public FacebookObjectCollection<Photo> userPhotos { get;  } =  new FacebookObjectCollection<Photo>();
+        //public FacebookObjectCollection<Album> UserAlbums { get; private set; }
+        //public FacebookObjectCollection<Photo> UserPhotos { get; private set; }
+
+        //public CreateCanvasController()
+        //{
+        //    //UserAlbums = FacebookFetcherService.FetchAlbums();      
+        //}
 
         public int IndexUserImages
         {
             get { return LayoutRaws; }
             set
             {
-                if (value > userPhotos.Count || value < 0)
+                if (value > UserPhotos.Count || value < 0)
                 {
                     value = 0;
                 }
@@ -31,24 +37,10 @@ namespace BasicFacebookFeatures.controllers
             }
         }
 
-
-
-        //public async Task<FacebookObjectCollection<Album>> GetAllUserAlbumsAsync()
+        //public void GetAllUserImagesFromAlbum(Album i_UserAlbum)
         //{
-        //    return await Task.Run(() =>
-        //    {
-        //        return AuthRepository.LoginResult.LoggedInUser.Albums;
-        //    });
-        //}
-        //public async Task GetAllUserImagesFromAlbumAsync(Album i_UserAlbum)
-        //{
-        //    await Task.Run(() =>
-        //    {
-        //        foreach (var image in i_UserAlbum.Photos)
-        //        {
-        //            userPhotos.Add(image);
-        //        }
-        //    });
+        //    UserPhotos.Clear();
+        //    UserPhotos = FacebookFetcherService.FetchPhotosFromAlbum(i_UserAlbum);
         //}
 
     }

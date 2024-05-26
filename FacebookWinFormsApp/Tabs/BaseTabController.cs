@@ -18,7 +18,6 @@ namespace BasicFacebookFeatures.Tabs
             FlowLayoutPanel = flowLayoutPanel;
         }
 
-
         public abstract void Populate();
     }
 }

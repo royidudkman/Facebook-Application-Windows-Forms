@@ -6,7 +6,7 @@
     using System.ComponentModel;
     using System.Data;
     using System.Drawing;
-using System.Linq;
+    using System.Linq;
 using System.Text;
     using System.Threading;
     using System.Threading.Tasks;
@@ -14,20 +14,23 @@ using System.Text;
 
 namespace BasicFacebookFeatures
 {
-    public partial class AlbumsCreateScreen : Form
+    public partial class CreateCanvasScreen : Form
     {
-        CreateCanvasController AlbumController { get; set; }
+        CreateCanvasController CreateCanvasController { get; set; }
+        //PictureController PictureController { get; set; }
 
-        public AlbumsCreateScreen()
+        public CreateCanvasScreen()
         {
             InitializeComponent();
-            AlbumController = new CreateCanvasController();
+            CreateCanvasController = new CreateCanvasController();
+            //PictureController = new PictureController();
         }
 
 
-        private async void AddAlbumsToComboBox()
+        private void AddAlbumsToComboBox()
         {
-            FacebookObjectCollection<Album> userAlbums = await AlbumController.GetAllUserAlbumsAsync();
+            //FacebookObjectCollection<Album> userAlbums = await CreateCanvasController.GetAllUserAlbumsAsync();
+            FacebookObjectCollection<Album> userAlbums = CreateCanvasController.UserAlbums;
             if (userAlbums != null)
             {
                 comboBoxAlbumsNames.DisplayMember = "Name";
@@ -40,26 +43,26 @@ namespace BasicFacebookFeatures
 
         }
 
-        private void CreateTableLayoutFromUserChoise()
+        private void CreateTableLayoutFromUserChoice()
         {
-            switch (AlbumController.LayoutSize)
+            switch (CreateCanvasController.LayoutSize)
             {
                 case eLayoutSize.TWO_ON_TWO:
                     {
-                        tableLayoutPanel.RowCount = AlbumController.LayoutRaws;
-                        tableLayoutPanel.ColumnCount = AlbumController.LayoutCols;
+                        tableLayoutPanel.RowCount = CreateCanvasController.LayoutRaws;
+                        tableLayoutPanel.ColumnCount = CreateCanvasController.LayoutCols;
                         break;
                     }
                 case eLayoutSize.ONE_ON_TWO:
                     {
-                        tableLayoutPanel.RowCount = AlbumController.LayoutRaws;
-                        tableLayoutPanel.ColumnCount = AlbumController.LayoutCols;
+                        tableLayoutPanel.RowCount = CreateCanvasController.LayoutRaws;
+                        tableLayoutPanel.ColumnCount = CreateCanvasController.LayoutCols;
                         break;
                     }
                 case eLayoutSize.THREE_ON_THREE:
                     {
-                        tableLayoutPanel.RowCount = AlbumController.LayoutRaws;
-                        tableLayoutPanel.ColumnCount = AlbumController.LayoutCols;
+                        tableLayoutPanel.RowCount = CreateCanvasController.LayoutRaws;
+                        tableLayoutPanel.ColumnCount = CreateCanvasController.LayoutCols;
                         break;
                     }
             }
@@ -83,9 +86,9 @@ namespace BasicFacebookFeatures
         private void CreateButtonsForTableLayout()
         {
             tableLayoutPanel.Controls.Clear();
-            for (int i = 0; i < AlbumController.LayoutRaws; i++)
+            for (int i = 0; i < CreateCanvasController.LayoutRaws; i++)
             {
-                for (int j = 0; j < AlbumController.LayoutCols; j++)
+                for (int j = 0; j < CreateCanvasController.LayoutCols; j++)
                 {
                     Button addImageBtn = new Button();
                     addImageBtn.Text = "Add Image Here";
@@ -105,7 +108,7 @@ namespace BasicFacebookFeatures
             {
                 PictureBox pictureBox = new PictureBox();
 
-                // Photo photoSelected = AlbumController.userPhotos.ElementAt(AlbumController.IndexUserImages);
+                // Photo photoSelected = CreateCanvasController.userPhotos.ElementAt(CreateCanvasController.IndexUserImages);
                 pictureBox.Image = pictureBoxImagesFromAlbum.Image;
                 pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
 
@@ -129,10 +132,10 @@ namespace BasicFacebookFeatures
         {
             if (radioButtonTwoOnTwo.Checked)
             {
-                AlbumController.LayoutRaws = 2;
-                AlbumController.LayoutCols = 2;
-                AlbumController.LayoutSize = eLayoutSize.TWO_ON_TWO;
-                CreateTableLayoutFromUserChoise();
+                CreateCanvasController.LayoutRaws = 2;
+                CreateCanvasController.LayoutCols = 2;
+                CreateCanvasController.LayoutSize = eLayoutSize.TWO_ON_TWO;
+                CreateTableLayoutFromUserChoice();
                 buttonPostImage.Hide();
             }
         }
@@ -141,10 +144,10 @@ namespace BasicFacebookFeatures
         {
             if (radioButtonOneOnTwo.Checked)
             {
-                AlbumController.LayoutRaws = 1;
-                AlbumController.LayoutCols = 2;
-                AlbumController.LayoutSize = eLayoutSize.ONE_ON_TWO;
-                CreateTableLayoutFromUserChoise();
+                CreateCanvasController.LayoutRaws = 1;
+                CreateCanvasController.LayoutCols = 2;
+                CreateCanvasController.LayoutSize = eLayoutSize.ONE_ON_TWO;
+                CreateTableLayoutFromUserChoice();
                 buttonPostImage.Hide();
 
             }
@@ -154,42 +157,40 @@ namespace BasicFacebookFeatures
         {
             if (radioButtonThreeOnThree.Checked)
             {
-                AlbumController.LayoutRaws = 3;
-                AlbumController.LayoutCols = 3;
-                AlbumController.LayoutSize = eLayoutSize.THREE_ON_THREE;
-                CreateTableLayoutFromUserChoise();
+                CreateCanvasController.LayoutRaws = 3;
+                CreateCanvasController.LayoutCols = 3;
+                CreateCanvasController.LayoutSize = eLayoutSize.THREE_ON_THREE;
+                CreateTableLayoutFromUserChoice();
                 buttonPostImage.Hide();
 
 
             }
         }
 
-        private async void comboBoxAlbumsNames_SelectedIndexChanged(object sender, EventArgs e)
+        private void comboBoxAlbumsNames_SelectedIndexChanged(object sender, EventArgs e)
         {
-            AlbumController.userPhotos.Clear();
             Album choosenAlbum = comboBoxAlbumsNames.SelectedItem as Album;
-            await AlbumController.GetAllUserImagesFromAlbumAsync(choosenAlbum);
-            pictureBoxImagesFromAlbum.Image = choosenAlbum.ImageAlbum;
-            await AlbumController.GetAllUserImagesFromAlbumAsync(choosenAlbum);
-            AlbumController.IndexUserImages = 0;
+            CreateCanvasController.GetAllUserImagesFromAlbum(choosenAlbum);
+            pictureBoxImagesFromAlbum.Image = choosenAlbum.ImageAlbum;        
+            CreateCanvasController.IndexUserImages = 0;
         }
 
         private void buttonNextImage_Click(object sender, EventArgs e)
         {
-            AlbumController.IndexUserImages++;
-            if (AlbumController.userPhotos.Count() > 0)
+            CreateCanvasController.IndexUserImages++;
+            if (CreateCanvasController.UserPhotos.Count() > 0)
             {
-                Photo photoToPresent = AlbumController.userPhotos.ElementAt(AlbumController.IndexUserImages);
+                Photo photoToPresent = CreateCanvasController.UserPhotos.ElementAt(CreateCanvasController.IndexUserImages);
                 pictureBoxImagesFromAlbum.Image = photoToPresent.ImageNormal;
             }
         }
 
         private void buttonBackImage_Click(object sender, EventArgs e)
         {
-            AlbumController.IndexUserImages--;
-            if (AlbumController.userPhotos.Count() > 0)
+            CreateCanvasController.IndexUserImages--;
+            if (CreateCanvasController.UserPhotos.Count() > 0)
             {
-                Photo photoToPresent = AlbumController.userPhotos.ElementAt(AlbumController.IndexUserImages);
+                Photo photoToPresent = CreateCanvasController.UserPhotos.ElementAt(CreateCanvasController.IndexUserImages);
                 pictureBoxImagesFromAlbum.Image = photoToPresent.ImageNormal;
             }
         }
@@ -197,10 +198,10 @@ namespace BasicFacebookFeatures
         private void AlbumsCreateScreen_Load(object sender, EventArgs e)
         {
             AddAlbumsToComboBox();
-            AlbumController.LayoutRaws = 2;
-            AlbumController.LayoutCols = 2;
-            AlbumController.LayoutSize = eLayoutSize.TWO_ON_TWO;
-            CreateTableLayoutFromUserChoise();
+            CreateCanvasController.LayoutRaws = 2;
+            CreateCanvasController.LayoutCols = 2;
+            CreateCanvasController.LayoutSize = eLayoutSize.TWO_ON_TWO;
+            CreateTableLayoutFromUserChoice();
             buttonPostImage.Hide();
             MainForm.LoadingSpinner.BringToFront();
             MainForm.LoadingSpinner.Hide();

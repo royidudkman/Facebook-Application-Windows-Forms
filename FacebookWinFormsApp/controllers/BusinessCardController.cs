@@ -27,7 +27,7 @@ namespace BasicFacebookFeatures.controllers
             switch (i_InfoType)
             {
                 case "Name":
-                    retVal = BusinessCard.Name;
+                    retVal = BusinessCard.FirstName;
                     break;
                 case "Last Name":
                     retVal = BusinessCard.LastName;

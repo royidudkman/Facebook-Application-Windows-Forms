@@ -40,17 +40,19 @@
             this.labelLoading.AutoSize = true;
             this.labelLoading.Font = new System.Drawing.Font("Aharoni", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.labelLoading.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.labelLoading.Location = new System.Drawing.Point(12, 205);
+            this.labelLoading.Location = new System.Drawing.Point(8, 133);
+            this.labelLoading.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelLoading.Name = "labelLoading";
-            this.labelLoading.Size = new System.Drawing.Size(352, 71);
+            this.labelLoading.Size = new System.Drawing.Size(237, 47);
             this.labelLoading.TabIndex = 0;
             this.labelLoading.Text = "Loading...";
             // 
             // progressBar
             // 
-            this.progressBar.Location = new System.Drawing.Point(24, 336);
+            this.progressBar.Location = new System.Drawing.Point(16, 218);
+            this.progressBar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.progressBar.Name = "progressBar";
-            this.progressBar.Size = new System.Drawing.Size(597, 43);
+            this.progressBar.Size = new System.Drawing.Size(373, 28);
             this.progressBar.TabIndex = 1;
             // 
             // labelPrecent
@@ -58,9 +60,10 @@
             this.labelPrecent.AutoSize = true;
             this.labelPrecent.Font = new System.Drawing.Font("Aharoni", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.labelPrecent.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.labelPrecent.Location = new System.Drawing.Point(640, 328);
+            this.labelPrecent.Location = new System.Drawing.Point(427, 213);
+            this.labelPrecent.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelPrecent.Name = "labelPrecent";
-            this.labelPrecent.Size = new System.Drawing.Size(44, 51);
+            this.labelPrecent.Size = new System.Drawing.Size(30, 35);
             this.labelPrecent.TabIndex = 2;
             this.labelPrecent.Text = "0";
             // 
@@ -71,14 +74,15 @@
             // 
             // LoadingScreen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(62)))), ((int)(((byte)(138)))));
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(533, 292);
             this.Controls.Add(this.labelPrecent);
             this.Controls.Add(this.progressBar);
             this.Controls.Add(this.labelLoading);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "LoadingScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LoadingScreen";

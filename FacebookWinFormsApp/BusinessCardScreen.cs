@@ -24,8 +24,8 @@ namespace BasicFacebookFeatures
 
         private void checkedListBoxOptions_ItemCheck(object sender, ItemCheckEventArgs e)
         {
-            //BeginInvoke((Action)UpdateRichTextBoxPreview); check!!!!!!!!!!!!!!!!!!
-            UpdateRichTextBoxPreview();
+            BeginInvoke((Action)UpdateRichTextBoxPreview); 
+            //UpdateRichTextBoxPreview();
         }
 
         private void UpdateRichTextBoxPreview()

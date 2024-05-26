@@ -16,13 +16,13 @@ namespace BasicFacebookFeatures
     public partial class LoginForm : Form
     {
 
-        private AuthRepository m_auth;
+        private AuthRepository Auth { get; set; }
         private MainForm m_MainForm;
         public LoginForm()
         {
             InitializeComponent();
             FacebookWrapper.FacebookService.s_CollectionLimit = 25;
-            m_auth = new AuthRepository(893455099216824, new string[]
+            Auth = new AuthRepository(893455099216824, new string[]
             {
                     "email",
                     "public_profile",
@@ -51,7 +51,7 @@ namespace BasicFacebookFeatures
                 loadingScreen.Show();
                 await Task.Run(() =>
                 {
-                    m_auth.Login();
+                    AuthRepository.Login();
                 });
                 if (string.IsNullOrEmpty(AuthRepository.LoginResult.ErrorMessage))
                 {

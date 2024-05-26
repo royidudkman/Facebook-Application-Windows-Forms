@@ -11,8 +11,6 @@ namespace BasicFacebookFeatures.Tabs
     public class FriendsTabController : BaseTabController
     {
         private DataToCardsFetcher m_DataToCard = new DataToCardsFetcher();
-
-
         public FriendsTabController(FlowLayoutPanel flowLayoutPanel) : base(flowLayoutPanel) { }
 
         public override void Populate()

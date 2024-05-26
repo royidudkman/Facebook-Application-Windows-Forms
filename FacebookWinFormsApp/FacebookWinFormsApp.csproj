@@ -114,6 +114,7 @@
     <Compile Include="AlbumItemControl.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="controllers\AlbumController.cs" />
     <Compile Include="CreateCanvasScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,7 +140,8 @@
     <Compile Include="controllers\PictureController.cs" />
     <Compile Include="controllers\PostsController.cs" />
     <Compile Include="Data\AuthRepository.cs" />
-    <Compile Include="Data\BusinessCard.cs" />
+    <Compile Include="Data\UserAbout.cs" />
+    <Compile Include="Data\FacebookFetcherService.cs" />
     <Compile Include="Data\GreetingCard.cs" />
     <Compile Include="ImageAndTitleCardItem.cs">
       <SubType>UserControl</SubType>
@@ -171,12 +173,6 @@
     </Compile>
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormMain.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormMain.Designer.cs">
-      <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
@@ -222,9 +218,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormMain.resx">
-      <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

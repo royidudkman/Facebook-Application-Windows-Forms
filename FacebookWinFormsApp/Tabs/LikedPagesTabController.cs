@@ -11,7 +11,6 @@ namespace BasicFacebookFeatures.Tabs
     public class LikedPagesTabController : BaseTabController
     {
         private DataToCardsFetcher m_DataToCard = new DataToCardsFetcher();
-
         public LikedPagesTabController(FlowLayoutPanel flowLayoutPanel) : base(flowLayoutPanel) { }
 
         public override void Populate()
