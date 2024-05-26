@@ -97,6 +97,7 @@
             this.Controls.Add(this.richTextBoxPreview);
             this.Controls.Add(this.checkedListBoxOptions);
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MinimumSize = new System.Drawing.Size(549, 331);
             this.Name = "BusinessCardScreen";
             this.Text = "BusinessCardScreen";
             this.ResumeLayout(false);

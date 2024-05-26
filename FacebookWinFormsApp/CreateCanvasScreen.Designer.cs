@@ -247,6 +247,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.labelTitle);
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MinimumSize = new System.Drawing.Size(689, 374);
             this.Name = "CreateCanvasScreen";
             this.Text = "CreateCanvasScreen";
             this.Load += new System.EventHandler(this.AlbumsCreateScreen_Load);

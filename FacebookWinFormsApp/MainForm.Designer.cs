@@ -50,6 +50,7 @@
             this.flowLayoutLikedPages = new System.Windows.Forms.FlowLayoutPanel();
             this.tabPageTeams = new System.Windows.Forms.TabPage();
             this.flowLayoutPanelTeams = new System.Windows.Forms.FlowLayoutPanel();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUserProfile)).BeginInit();
             this.tabControlFeed.SuspendLayout();
@@ -83,7 +84,7 @@
             this.buttonSendHappyBirthday.Location = new System.Drawing.Point(7, 31);
             this.buttonSendHappyBirthday.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.buttonSendHappyBirthday.Name = "buttonSendHappyBirthday";
-            this.buttonSendHappyBirthday.Size = new System.Drawing.Size(145, 30);
+            this.buttonSendHappyBirthday.Size = new System.Drawing.Size(194, 30);
             this.buttonSendHappyBirthday.TabIndex = 1;
             this.buttonSendHappyBirthday.Text = "send happy Bday";
             this.buttonSendHappyBirthday.UseVisualStyleBackColor = false;
@@ -93,6 +94,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(202)))), ((int)(((byte)(228)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.buttonLogout);
             this.panel1.Controls.Add(this.buttonCreateCanvas);
             this.panel1.Controls.Add(this.ButtonCreateBusinessCard);
@@ -111,7 +113,7 @@
             this.buttonLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(240)))), ((int)(((byte)(248)))));
             this.buttonLogout.Font = new System.Drawing.Font("Aharoni", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.buttonLogout.ForeColor = System.Drawing.Color.Red;
-            this.buttonLogout.Location = new System.Drawing.Point(620, 28);
+            this.buttonLogout.Location = new System.Drawing.Point(611, 31);
             this.buttonLogout.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.buttonLogout.Name = "buttonLogout";
             this.buttonLogout.Size = new System.Drawing.Size(141, 30);
@@ -126,7 +128,7 @@
             this.buttonCreateCanvas.AutoSize = true;
             this.buttonCreateCanvas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(240)))), ((int)(((byte)(248)))));
             this.buttonCreateCanvas.Font = new System.Drawing.Font("Aharoni", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.buttonCreateCanvas.Location = new System.Drawing.Point(408, 28);
+            this.buttonCreateCanvas.Location = new System.Drawing.Point(403, 31);
             this.buttonCreateCanvas.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.buttonCreateCanvas.Name = "buttonCreateCanvas";
             this.buttonCreateCanvas.Size = new System.Drawing.Size(194, 30);
@@ -141,10 +143,10 @@
             this.ButtonCreateBusinessCard.AutoSize = true;
             this.ButtonCreateBusinessCard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(240)))), ((int)(((byte)(248)))));
             this.ButtonCreateBusinessCard.Font = new System.Drawing.Font("Aharoni", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.ButtonCreateBusinessCard.Location = new System.Drawing.Point(187, 31);
+            this.ButtonCreateBusinessCard.Location = new System.Drawing.Point(204, 31);
             this.ButtonCreateBusinessCard.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.ButtonCreateBusinessCard.Name = "ButtonCreateBusinessCard";
-            this.ButtonCreateBusinessCard.Size = new System.Drawing.Size(215, 30);
+            this.ButtonCreateBusinessCard.Size = new System.Drawing.Size(194, 30);
             this.ButtonCreateBusinessCard.TabIndex = 2;
             this.ButtonCreateBusinessCard.Text = "Create Business Card";
             this.ButtonCreateBusinessCard.UseVisualStyleBackColor = false;
@@ -320,6 +322,16 @@
             this.flowLayoutPanelTeams.Size = new System.Drawing.Size(713, 441);
             this.flowLayoutPanelTeams.TabIndex = 2;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Aharoni", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(10, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(110, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Special Features:";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -376,5 +388,6 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutLikedPages;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelTeams;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelAbout;
+        private System.Windows.Forms.Label label1;
     }
 }

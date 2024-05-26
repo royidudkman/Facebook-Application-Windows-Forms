@@ -52,7 +52,7 @@
             this.progressBar.Location = new System.Drawing.Point(16, 218);
             this.progressBar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.progressBar.Name = "progressBar";
-            this.progressBar.Size = new System.Drawing.Size(373, 28);
+            this.progressBar.Size = new System.Drawing.Size(398, 28);
             this.progressBar.TabIndex = 1;
             // 
             // labelPrecent

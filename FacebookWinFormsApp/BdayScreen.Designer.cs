@@ -145,7 +145,7 @@
             this.richTextBoxGreeting.Name = "richTextBoxGreeting";
             this.richTextBoxGreeting.Size = new System.Drawing.Size(179, 83);
             this.richTextBoxGreeting.TabIndex = 1;
-            this.richTextBoxGreeting.Text = "preview";
+            this.richTextBoxGreeting.Text = "";
             // 
             // labelTitle
             // 
@@ -171,6 +171,7 @@
             this.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(549, 331);
             this.Name = "BdayScreen";
             this.Text = "BdayScreen";
             this.Load += new System.EventHandler(this.BdayScreen_Load);
