@@ -17,11 +17,11 @@ namespace BasicFacebookFeatures.Tabs
         public override void Populate()
         {
             var posts = m_PostsController.FetchPosts();
+
             foreach (var post in posts)
             {
                 FlowLayoutPanel.Controls.Add(post);
             }
         }
     }
-
 }

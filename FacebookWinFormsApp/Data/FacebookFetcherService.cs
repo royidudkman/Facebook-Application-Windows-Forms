@@ -10,7 +10,6 @@ using FacebookWrapper.ObjectModel;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
-
 namespace BasicFacebookFeatures.Data
 {
     internal class FacebookFetcherService

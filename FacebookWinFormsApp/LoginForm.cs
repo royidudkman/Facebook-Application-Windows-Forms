@@ -15,13 +15,12 @@ namespace BasicFacebookFeatures
 {
     public partial class LoginForm : Form
     {
-
         private AuthRepository Auth { get; set; }
-        private MainForm m_MainForm;
+        private MainForm MainForm { get; set; }
         public LoginForm()
         {
             InitializeComponent();
-            FacebookWrapper.FacebookService.s_CollectionLimit = 25;
+            FacebookService.s_CollectionLimit = 25;
             Auth = new AuthRepository(893455099216824, new string[]
             {
                     "email",
@@ -41,22 +40,16 @@ namespace BasicFacebookFeatures
             });
         }
 
-     
-
-        private async void buttonLogin_Clicked(object sender, EventArgs e)
+        private void buttonLogin_Clicked(object sender, EventArgs e)
         {
             if (AuthRepository.LoginResult == null)
             {
-                LoadingScreen loadingScreen = new LoadingScreen();
-                loadingScreen.Show();
-                await Task.Run(() =>
-                {
-                    AuthRepository.Login();
-                });
-                if (string.IsNullOrEmpty(AuthRepository.LoginResult.ErrorMessage))
-                {
-                    this.Hide();                  
-                }
+                labelTitle.Text = "Waiting for you to log-in";
+                AuthRepository.Login();
+                labelTitle.Text = "Logging in, please wait...";
+                MainForm = new MainForm();
+                MainForm.Show();
+                Hide();            
             }
         }
     }

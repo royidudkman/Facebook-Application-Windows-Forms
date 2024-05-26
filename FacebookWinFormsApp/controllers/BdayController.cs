@@ -7,16 +7,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static BasicFacebookFeatures.Data.Enums;
 
 namespace BasicFacebookFeatures.controllers
 {
-    internal class BdayController 
+    internal class BdayController
     {
-       
         public GreetingCard GreetingCard { get; set; }
-
-        public User Friend { get; set; }    
-
+        public User Friend { get; set; }
         public eGreetTypes eGreetTypes { get; set; }
 
         public FacebookObjectCollection<User> GetAllAppFriends()
@@ -27,25 +25,29 @@ namespace BasicFacebookFeatures.controllers
             {
                 return userFriends;
             }
+
             else
             {
-                throw new Exception(); // there is no friends for this user
+                throw new Exception("There are no friends");
             }
-
         }
 
-        public String CreateAGreetingForFriend(User i_friendToGreet, eGreetTypes eGreetTypes)
+        public string CreateAGreetingForFriend(User i_FriendToGreet, eGreetTypes i_eGreetTypes)
         {
             string friendName;
-            if(i_friendToGreet != null) 
-            { 
-                friendName = i_friendToGreet.Name;
+
+            if (i_FriendToGreet != null)
+            {
+                friendName = i_FriendToGreet.Name;
             }
+
             else
             {
                 friendName = "My Friend";
             }
-            GreetingCard = new GreetingCard(friendName , eGreetTypes);
+
+            GreetingCard = new GreetingCard(friendName, i_eGreetTypes);
+
             return GreetingCard.FormatMessage();
         }
 
@@ -57,6 +59,7 @@ namespace BasicFacebookFeatures.controllers
                 {
                     AuthRepository.LoginResult.LoggedInUser.PostStatus(GreetingCard.RecipientName);
                 }
+
                 else
                 {
                     throw new InvalidOperationException("User is not logged in.");
@@ -67,11 +70,5 @@ namespace BasicFacebookFeatures.controllers
                 throw new ArgumentNullException(nameof(GreetingCard), "Greeting card is null.");
             }
         }
-
-    }
-
-    public enum eGreetTypes
-    {
-        TYPE1,TYPE2,TYPE3,CUSTOM_GREET
     }
 }

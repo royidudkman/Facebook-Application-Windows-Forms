@@ -11,6 +11,7 @@ using System.Text;
     using System.Threading;
     using System.Threading.Tasks;
     using System.Windows.Forms;
+using static BasicFacebookFeatures.Data.Enums;
 
 namespace BasicFacebookFeatures
 {
@@ -203,8 +204,7 @@ namespace BasicFacebookFeatures
             CreateCanvasController.LayoutSize = eLayoutSize.TWO_ON_TWO;
             CreateTableLayoutFromUserChoice();
             buttonPostImage.Hide();
-            MainForm.LoadingSpinner.BringToFront();
-            MainForm.LoadingSpinner.Hide();
+ 
         }
 
         private void buttonPostImage_Click(object sender, EventArgs e)

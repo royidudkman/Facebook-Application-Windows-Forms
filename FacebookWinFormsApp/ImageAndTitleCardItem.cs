@@ -12,26 +12,23 @@ namespace BasicFacebookFeatures
 {
     public partial class ImageAndTitleCardItem : UserControl
     {
-        private Image m_Image;
-        private string m_Title;
-
         public Image Image
         {
-            get { return m_Image; }
+            get { return Image; }
             set 
             {
-                m_Image = value; 
-                pictureBoxImage.Image = m_Image;        
+                Image = value; 
+                pictureBoxImage.Image = Image;        
             }
         }
 
         public string Title
         {
-            get { return m_Title; }
+            get { return Title; }
             set
             {
-                m_Title = value;
-                labelName.Text = m_Title;
+                Title = value;
+                labelName.Text = Title;
             }
         }
 

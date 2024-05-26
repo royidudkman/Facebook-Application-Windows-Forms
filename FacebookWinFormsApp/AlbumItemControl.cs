@@ -14,15 +14,14 @@ public class AlbumItemControl : TableLayoutPanel
             SizeMode = PictureBoxSizeMode.StretchImage,
              
         };
-
         Label = new Label
         {
             Dock = DockStyle.Bottom,
             TextAlign = ContentAlignment.MiddleCenter
         };
 
-        this.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-        this.Controls.Add(PictureBox, 0, 0);
-        this.Controls.Add(Label, 0, 1);
+        RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+        Controls.Add(PictureBox, 0, 0);
+        Controls.Add(Label, 0, 1);
     }
 }

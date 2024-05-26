@@ -18,11 +18,11 @@ namespace BasicFacebookFeatures.controllers
             UserAlbums = FacebookFetcherService.FetchAlbums();
             UserPhotos = new FacebookObjectCollection<Photo>();
         }
+
         public void GetAllUserImagesFromAlbum(Album i_UserAlbum)
         {
             UserPhotos.Clear();
             UserPhotos = FacebookFetcherService.FetchPhotosFromAlbum(i_UserAlbum);
         }
-
     }
 }

@@ -16,7 +16,6 @@ namespace BasicFacebookFeatures.controllers
         public ImageAndTitleCardItem[] FetchFriends()
         {
             FacebookObjectCollection<User> allFriends = FacebookFetcherService.FetchFriends();
-
             ImageAndTitleCardItem[] friendItems;
 
             if (allFriends == null || allFriends.Count == 0)
@@ -27,9 +26,11 @@ namespace BasicFacebookFeatures.controllers
             else
             {
                 friendItems = new ImageAndTitleCardItem[allFriends.Count];
+
                 for (int i = 0; i < friendItems.Length; i++)
                 {
                     friendItems[i] = new ImageAndTitleCardItem();
+
                     friendItems[i].Title = allFriends[i].Name;
                     friendItems[i].Image = allFriends[i].ImageSquare;
                 }
@@ -51,9 +52,11 @@ namespace BasicFacebookFeatures.controllers
             else
             {
                 likedPagesItems = new ImageAndTitleCardItem[allLikedPages.Count];
+
                 for (int i = 0; i < likedPagesItems.Length; i++)
                 {
                     likedPagesItems[i] = new ImageAndTitleCardItem();
+
                     likedPagesItems[i].Title = allLikedPages[i].Name;
                     likedPagesItems[i].Image = allLikedPages[i].ImageSquare;
                 }
@@ -75,9 +78,11 @@ namespace BasicFacebookFeatures.controllers
             else
             {
                 teamsItems = new ImageAndTitleCardItem[allTeams.Count()];
+
                 for (int i = 0; i < teamsItems.Length; i++)
                 {
                     teamsItems[i] = new ImageAndTitleCardItem();
+
                     teamsItems[i].Title = allTeams[i].Name;
                     teamsItems[i].Image = allTeams[i].ImageSquare;
                 }

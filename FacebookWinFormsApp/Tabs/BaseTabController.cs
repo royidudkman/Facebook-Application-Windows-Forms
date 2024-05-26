@@ -8,7 +8,6 @@ using System.Windows.Forms;
 
 namespace BasicFacebookFeatures.Tabs
 {
-    
     public abstract class BaseTabController : IPopulateable
     {
         protected FlowLayoutPanel FlowLayoutPanel { get; set; }

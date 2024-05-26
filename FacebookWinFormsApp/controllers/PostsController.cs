@@ -17,8 +17,8 @@ namespace BasicFacebookFeatures.controllers
         {
             FacebookObjectCollection<Post> allPosts = FacebookFetcherService.FetchPosts();
             PostItem[] allPostItems;
-
             allPostItems = new PostItem[allPosts.Count];
+
             for (int i = 0; i < allPostItems.Length; i++)
             {
                 allPostItems[i] = new PostItem();

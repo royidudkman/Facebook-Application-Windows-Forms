@@ -18,13 +18,11 @@ namespace BasicFacebookFeatures.Tabs
         public override void Populate()
         {
             UserAbout user = FacebookFetcherService.FetchAbout();
-
             string info = $"{(user?.FirstName != null ? $"First Name: {user.FirstName}{Environment.NewLine}" : string.Empty)}" +
             $"{(user?.LastName != null ? $"Last Name: {user.LastName}{Environment.NewLine}" : string.Empty)}" +
             $"{(user?.Location?.Name != null ? $"City: {user.Location.Name}{Environment.NewLine}" : string.Empty)}" +
             $"{(user?.Email != null ? $"Email: {user.Email}{Environment.NewLine}" : string.Empty)}" +
             $"{(user?.Gender != null ? $"Gender: {user.Gender}{Environment.NewLine}" : string.Empty)}";
-
             Label aboutInfoLabel = new Label
             {
                 Text = info,

@@ -16,6 +16,7 @@ namespace BasicFacebookFeatures.Tabs
         public override void Populate()
         {
             var likedPages = m_DataToCard.FetchLikedPages();
+
             foreach (var likedPage in likedPages)
             {
                 FlowLayoutPanel.Controls.Add(likedPage);
@@ -23,4 +24,3 @@ namespace BasicFacebookFeatures.Tabs
         }
     }
 }
-

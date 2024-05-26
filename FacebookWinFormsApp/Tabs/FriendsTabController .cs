@@ -16,11 +16,11 @@ namespace BasicFacebookFeatures.Tabs
         public override void Populate()
         {
             var friends = m_DataToCard.FetchFriends();
+
             foreach (var friend in friends)
             {
                 FlowLayoutPanel.Controls.Add(friend);
             }
         }
     }
-
 }

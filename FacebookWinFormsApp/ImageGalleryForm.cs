@@ -17,14 +17,14 @@ namespace BasicFacebookFeatures
             InitializeComponent();
         }
 
-        public void populateGallery(List<AlbumItemControl> i_allPhotos)
+        public void populateGallery(List<AlbumItemControl> i_AllPhotos)
         {
             if (flowLayoutPanelGallery.Controls.Count > 0)
             {
                 flowLayoutPanelGallery.Controls.Clear();
             }
 
-            foreach (var photo in i_allPhotos)
+            foreach (var photo in i_AllPhotos)
             {
                 flowLayoutPanelGallery.Controls.Add(photo);
             }

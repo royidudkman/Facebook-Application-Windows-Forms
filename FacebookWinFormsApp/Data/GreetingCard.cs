@@ -7,6 +7,7 @@ using System.Linq;
 using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
+using static BasicFacebookFeatures.Data.Enums;
 
 namespace BasicFacebookFeatures
 {
@@ -18,39 +19,32 @@ namespace BasicFacebookFeatures
         public eGreetTypes eGreetTypes { get; set; }
         public List<string> Attachment { get; set; }
 
-        public GreetingCard(string i_recipientName , eGreetTypes i_eGreetTypes = eGreetTypes.TYPE1)
+        public GreetingCard(string i_RecipientName, eGreetTypes i_eGreetTypes = eGreetTypes.TYPE1)
         {
             SenderName = AuthRepository.LoginResult.LoggedInUser.Name;
-            RecipientName = i_recipientName;
+            RecipientName = i_RecipientName;
             Attachment = new List<string>();
+
             switch (i_eGreetTypes)
             {
                 case eGreetTypes.TYPE1:
-                    {
-                        Message = Resources.GreetType1;
-                        break;
-                    }
+                    Message = Resources.GreetType1;
+                    break;
                 case eGreetTypes.TYPE2:
-                    {
-                        Message = Resources.GreetType2;
-                        break;
-                    }
+                    Message = Resources.GreetType2;
+                    break;
                 case eGreetTypes.TYPE3:
-                    {
-                        Message= Resources.GreetType3;
-                        break;
-                    }
+                    Message = Resources.GreetType3;
+                    break;
                 case eGreetTypes.CUSTOM_GREET:
-                    {
-                        Message = "";
-                        break;
-                    }                
+                    Message = "";
+                    break;
             }
         }
 
-        public void AddAttachment(string attachment)
+        public void AddAttachment(string i_Attachment)
         {
-            Attachment.Add(attachment);
+            Attachment.Add(i_Attachment);
         }
 
         public string FormatMessage()

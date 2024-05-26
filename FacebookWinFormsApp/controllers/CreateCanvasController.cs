@@ -6,23 +6,21 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static BasicFacebookFeatures.Data.Enums;
 
 namespace BasicFacebookFeatures.controllers
 {
-
     internal class CreateCanvasController : AlbumController
     {
-        public int LayoutRaws { get; set; } = 0;
-        public int LayoutCols { get; set; } = 0;
+        public int LayoutRaws { get; set; }
+        public int LayoutCols { get; set; }
         public eLayoutSize LayoutSize { get; set; }
 
-        //public FacebookObjectCollection<Album> UserAlbums { get; private set; }
-        //public FacebookObjectCollection<Photo> UserPhotos { get; private set; }
-
-        //public CreateCanvasController()
-        //{
-        //    //UserAlbums = FacebookFetcherService.FetchAlbums();      
-        //}
+        public CreateCanvasController()
+        {
+            LayoutRaws = 0;
+            LayoutCols = 0;
+        }
 
         public int IndexUserImages
         {
@@ -33,23 +31,9 @@ namespace BasicFacebookFeatures.controllers
                 {
                     value = 0;
                 }
+
                 LayoutRaws = value;
             }
         }
-
-        //public void GetAllUserImagesFromAlbum(Album i_UserAlbum)
-        //{
-        //    UserPhotos.Clear();
-        //    UserPhotos = FacebookFetcherService.FetchPhotosFromAlbum(i_UserAlbum);
-        //}
-
-    }
-
-
-    enum eLayoutSize
-    {
-        ONE_ON_TWO,
-        THREE_ON_THREE,
-        TWO_ON_TWO
     }
 }

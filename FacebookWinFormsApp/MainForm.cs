@@ -26,7 +26,7 @@ namespace BasicFacebookFeatures
         private PicturesTabController picturesTabController { get; set; }
         private LikedPagesTabController LikedPagesTabController { get; set; }
         private TeamsTabController TeamsTabController { get; set; }
-        public static LoadingSpinner LoadingSpinner { get; set; } = new LoadingSpinner();
+  
 
         public MainForm()
         {
@@ -72,9 +72,9 @@ namespace BasicFacebookFeatures
 
         private void buttonCreateNewAlbum_Click(object sender, EventArgs e)
         {
-            LoadingSpinner = new LoadingSpinner();
+
             CreateCanvasScreen albumsCreateScreen = new CreateCanvasScreen();
-            LoadingSpinner.Show();
+   
             albumsCreateScreen.Show();
         }
 

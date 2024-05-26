@@ -40,7 +40,7 @@
             this.buttonLogin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonLogin.Font = new System.Drawing.Font("Aharoni", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.buttonLogin.Location = new System.Drawing.Point(217, 257);
-            this.buttonLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonLogin.Margin = new System.Windows.Forms.Padding(2);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(92, 36);
             this.buttonLogin.TabIndex = 0;
@@ -53,12 +53,12 @@
             this.labelTitle.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelTitle.AutoSize = true;
             this.labelTitle.Font = new System.Drawing.Font("Aharoni", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTitle.Location = new System.Drawing.Point(105, 35);
+            this.labelTitle.Location = new System.Drawing.Point(126, 27);
             this.labelTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(338, 19);
+            this.labelTitle.Size = new System.Drawing.Size(295, 19);
             this.labelTitle.TabIndex = 2;
-            this.labelTitle.Text = "Hello User Welcom to Facebook App";
+            this.labelTitle.Text = "Login to your Facebook account";
             this.labelTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // LoginForm
@@ -71,7 +71,7 @@
             this.ClientSize = new System.Drawing.Size(533, 313);
             this.Controls.Add(this.labelTitle);
             this.Controls.Add(this.buttonLogin);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LoginForm";

@@ -15,72 +15,62 @@ namespace BasicFacebookFeatures
 {
     public partial class PostItem : UserControl
     {
-        private string m_UserName;
-        private string m_PostText;
-        private string m_PostPictureURL;
-        private string m_PostVideoURL;
-        private Image m_UserProfilePicture;
-
-
-
         public string UserName
         {
-            get { return m_UserName; }
+            get { return UserName; }
+
             set
             {
-                m_UserName = value;
+                UserName = value;
                 labelName.Text = value;
             }
         }
 
-   
-
         public string PostText
         {
-            get { return m_PostText; }
+            get { return PostText; }
             set
             {
                 if(value != null)
                 {
-                    m_PostText = value;
+                    PostText = value;
                     labelPostText.Text = value;
                 }
+
                 else
                 {
                     labelPostText.Visible = false;
-                }
-               
+                }      
             }
         }
-
     
         public string PostPictureURL
         {
-            get { return m_PostPictureURL; }
+            get { return PostPictureURL; }
             set
             {
                 if(value != null)
                 {
-                    m_PostPictureURL = value;
+                    PostPictureURL = value;
                     pictureBoxPostPicture.LoadAsync(value);
                 }
 
                 else
                 {
                     pictureBoxPostPicture.Visible = false;
-                }
-                
+                }         
             }
         }
 
         public string PostVideoURL
         {
-            get { return m_PostVideoURL; }
+            get { return PostVideoURL; }
+
             set
             {
                 if(value != null)
                 {
-                    m_PostVideoURL = value;
+                    PostVideoURL = value;
                     axWindowsMediaPlayer1.URL = value;
                     axWindowsMediaPlayer1.Ctlcontrols.stop();
                 }
@@ -88,18 +78,17 @@ namespace BasicFacebookFeatures
                 else
                 {
                     axWindowsMediaPlayer1.Visible = false;
-                }
-               
+                }         
             }
         }
-     
 
         public Image UserProfilePicture
         {
-            get { return m_UserProfilePicture; }
+            get { return UserProfilePicture; }
+
             set
             {
-                m_UserProfilePicture = value;
+                UserProfilePicture = value;
                 pictureBoxProfilePicture.Image = value;
             }
         }
@@ -108,10 +97,5 @@ namespace BasicFacebookFeatures
         {
             InitializeComponent();
         }
-
-
-     
-       
-
     }
 }
