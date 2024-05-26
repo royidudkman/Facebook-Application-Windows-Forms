@@ -13,30 +13,23 @@ namespace BasicFacebookFeatures.controllers
 {
     internal class PostsController
     {
-        private FacebookWrapper.LoginResult LoginResult { get; set; }
-        private PostItem[] m_Posts;
-
-        public PostsController()
-        {
-            LoginResult = AuthRepository.LoginResult;
-        }
-
         public PostItem[] FetchPosts()
         {
-            FacebookObjectCollection<Post> allPosts = LoginResult.LoggedInUser.Posts;
+            FacebookObjectCollection<Post> allPosts = FacebookFetcherService.FetchPosts();
+            PostItem[] allPostItems;
 
-            m_Posts = new PostItem[allPosts.Count];
-            for (int i = 0; i < m_Posts.Length; i++)
+            allPostItems = new PostItem[allPosts.Count];
+            for (int i = 0; i < allPostItems.Length; i++)
             {
-                m_Posts[i] = new PostItem();
-                m_Posts[i].UserName = allPosts[i].From.ToString();
-                m_Posts[i].UserProfilePicture = allPosts[i].From.ImageSmall;
-                m_Posts[i].PostText = allPosts[i].Message;
-                m_Posts[i].PostPictureURL = allPosts[i].PictureURL;
-                m_Posts[i].PostVideoURL = allPosts[i].Source;          
+                allPostItems[i] = new PostItem();
+                allPostItems[i].UserName = allPosts[i].From.ToString();
+                allPostItems[i].UserProfilePicture = allPosts[i].From.ImageSmall;
+                allPostItems[i].PostText = allPosts[i].Message;
+                allPostItems[i].PostPictureURL = allPosts[i].PictureURL;
+                allPostItems[i].PostVideoURL = allPosts[i].Source;          
             }
 
-            return m_Posts;
+            return allPostItems;
         }
     }
 }

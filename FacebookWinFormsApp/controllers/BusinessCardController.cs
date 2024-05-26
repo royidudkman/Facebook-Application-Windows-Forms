@@ -17,23 +17,38 @@ namespace BasicFacebookFeatures.controllers
 
         public BusinessCardController()
         {
-            BusinessCard = new UserAbout(AuthRepository.LoginResult);
-             
+            BusinessCard = FacebookFetcherService.FetchAbout();     
         }
 
-        public string BusinessCardFormat()
+        public string GetInfoFromUser(string i_InfoType)
         {
-            StringBuilder businessCardBuilder = new StringBuilder();
+            string retVal;
 
-            businessCardBuilder.AppendLine("Name: " + BusinessCard.Name);
-            businessCardBuilder.AppendLine("Last Name: " + BusinessCard.LastName);
-            businessCardBuilder.AppendLine("Email: " + BusinessCard.Email);
-            businessCardBuilder.AppendLine("Gender: " + BusinessCard.Gender);
-            businessCardBuilder.AppendLine("Location: " + BusinessCard.Location);
-            businessCardBuilder.AppendLine("HomeTown: " + BusinessCard.HomeTown);
-            businessCardBuilder.AppendLine("Website: " + BusinessCard.LinkWebsite);
+            switch (i_InfoType)
+            {
+                case "Name":
+                    retVal = BusinessCard.Name;
+                    break;
+                case "Last Name":
+                    retVal = BusinessCard.LastName;
+                    break;
+                case "Location":
+                    retVal = BusinessCard.Location?.ToString();
+                    break;
+                case "Home Town":
+                    retVal = BusinessCard.HomeTown?.ToString();
+                    break;
+                case "Gender":
+                    retVal = BusinessCard.Gender?.ToString();
+                    break;
+                case "Link To Website":
+                    retVal = BusinessCard.LinkWebsite;
+                    break;
+                default:
+                    return string.Empty;
+            }
 
-            return businessCardBuilder.ToString();
+            return retVal;
         }
     }
 }

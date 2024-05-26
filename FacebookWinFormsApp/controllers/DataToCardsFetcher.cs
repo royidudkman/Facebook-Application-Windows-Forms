@@ -13,60 +13,49 @@ namespace BasicFacebookFeatures.controllers
 {
     internal class DataToCardsFetcher
     {
-        private FacebookWrapper.LoginResult LoginResult { get; set; }
-        private FacebookObjectCollection<User> AllFriends { get; set; }
-        private FacebookObjectCollection<Page> AllLikedPages { get; set; }
-        private Page[] AllTeams { get; set; }
-        private FacebookObjectCollection<Album> AllAlbums { get; set; }
-
-        public DataToCardsFetcher()
-        {
-            LoginResult = AuthRepository.LoginResult;
-        }
-
         public ImageAndTitleCardItem[] FetchFriends()
         {
-            AllFriends = LoginResult.LoggedInUser.Friends;
+            FacebookObjectCollection<User> allFriends = FacebookFetcherService.FetchFriends();
+
             ImageAndTitleCardItem[] friendItems;
 
-            if (AllFriends == null || AllFriends.Count == 0)
+            if (allFriends == null || allFriends.Count == 0)
             {
                 friendItems = new ImageAndTitleCardItem[0];
             }
 
             else
             {
-                friendItems = new ImageAndTitleCardItem[AllFriends.Count];
+                friendItems = new ImageAndTitleCardItem[allFriends.Count];
                 for (int i = 0; i < friendItems.Length; i++)
                 {
                     friendItems[i] = new ImageAndTitleCardItem();
-                    friendItems[i].Title = AllFriends[i].Name;
-                    friendItems[i].Image = AllFriends[i].ImageSquare;
+                    friendItems[i].Title = allFriends[i].Name;
+                    friendItems[i].Image = allFriends[i].ImageSquare;
                 }
             }
-
 
             return friendItems;
         }
 
         public ImageAndTitleCardItem[] FetchLikedPages()
         {
-            AllLikedPages = LoginResult.LoggedInUser.LikedPages;
+            FacebookObjectCollection<Page> allLikedPages = FacebookFetcherService.FetchLikedPages();
             ImageAndTitleCardItem[] likedPagesItems;
 
-            if(AllLikedPages == null || AllLikedPages.Count == 0)
+            if(allLikedPages == null || allLikedPages.Count == 0)
             {
                 likedPagesItems = new ImageAndTitleCardItem[0];
             }
 
             else
             {
-                likedPagesItems = new ImageAndTitleCardItem[AllLikedPages.Count];
+                likedPagesItems = new ImageAndTitleCardItem[allLikedPages.Count];
                 for (int i = 0; i < likedPagesItems.Length; i++)
                 {
                     likedPagesItems[i] = new ImageAndTitleCardItem();
-                    likedPagesItems[i].Title = AllLikedPages[i].Name;
-                    likedPagesItems[i].Image = AllLikedPages[i].ImageSquare;
+                    likedPagesItems[i].Title = allLikedPages[i].Name;
+                    likedPagesItems[i].Image = allLikedPages[i].ImageSquare;
                 }
             }
           
@@ -75,22 +64,22 @@ namespace BasicFacebookFeatures.controllers
 
         public ImageAndTitleCardItem[] FetchTeams()
         {
-            AllTeams = LoginResult.LoggedInUser.FavofriteTeams;
+            Page[]  allTeams = FacebookFetcherService.FetchFavofriteTeams();
             ImageAndTitleCardItem[] teamsItems;
 
-            if(AllTeams == null || AllTeams.Length == 0)
+            if(allTeams == null || allTeams.Length == 0)
             {
                 teamsItems = new ImageAndTitleCardItem[0];
             }
 
             else
             {
-                teamsItems = new ImageAndTitleCardItem[AllTeams.Count()];
+                teamsItems = new ImageAndTitleCardItem[allTeams.Count()];
                 for (int i = 0; i < teamsItems.Length; i++)
                 {
                     teamsItems[i] = new ImageAndTitleCardItem();
-                    teamsItems[i].Title = AllTeams[i].Name;
-                    teamsItems[i].Image = AllTeams[i].ImageSquare;
+                    teamsItems[i].Title = allTeams[i].Name;
+                    teamsItems[i].Image = allTeams[i].ImageSquare;
                 }
             }
          

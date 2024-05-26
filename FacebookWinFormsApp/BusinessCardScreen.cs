@@ -24,7 +24,8 @@ namespace BasicFacebookFeatures
 
         private void checkedListBoxOptions_ItemCheck(object sender, ItemCheckEventArgs e)
         {
-            BeginInvoke((Action)UpdateRichTextBoxPreview);
+            //BeginInvoke((Action)UpdateRichTextBoxPreview); check!!!!!!!!!!!!!!!!!!
+            UpdateRichTextBoxPreview();
         }
 
         private void UpdateRichTextBoxPreview()
@@ -34,35 +35,34 @@ namespace BasicFacebookFeatures
 
             foreach (string checkedItem in checkedListBoxOptions.CheckedItems)
             {
-                string propertyValue = GetPropertyValue(checkedItem);
+                string propertyValue = BusinessCardController.GetInfoFromUser(checkedItem);
                 previewText.AppendLine($"{checkedItem}: {propertyValue}");
-
             }
 
             richTextBoxPreview.Text = previewText.ToString();
         }
 
 
-        private string GetPropertyValue(string propertyName)
-        {
-            switch (propertyName)
-            {
-                case "Name":
-                    return BusinessCardController.BusinessCard.Name;
-                case "Last Name":
-                    return BusinessCardController.BusinessCard.LastName;
-                case "Location":
-                    return BusinessCardController.BusinessCard.Location?.ToString();
-                case "Home Town":
-                    return BusinessCardController.BusinessCard.HomeTown?.ToString();
-                case "Gender":
-                    return BusinessCardController.BusinessCard.Gender?.ToString();
-                case "Link To Website":
-                    return BusinessCardController.BusinessCard.LinkWebsite;
-                default:
-                    return string.Empty;
-            }
-        }
+        //private string GetPropertyValue(string propertyName)
+        //{
+        //    switch (propertyName)
+        //    {
+        //        case "Name":
+        //            return BusinessCardController.BusinessCard.Name;
+        //        case "Last Name":
+        //            return BusinessCardController.BusinessCard.LastName;
+        //        case "Location":
+        //            return BusinessCardController.BusinessCard.Location?.ToString();
+        //        case "Home Town":
+        //            return BusinessCardController.BusinessCard.HomeTown?.ToString();
+        //        case "Gender":
+        //            return BusinessCardController.BusinessCard.Gender?.ToString();
+        //        case "Link To Website":
+        //            return BusinessCardController.BusinessCard.LinkWebsite;
+        //        default:
+        //            return string.Empty;
+        //    }
+        //}
 
 
 
