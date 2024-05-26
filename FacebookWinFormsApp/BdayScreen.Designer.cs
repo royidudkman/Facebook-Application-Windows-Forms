@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.radioButtonCustomGreed = new System.Windows.Forms.RadioButton();
+            this.radioButtonGreetType3 = new System.Windows.Forms.RadioButton();
+            this.radioButtonGreetType2 = new System.Windows.Forms.RadioButton();
+            this.radioButtonGreetType1 = new System.Windows.Forms.RadioButton();
             this.listBoxUserFriends = new System.Windows.Forms.ListBox();
             this.buttonPostBlessing = new System.Windows.Forms.Button();
             this.richTextBoxGreeting = new System.Windows.Forms.RichTextBox();
             this.labelTitle = new System.Windows.Forms.Label();
-            this.radioButtonGreetType1 = new System.Windows.Forms.RadioButton();
-            this.radioButtonGreetType2 = new System.Windows.Forms.RadioButton();
-            this.radioButtonGreetType3 = new System.Windows.Forms.RadioButton();
-            this.radioButtonCustomGreed = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,6 +57,62 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
+            // 
+            // radioButtonCustomGreed
+            // 
+            this.radioButtonCustomGreed.AutoSize = true;
+            this.radioButtonCustomGreed.Font = new System.Drawing.Font("Aharoni", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.radioButtonCustomGreed.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.radioButtonCustomGreed.Location = new System.Drawing.Point(201, 157);
+            this.radioButtonCustomGreed.Name = "radioButtonCustomGreed";
+            this.radioButtonCustomGreed.Size = new System.Drawing.Size(107, 17);
+            this.radioButtonCustomGreed.TabIndex = 12;
+            this.radioButtonCustomGreed.TabStop = true;
+            this.radioButtonCustomGreed.Text = "Custom Greet";
+            this.radioButtonCustomGreed.UseVisualStyleBackColor = true;
+            this.radioButtonCustomGreed.CheckedChanged += new System.EventHandler(this.radioButtonGreetType_CheckedChanged);
+            // 
+            // radioButtonGreetType3
+            // 
+            this.radioButtonGreetType3.AutoSize = true;
+            this.radioButtonGreetType3.Font = new System.Drawing.Font("Aharoni", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.radioButtonGreetType3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.radioButtonGreetType3.Location = new System.Drawing.Point(201, 127);
+            this.radioButtonGreetType3.Name = "radioButtonGreetType3";
+            this.radioButtonGreetType3.Size = new System.Drawing.Size(100, 17);
+            this.radioButtonGreetType3.TabIndex = 11;
+            this.radioButtonGreetType3.TabStop = true;
+            this.radioButtonGreetType3.Text = "Greet Type 3";
+            this.radioButtonGreetType3.UseVisualStyleBackColor = true;
+            this.radioButtonGreetType3.CheckedChanged += new System.EventHandler(this.radioButtonGreetType_CheckedChanged);
+            // 
+            // radioButtonGreetType2
+            // 
+            this.radioButtonGreetType2.AutoSize = true;
+            this.radioButtonGreetType2.Font = new System.Drawing.Font("Aharoni", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.radioButtonGreetType2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.radioButtonGreetType2.Location = new System.Drawing.Point(201, 98);
+            this.radioButtonGreetType2.Name = "radioButtonGreetType2";
+            this.radioButtonGreetType2.Size = new System.Drawing.Size(100, 17);
+            this.radioButtonGreetType2.TabIndex = 10;
+            this.radioButtonGreetType2.TabStop = true;
+            this.radioButtonGreetType2.Text = "Greet Type 2";
+            this.radioButtonGreetType2.UseVisualStyleBackColor = true;
+            this.radioButtonGreetType2.CheckedChanged += new System.EventHandler(this.radioButtonGreetType_CheckedChanged);
+            // 
+            // radioButtonGreetType1
+            // 
+            this.radioButtonGreetType1.AutoSize = true;
+            this.radioButtonGreetType1.Font = new System.Drawing.Font("Aharoni", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.radioButtonGreetType1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.radioButtonGreetType1.Location = new System.Drawing.Point(201, 68);
+            this.radioButtonGreetType1.Name = "radioButtonGreetType1";
+            this.radioButtonGreetType1.Size = new System.Drawing.Size(100, 17);
+            this.radioButtonGreetType1.TabIndex = 9;
+            this.radioButtonGreetType1.TabStop = true;
+            this.radioButtonGreetType1.Text = "Greet Type 1";
+            this.radioButtonGreetType1.UseVisualStyleBackColor = true;
+            this.radioButtonGreetType1.CheckedChanged += new System.EventHandler(this.radioButtonGreetType_CheckedChanged);
             // 
             // listBoxUserFriends
             // 
@@ -103,61 +159,6 @@
             this.labelTitle.TabIndex = 4;
             this.labelTitle.Text = "Send Happy Bday To Your Friends";
             // 
-            // radioButtonGreetType1
-            // 
-            this.radioButtonGreetType1.AutoSize = true;
-            this.radioButtonGreetType1.Font = new System.Drawing.Font("Aharoni", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.radioButtonGreetType1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.radioButtonGreetType1.Location = new System.Drawing.Point(201, 68);
-            this.radioButtonGreetType1.Name = "radioButtonGreetType1";
-            this.radioButtonGreetType1.Size = new System.Drawing.Size(100, 17);
-            this.radioButtonGreetType1.TabIndex = 9;
-            this.radioButtonGreetType1.TabStop = true;
-            this.radioButtonGreetType1.Text = "Greet Type 1";
-            this.radioButtonGreetType1.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonGreetType2
-            // 
-            this.radioButtonGreetType2.AutoSize = true;
-            this.radioButtonGreetType2.Font = new System.Drawing.Font("Aharoni", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.radioButtonGreetType2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.radioButtonGreetType2.Location = new System.Drawing.Point(201, 98);
-            this.radioButtonGreetType2.Name = "radioButtonGreetType2";
-            this.radioButtonGreetType2.Size = new System.Drawing.Size(100, 17);
-            this.radioButtonGreetType2.TabIndex = 10;
-            this.radioButtonGreetType2.TabStop = true;
-            this.radioButtonGreetType2.Text = "Greet Type 2";
-            this.radioButtonGreetType2.UseVisualStyleBackColor = true;
-            this.radioButtonGreetType2.CheckedChanged += new System.EventHandler(this.radioButtonGreetType2_CheckedChanged);
-            // 
-            // radioButtonGreetType3
-            // 
-            this.radioButtonGreetType3.AutoSize = true;
-            this.radioButtonGreetType3.Font = new System.Drawing.Font("Aharoni", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.radioButtonGreetType3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.radioButtonGreetType3.Location = new System.Drawing.Point(201, 127);
-            this.radioButtonGreetType3.Name = "radioButtonGreetType3";
-            this.radioButtonGreetType3.Size = new System.Drawing.Size(100, 17);
-            this.radioButtonGreetType3.TabIndex = 11;
-            this.radioButtonGreetType3.TabStop = true;
-            this.radioButtonGreetType3.Text = "Greet Type 3";
-            this.radioButtonGreetType3.UseVisualStyleBackColor = true;
-            this.radioButtonGreetType3.CheckedChanged += new System.EventHandler(this.radioButtonGreetType3_CheckedChanged);
-            // 
-            // radioButtonCustomGreed
-            // 
-            this.radioButtonCustomGreed.AutoSize = true;
-            this.radioButtonCustomGreed.Font = new System.Drawing.Font("Aharoni", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.radioButtonCustomGreed.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.radioButtonCustomGreed.Location = new System.Drawing.Point(201, 157);
-            this.radioButtonCustomGreed.Name = "radioButtonCustomGreed";
-            this.radioButtonCustomGreed.Size = new System.Drawing.Size(107, 17);
-            this.radioButtonCustomGreed.TabIndex = 12;
-            this.radioButtonCustomGreed.TabStop = true;
-            this.radioButtonCustomGreed.Text = "Custom Greet";
-            this.radioButtonCustomGreed.UseVisualStyleBackColor = true;
-            this.radioButtonCustomGreed.CheckedChanged += new System.EventHandler(this.radioButtonCustomGreet_CheckedChanged);
-            // 
             // BdayScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -172,6 +173,7 @@
             this.MinimizeBox = false;
             this.Name = "BdayScreen";
             this.Text = "BdayScreen";
+            this.Load += new System.EventHandler(this.BdayScreen_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

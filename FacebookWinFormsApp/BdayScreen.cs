@@ -16,14 +16,16 @@ namespace BasicFacebookFeatures
     {
         BdayController BdayController { get; set; }
 
-
         public BdayScreen()
         {
             InitializeComponent();
             BdayController = new BdayController();
-            ShowAllUserFriends();
         }
 
+        private void BdayScreen_Load(object sender, EventArgs e)
+        {
+            ShowAllUserFriends();
+        }
 
         private void ShowAllUserFriends()
         {
@@ -31,7 +33,6 @@ namespace BasicFacebookFeatures
             {
                 FacebookObjectCollection<User> userFriends = BdayController.GetAllAppFriends();
                 listBoxUserFriends.DisplayMember = "Name";
-                //TODO: tell the user that he doesnt have any friends
                 foreach (User friend in userFriends)
                 {
                     listBoxUserFriends.Items.Add(friend);
@@ -47,7 +48,6 @@ namespace BasicFacebookFeatures
         private void ShowHappyBdayOnTextBox(string i_greetHappyBdayText)
         {
             richTextBoxGreeting.Text = i_greetHappyBdayText;
-
         }
 
         private void listBoxUserFriends_SelectedIndexChanged(object sender, EventArgs e)
@@ -59,7 +59,6 @@ namespace BasicFacebookFeatures
         {
             try
             {
-                // Show a dialog to confirm that the user wants to post
                 DialogResult confirmationResult = MessageBox.Show("Are you sure you want to post this greeting?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (confirmationResult == DialogResult.Yes)
@@ -84,41 +83,31 @@ namespace BasicFacebookFeatures
         }
 
 
-        private void radioButtonGreetType1_CheckedChanged(object sender, EventArgs e)
+        private void radioButtonGreetType_CheckedChanged(object sender, EventArgs e)
         {
+      
             if (radioButtonGreetType1.Checked)
             {
                 BdayController.eGreetTypes = eGreetTypes.TYPE1;
                 BdayController.CreateAGreetingForFriend(BdayController.Friend, BdayController.eGreetTypes);
                 ShowHappyBdayOnTextBox(BdayController.GreetingCard.FormatMessage());
             }
-        }
 
-        private void radioButtonGreetType2_CheckedChanged(object sender, EventArgs e)
-        {
-            if (radioButtonGreetType2.Checked)
+            else if (radioButtonGreetType2.Checked)
             {
                 BdayController.eGreetTypes = eGreetTypes.TYPE2;
                 BdayController.CreateAGreetingForFriend(BdayController.Friend, BdayController.eGreetTypes);
                 ShowHappyBdayOnTextBox(BdayController.GreetingCard.FormatMessage());
             }
-        }
 
-        private void radioButtonGreetType3_CheckedChanged(object sender, EventArgs e)
-        {
-            if (radioButtonGreetType3.Checked)
+            else if (radioButtonGreetType3.Checked)
             {
                 BdayController.eGreetTypes = eGreetTypes.TYPE3;
                 BdayController.CreateAGreetingForFriend(BdayController.Friend, BdayController.eGreetTypes);
                 ShowHappyBdayOnTextBox(BdayController.GreetingCard.FormatMessage());
             }
-        }
 
-
-
-        private void radioButtonCustomGreet_CheckedChanged(object sender, EventArgs e)
-        {
-            if (radioButtonCustomGreed.Checked)
+            else if (radioButtonCustomGreed.Checked)
             {
                 BdayController.eGreetTypes = eGreetTypes.CUSTOM_GREET;
                 BdayController.GreetingCard.Message = richTextBoxGreeting.Text;
@@ -126,7 +115,7 @@ namespace BasicFacebookFeatures
                 ShowHappyBdayOnTextBox(BdayController.GreetingCard.FormatMessage());
             }
         }
-    }
 
-    
+        
+    }
 }

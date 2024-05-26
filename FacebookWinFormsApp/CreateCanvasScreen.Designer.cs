@@ -1,6 +1,6 @@
 ﻿namespace BasicFacebookFeatures
 {
-    partial class AlbumsCreateScreen
+    partial class CreateCanvasScreen
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AlbumsCreateScreen));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreateCanvasScreen));
             this.labelTitle = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.buttonPostImage = new System.Windows.Forms.Button();
@@ -51,9 +51,10 @@
             // 
             this.labelTitle.AutoSize = true;
             this.labelTitle.Font = new System.Drawing.Font("Aharoni", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.labelTitle.Location = new System.Drawing.Point(401, 25);
+            this.labelTitle.Location = new System.Drawing.Point(267, 16);
+            this.labelTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(290, 39);
+            this.labelTitle.Size = new System.Drawing.Size(196, 27);
             this.labelTitle.TabIndex = 4;
             this.labelTitle.Text = "Create Canvas";
             // 
@@ -72,9 +73,10 @@
             this.panel1.Controls.Add(this.radioButtonThreeOnThree);
             this.panel1.Controls.Add(this.radioButtonOneOnTwo);
             this.panel1.Controls.Add(this.radioButtonTwoOnTwo);
-            this.panel1.Location = new System.Drawing.Point(21, 94);
+            this.panel1.Location = new System.Drawing.Point(14, 61);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(984, 417);
+            this.panel1.Size = new System.Drawing.Size(656, 271);
             this.panel1.TabIndex = 5;
             // 
             // buttonPostImage
@@ -85,9 +87,10 @@
             this.buttonPostImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(4)))), ((int)(((byte)(94)))));
             this.buttonPostImage.Font = new System.Drawing.Font("Aharoni", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.buttonPostImage.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.buttonPostImage.Location = new System.Drawing.Point(637, 343);
+            this.buttonPostImage.Location = new System.Drawing.Point(425, 223);
+            this.buttonPostImage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonPostImage.Name = "buttonPostImage";
-            this.buttonPostImage.Size = new System.Drawing.Size(179, 54);
+            this.buttonPostImage.Size = new System.Drawing.Size(119, 35);
             this.buttonPostImage.TabIndex = 6;
             this.buttonPostImage.Text = "Post Image";
             this.buttonPostImage.UseVisualStyleBackColor = false;
@@ -101,15 +104,16 @@
             this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel.Location = new System.Drawing.Point(482, 3);
+            this.tableLayoutPanel.Location = new System.Drawing.Point(321, 2);
+            this.tableLayoutPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableLayoutPanel.Name = "tableLayoutPanel";
             this.tableLayoutPanel.RowCount = 3;
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel.Size = new System.Drawing.Size(497, 314);
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 13F));
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 13F));
+            this.tableLayoutPanel.Size = new System.Drawing.Size(331, 204);
             this.tableLayoutPanel.TabIndex = 10;
             // 
             // buttonNextImage
@@ -117,9 +121,10 @@
             this.buttonNextImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(4)))), ((int)(((byte)(94)))));
             this.buttonNextImage.Font = new System.Drawing.Font("Aharoni", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.buttonNextImage.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.buttonNextImage.Location = new System.Drawing.Point(344, 228);
+            this.buttonNextImage.Location = new System.Drawing.Point(229, 148);
+            this.buttonNextImage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonNextImage.Name = "buttonNextImage";
-            this.buttonNextImage.Size = new System.Drawing.Size(79, 40);
+            this.buttonNextImage.Size = new System.Drawing.Size(53, 26);
             this.buttonNextImage.TabIndex = 9;
             this.buttonNextImage.Text = "Next";
             this.buttonNextImage.UseVisualStyleBackColor = false;
@@ -130,9 +135,10 @@
             this.buttonBackImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(4)))), ((int)(((byte)(94)))));
             this.buttonBackImage.Font = new System.Drawing.Font("Aharoni", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.buttonBackImage.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.buttonBackImage.Location = new System.Drawing.Point(253, 228);
+            this.buttonBackImage.Location = new System.Drawing.Point(169, 148);
+            this.buttonBackImage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonBackImage.Name = "buttonBackImage";
-            this.buttonBackImage.Size = new System.Drawing.Size(79, 40);
+            this.buttonBackImage.Size = new System.Drawing.Size(53, 26);
             this.buttonBackImage.TabIndex = 8;
             this.buttonBackImage.Text = "Back";
             this.buttonBackImage.UseVisualStyleBackColor = false;
@@ -144,18 +150,20 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label1.Location = new System.Drawing.Point(3, 48);
+            this.label1.Location = new System.Drawing.Point(2, 31);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(158, 24);
+            this.label1.Size = new System.Drawing.Size(113, 16);
             this.label1.TabIndex = 7;
             this.label1.Text = "Select Layout : ";
             // 
             // pictureBoxImagesFromAlbum
             // 
             this.pictureBoxImagesFromAlbum.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxImagesFromAlbum.Image")));
-            this.pictureBoxImagesFromAlbum.Location = new System.Drawing.Point(253, 75);
+            this.pictureBoxImagesFromAlbum.Location = new System.Drawing.Point(169, 49);
+            this.pictureBoxImagesFromAlbum.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBoxImagesFromAlbum.Name = "pictureBoxImagesFromAlbum";
-            this.pictureBoxImagesFromAlbum.Size = new System.Drawing.Size(170, 136);
+            this.pictureBoxImagesFromAlbum.Size = new System.Drawing.Size(113, 88);
             this.pictureBoxImagesFromAlbum.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxImagesFromAlbum.TabIndex = 5;
             this.pictureBoxImagesFromAlbum.TabStop = false;
@@ -165,9 +173,10 @@
             this.comboBoxAlbumsNames.FormattingEnabled = true;
             this.comboBoxAlbumsNames.Items.AddRange(new object[] {
             ""});
-            this.comboBoxAlbumsNames.Location = new System.Drawing.Point(253, 41);
+            this.comboBoxAlbumsNames.Location = new System.Drawing.Point(169, 27);
+            this.comboBoxAlbumsNames.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBoxAlbumsNames.Name = "comboBoxAlbumsNames";
-            this.comboBoxAlbumsNames.Size = new System.Drawing.Size(170, 28);
+            this.comboBoxAlbumsNames.Size = new System.Drawing.Size(115, 21);
             this.comboBoxAlbumsNames.TabIndex = 4;
             this.comboBoxAlbumsNames.SelectedIndexChanged += new System.EventHandler(this.comboBoxAlbumsNames_SelectedIndexChanged);
             // 
@@ -178,9 +187,10 @@
             this.radioButtonThreeOnThree.AutoSize = true;
             this.radioButtonThreeOnThree.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.radioButtonThreeOnThree.Image = ((System.Drawing.Image)(resources.GetObject("radioButtonThreeOnThree.Image")));
-            this.radioButtonThreeOnThree.Location = new System.Drawing.Point(24, 169);
+            this.radioButtonThreeOnThree.Location = new System.Drawing.Point(16, 110);
+            this.radioButtonThreeOnThree.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.radioButtonThreeOnThree.Name = "radioButtonThreeOnThree";
-            this.radioButtonThreeOnThree.Size = new System.Drawing.Size(93, 25);
+            this.radioButtonThreeOnThree.Size = new System.Drawing.Size(69, 19);
             this.radioButtonThreeOnThree.TabIndex = 2;
             this.radioButtonThreeOnThree.Text = "3 X 3";
             this.radioButtonThreeOnThree.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -194,9 +204,10 @@
             this.radioButtonOneOnTwo.AutoSize = true;
             this.radioButtonOneOnTwo.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.radioButtonOneOnTwo.Image = ((System.Drawing.Image)(resources.GetObject("radioButtonOneOnTwo.Image")));
-            this.radioButtonOneOnTwo.Location = new System.Drawing.Point(24, 130);
+            this.radioButtonOneOnTwo.Location = new System.Drawing.Point(16, 84);
+            this.radioButtonOneOnTwo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.radioButtonOneOnTwo.Name = "radioButtonOneOnTwo";
-            this.radioButtonOneOnTwo.Size = new System.Drawing.Size(93, 25);
+            this.radioButtonOneOnTwo.Size = new System.Drawing.Size(69, 19);
             this.radioButtonOneOnTwo.TabIndex = 1;
             this.radioButtonOneOnTwo.Text = "1 X 2";
             this.radioButtonOneOnTwo.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -211,9 +222,10 @@
             this.radioButtonTwoOnTwo.Checked = true;
             this.radioButtonTwoOnTwo.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.radioButtonTwoOnTwo.Image = ((System.Drawing.Image)(resources.GetObject("radioButtonTwoOnTwo.Image")));
-            this.radioButtonTwoOnTwo.Location = new System.Drawing.Point(24, 91);
+            this.radioButtonTwoOnTwo.Location = new System.Drawing.Point(16, 59);
+            this.radioButtonTwoOnTwo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.radioButtonTwoOnTwo.Name = "radioButtonTwoOnTwo";
-            this.radioButtonTwoOnTwo.Size = new System.Drawing.Size(93, 25);
+            this.radioButtonTwoOnTwo.Size = new System.Drawing.Size(69, 19);
             this.radioButtonTwoOnTwo.TabIndex = 0;
             this.radioButtonTwoOnTwo.TabStop = true;
             this.radioButtonTwoOnTwo.Text = "2 X 2";
@@ -226,16 +238,17 @@
             this.notifyIcon1.Text = "notifyIcon1";
             this.notifyIcon1.Visible = true;
             // 
-            // AlbumsCreateScreen
+            // CreateCanvasScreen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(202)))), ((int)(((byte)(228)))));
-            this.ClientSize = new System.Drawing.Size(1009, 516);
+            this.ClientSize = new System.Drawing.Size(673, 335);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.labelTitle);
-            this.Name = "AlbumsCreateScreen";
-            this.Text = "AlbumsCreateScreen";
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Name = "CreateCanvasScreen";
+            this.Text = "CreateCanvasScreen";
             this.Load += new System.EventHandler(this.AlbumsCreateScreen_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

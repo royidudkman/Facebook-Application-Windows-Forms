@@ -16,12 +16,12 @@ namespace BasicFacebookFeatures
 {
     public partial class AlbumsCreateScreen : Form
     {
-        CreateAlbumController AlbumController { get; set; }
+        CreateCanvasController AlbumController { get; set; }
 
         public AlbumsCreateScreen()
         {
             InitializeComponent();
-            AlbumController = new CreateAlbumController();
+            AlbumController = new CreateCanvasController();
         }
 
 

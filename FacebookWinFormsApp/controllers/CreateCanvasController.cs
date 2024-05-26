@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace BasicFacebookFeatures.controllers
 { 
     
-    internal class CreateAlbumController
+    internal class CreateCanvasController
     {
         public int LayoutRaws { get; set; } = 0;
         public int LayoutCols { get; set; } = 0;
@@ -33,23 +33,23 @@ namespace BasicFacebookFeatures.controllers
 
 
 
-        public async Task<FacebookObjectCollection<Album>> GetAllUserAlbumsAsync()
-        {
-            return await Task.Run(() =>
-            {
-                return AuthRepository.LoginResult.LoggedInUser.Albums;
-            });
-        }
-        public async Task GetAllUserImagesFromAlbumAsync(Album i_UserAlbum)
-        {
-            await Task.Run(() =>
-            {
-                foreach (var image in i_UserAlbum.Photos)
-                {
-                    userPhotos.Add(image);
-                }
-            });
-        }
+        //public async Task<FacebookObjectCollection<Album>> GetAllUserAlbumsAsync()
+        //{
+        //    return await Task.Run(() =>
+        //    {
+        //        return AuthRepository.LoginResult.LoggedInUser.Albums;
+        //    });
+        //}
+        //public async Task GetAllUserImagesFromAlbumAsync(Album i_UserAlbum)
+        //{
+        //    await Task.Run(() =>
+        //    {
+        //        foreach (var image in i_UserAlbum.Photos)
+        //        {
+        //            userPhotos.Add(image);
+        //        }
+        //    });
+        //}
 
     }
 

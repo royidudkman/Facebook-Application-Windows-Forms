@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BasicFacebookFeatures.interfaces
+namespace BasicFacebookFeatures.Data
 {
-    public interface IPopulateable
+    internal class FacebookFetcherService
     {
-        void Populate();
     }
 }

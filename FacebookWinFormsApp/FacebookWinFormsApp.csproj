@@ -135,10 +135,9 @@
     <Compile Include="controllers\BdayController.cs" />
     <Compile Include="controllers\BusinessCardController.cs" />
     <Compile Include="controllers\DataToCardsFetcher.cs" />
-    <Compile Include="controllers\CreateAlbumController.cs" />
+    <Compile Include="controllers\CreateCanvasController.cs" />
     <Compile Include="controllers\PictureController.cs" />
     <Compile Include="controllers\PostsController.cs" />
-    <Compile Include="Data\AlbumManager.cs" />
     <Compile Include="Data\AuthRepository.cs" />
     <Compile Include="Data\BusinessCard.cs" />
     <Compile Include="Data\GreetingCard.cs" />

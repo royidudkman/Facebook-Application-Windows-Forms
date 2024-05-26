@@ -73,7 +73,7 @@ namespace BasicFacebookFeatures
         private void buttonCreateNewAlbum_Click(object sender, EventArgs e)
         {
             LoadingSpinner = new LoadingSpinner();
-            AlbumsCreateScreen albumsCreateScreen = new AlbumsCreateScreen();
+            CreateCanvasScreen albumsCreateScreen = new CreateCanvasScreen();
             LoadingSpinner.Show();
             albumsCreateScreen.Show();
         }

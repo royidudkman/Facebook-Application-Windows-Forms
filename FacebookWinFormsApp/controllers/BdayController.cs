@@ -19,16 +19,10 @@ namespace BasicFacebookFeatures.controllers
 
         public eGreetTypes eGreetTypes { get; set; }
 
-        public BdayController()
-        { 
-
-        }
-
-
-
         public FacebookObjectCollection<User> GetAllAppFriends()
         {
-            FacebookObjectCollection<User> userFriends =AuthRepository.LoginResult.LoggedInUser.Friends;
+            FacebookObjectCollection<User> userFriends = FacebookFetcherService.FetchFriends();
+
             if (userFriends.Count > 0)
             {
                 return userFriends;
@@ -53,9 +47,7 @@ namespace BasicFacebookFeatures.controllers
             }
             GreetingCard = new GreetingCard(friendName , eGreetTypes);
             return GreetingCard.FormatMessage();
-
         }
-
 
         public void PostGreeting()
         {
@@ -78,11 +70,8 @@ namespace BasicFacebookFeatures.controllers
 
     }
 
-
     public enum eGreetTypes
     {
         TYPE1,TYPE2,TYPE3,CUSTOM_GREET
     }
-
-
 }

@@ -13,11 +13,11 @@ namespace BasicFacebookFeatures.controllers
 {
     internal class BusinessCardController 
     {
-        public BusinessCard BusinessCard { get; set; }
+        public UserAbout BusinessCard { get; set; }
 
         public BusinessCardController()
         {
-            BusinessCard = new BusinessCard(AuthRepository.LoginResult);
+            BusinessCard = new UserAbout(AuthRepository.LoginResult);
              
         }
 
@@ -35,8 +35,5 @@ namespace BasicFacebookFeatures.controllers
 
             return businessCardBuilder.ToString();
         }
-
-
-
     }
 }

@@ -12,11 +12,9 @@ namespace BasicFacebookFeatures
 {
     internal class GreetingCard
     {
-    
         public string SenderName { get; set; }
         public string RecipientName { get; set; }
         public string Message { get; set; }
-
         public eGreetTypes eGreetTypes { get; set; }
         public List<string> Attachment { get; set; }
 
@@ -46,17 +44,14 @@ namespace BasicFacebookFeatures
                     {
                         Message = "";
                         break;
-                    }
-                   
+                    }                
             }
         }
-
 
         public void AddAttachment(string attachment)
         {
             Attachment.Add(attachment);
         }
-
 
         public string FormatMessage()
         {
@@ -66,8 +61,5 @@ namespace BasicFacebookFeatures
             happyBdayBuilder.AppendLine("From : " + SenderName);
             return happyBdayBuilder.ToString();
         }
-
-
-
     }
 }
