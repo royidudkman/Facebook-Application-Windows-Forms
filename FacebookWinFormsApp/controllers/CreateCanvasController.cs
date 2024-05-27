@@ -27,7 +27,7 @@ namespace BasicFacebookFeatures.controllers
             get { return LayoutRaws; }
             set
             {
-                if (value > UserPhotos.Count || value < 0)
+                if (value >= UserPhotos.Count || value < 0)
                 {
                     value = 0;
                 }

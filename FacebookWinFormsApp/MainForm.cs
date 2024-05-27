@@ -19,14 +19,13 @@ namespace BasicFacebookFeatures
 {
     public partial class MainForm : Form
     {
-        private FacebookWrapper.LoginResult LoginResult { get; set; }
+        private LoginResult LoginResult { get; set; }
         private PostsTabController postsTabController { get; set; }
         private FriendsTabController friendsTabController { get; set; }
         private AboutTabController aboutTabController { get; set; }
         private PicturesTabController picturesTabController { get; set; }
         private LikedPagesTabController LikedPagesTabController { get; set; }
         private TeamsTabController TeamsTabController { get; set; }
-  
 
         public MainForm()
         {
@@ -42,7 +41,7 @@ namespace BasicFacebookFeatures
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            SetTitleAndProfilePicture();
+            setTitleAndProfilePicture();
             postsTabController.Populate();
             aboutTabController.Populate();
             friendsTabController.Populate();
@@ -51,7 +50,7 @@ namespace BasicFacebookFeatures
             TeamsTabController.Populate();
         }
 
-        public void SetTitleAndProfilePicture()
+        private void setTitleAndProfilePicture()
         {
             labelTitle.Text = $"Welcome {LoginResult.LoggedInUser.FirstName}";
             pictureBoxUserProfile.Image = LoginResult.LoggedInUser.ImageNormal;
@@ -60,19 +59,18 @@ namespace BasicFacebookFeatures
         private void ButtonCreateBusinessCard_Click(object sender, EventArgs e)
         {
             BusinessCardScreen businessCardScreen = new BusinessCardScreen();
+
             businessCardScreen.Show();
         }
 
         private void buttonSendHappyBirthday_Click(object sender, EventArgs e)
         {
-          
             BdayScreen bdayScreen = new BdayScreen();
             bdayScreen.Show();
         }
 
         private void buttonCreateNewAlbum_Click(object sender, EventArgs e)
         {
-
             CreateCanvasScreen albumsCreateScreen = new CreateCanvasScreen();
    
             albumsCreateScreen.Show();

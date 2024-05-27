@@ -17,6 +17,7 @@ namespace BasicFacebookFeatures
     {
         private AuthRepository Auth { get; set; }
         private MainForm MainForm { get; set; }
+
         public LoginForm()
         {
             InitializeComponent();
@@ -42,14 +43,14 @@ namespace BasicFacebookFeatures
 
         private void buttonLogin_Clicked(object sender, EventArgs e)
         {
-            if (AuthRepository.LoginResult == null)
+            labelTitle.Text = "Waiting for you to log-in";
+            AuthRepository.Login();
+            if (AuthRepository.LoginResult.AccessToken != null)
             {
-                labelTitle.Text = "Waiting for you to log-in";
-                AuthRepository.Login();
                 labelTitle.Text = "Logging in, please wait...";
                 MainForm = new MainForm();
                 MainForm.Show();
-                Hide();            
+                Hide();
             }
         }
     }
