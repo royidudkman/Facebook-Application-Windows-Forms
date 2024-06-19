@@ -15,7 +15,16 @@ namespace BasicFacebookFeatures
 {
     public partial class BusinessCardScreen : Form
     {
+        private const string k_SaveDialogFilter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
+        private const string k_SaveDialogTitle = "Save Text File";
+        private const string k_SuccessMessage = "File saved successfully";
+        private const string k_SuccessTitle = "File Saved";
+        private const string k_ErrorTitle = "Error";
+        private const string k_NoContentMessage = "No content to save.";
+        private const string k_InfoTitle = "Information";
+
         private BusinessCardController BusinessCardController;
+
         public BusinessCardScreen()
         {
             InitializeComponent();
@@ -47,8 +56,8 @@ namespace BasicFacebookFeatures
             {
                 using (SaveFileDialog saveFileDialog = new SaveFileDialog())
                 {
-                    saveFileDialog.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
-                    saveFileDialog.Title = "Save Text File";
+                    saveFileDialog.Filter = k_SaveDialogFilter;
+                    saveFileDialog.Title = k_SaveDialogTitle;
 
                     if (saveFileDialog.ShowDialog() == DialogResult.OK)
                     {
@@ -57,19 +66,18 @@ namespace BasicFacebookFeatures
                         try
                         {
                             File.WriteAllText(filePath, richTextBoxPreview.Text);
-                            MessageBox.Show($"File saved successfully", "File Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show(k_SuccessMessage, k_SuccessTitle, MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
-
                         catch (Exception ex)
                         {
-                            MessageBox.Show($"Error saving file: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show($"Error saving file: {ex.Message}", k_ErrorTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                 }
             }
             else
             {
-                MessageBox.Show("No content to save.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(k_NoContentMessage, k_InfoTitle, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }

@@ -17,6 +17,18 @@ namespace BasicFacebookFeatures
 {
     public partial class CreateCanvasScreen : Form
     {
+        private const string k_NoAlbumsMessage = "There Are No Albums";
+        private const string k_DisplayMemberName = "Name";
+        private const string k_AddImageText = "Add Image Here";
+        private const string k_FontName = "Arial";
+        private const int k_FontSize = 10;
+        private const FontStyle k_FontStyle = FontStyle.Bold;
+        private const string k_SaveFileDialogFilter = "PNG Image (*.png)|*.png|JPEG Image (*.jpg)|*.jpg|All files (*.*)|*.*";
+        private const string k_SuccessMessage = "Table layout saved as image.";
+        private const string k_SuccessTitle = "Success";
+        private const MessageBoxButtons k_OkButton = MessageBoxButtons.OK;
+        private const MessageBoxIcon k_InformationIcon = MessageBoxIcon.Information;
+
         CreateCanvasController CreateCanvasController { get; set; }
 
         public CreateCanvasScreen()
@@ -31,33 +43,19 @@ namespace BasicFacebookFeatures
 
             if (userAlbums != null)
             {
-                comboBoxAlbumsNames.DisplayMember = "Name";
+                comboBoxAlbumsNames.DisplayMember = k_DisplayMemberName;
                 comboBoxAlbumsNames.DataSource = userAlbums;
             }
-
             else
             {
-                comboBoxAlbumsNames.Text = "There Are No Albunms";
+                comboBoxAlbumsNames.Text = k_NoAlbumsMessage;
             }
         }
 
         private void createTableLayoutFromUserChoice()
         {
-            switch (CreateCanvasController.LayoutSize)
-            {
-                case eLayoutSize.TWO_ON_TWO:
-                    tableLayoutPanel.RowCount = CreateCanvasController.LayoutRaws;
-                    tableLayoutPanel.ColumnCount = CreateCanvasController.LayoutCols;
-                    break;
-                case eLayoutSize.ONE_ON_TWO:
-                    tableLayoutPanel.RowCount = CreateCanvasController.LayoutRaws;
-                    tableLayoutPanel.ColumnCount = CreateCanvasController.LayoutCols;
-                    break;
-                case eLayoutSize.THREE_ON_THREE:
-                    tableLayoutPanel.RowCount = CreateCanvasController.LayoutRaws;
-                    tableLayoutPanel.ColumnCount = CreateCanvasController.LayoutCols;
-                    break;
-            }
+            tableLayoutPanel.RowCount = CreateCanvasController.LayoutRaws;
+            tableLayoutPanel.ColumnCount = CreateCanvasController.LayoutCols;
 
             setColAndRowsSameSizeOfTable();
             createButtonsForTableLayout();
@@ -83,11 +81,12 @@ namespace BasicFacebookFeatures
             {
                 for (int j = 0; j < CreateCanvasController.LayoutCols; j++)
                 {
-                    Button addImageBtn = new Button();
-
-                    addImageBtn.Text = "Add Image Here";
-                    addImageBtn.Dock = DockStyle.Fill;
-                    addImageBtn.Font = new Font("Arial", 10, FontStyle.Bold);
+                    Button addImageBtn = new Button
+                    {
+                        Text = k_AddImageText,
+                        Dock = DockStyle.Fill,
+                        Font = new Font(k_FontName, k_FontSize, k_FontStyle)
+                    };
 
                     tableLayoutPanel.Controls.Add(addImageBtn, j, i);
                     addImageBtn.Click += createPictureBoxInsteadButton;
@@ -97,23 +96,23 @@ namespace BasicFacebookFeatures
 
         private void createPictureBoxInsteadButton(object sender, EventArgs e)
         {
-            Button clickedButton = sender as Button;
-
-            if (clickedButton != null)
+            if (sender is Button clickedButton)
             {
-                PictureBox pictureBox = new PictureBox();
+                PictureBox pictureBox = new PictureBox
+                {
+                    Image = pictureBoxImagesFromAlbum.Image,
+                    SizeMode = PictureBoxSizeMode.StretchImage,
+                    Location = clickedButton.Location,
+                    Size = clickedButton.Size
+                };
 
-                pictureBox.Image = pictureBoxImagesFromAlbum.Image;
-                pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
-                pictureBox.Location = clickedButton.Location;
-                pictureBox.Size = clickedButton.Size;
                 TableLayoutPanelCellPosition pos = tableLayoutPanel.GetCellPosition(clickedButton);
 
                 tableLayoutPanel.Controls.Add(pictureBox, pos.Column, pos.Row);
                 tableLayoutPanel.Controls.Remove(clickedButton);
             }
 
-            if (CheakTableIsFullInPictures() == true)
+            if (CheakTableIsFullInPictures())
             {
                 buttonPostImage.Show();
             }
@@ -157,11 +156,12 @@ namespace BasicFacebookFeatures
 
         private void comboBoxAlbumsNames_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Album choosenAlbum = comboBoxAlbumsNames.SelectedItem as Album;
-
-            CreateCanvasController.GetAllUserImagesFromAlbum(choosenAlbum);
-            pictureBoxImagesFromAlbum.Image = choosenAlbum.ImageAlbum;
-            CreateCanvasController.IndexUserImages = 0;
+            if (comboBoxAlbumsNames.SelectedItem is Album choosenAlbum)
+            {
+                CreateCanvasController.GetAllUserImagesFromAlbum(choosenAlbum);
+                pictureBoxImagesFromAlbum.Image = choosenAlbum.ImageAlbum;
+                CreateCanvasController.IndexUserImages = 0;
+            }
         }
 
         private void buttonNextImage_Click(object sender, EventArgs e)
@@ -196,32 +196,25 @@ namespace BasicFacebookFeatures
 
         private void buttonPostImage_Click(object sender, EventArgs e)
         {
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-
-            saveFileDialog.Filter = "PNG Image (*.png)|*.png|JPEG Image (*.jpg)|*.jpg|All files (*.*)|*.*";
-            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            using (SaveFileDialog saveFileDialog = new SaveFileDialog { Filter = k_SaveFileDialogFilter })
             {
-                string filePath = saveFileDialog.FileName;
-                Bitmap bitmap = new Bitmap(tableLayoutPanel.Width, tableLayoutPanel.Height);
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string filePath = saveFileDialog.FileName;
+                    using (Bitmap bitmap = new Bitmap(tableLayoutPanel.Width, tableLayoutPanel.Height))
+                    {
+                        tableLayoutPanel.DrawToBitmap(bitmap, new Rectangle(0, 0, tableLayoutPanel.Width, tableLayoutPanel.Height));
+                        bitmap.Save(filePath);
+                    }
 
-                tableLayoutPanel.DrawToBitmap(bitmap, new Rectangle(0, 0, tableLayoutPanel.Width, tableLayoutPanel.Height));
-                bitmap.Save(filePath);
-                bitmap.Dispose();
-                MessageBox.Show("Table layout saved as image.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(k_SuccessMessage, k_SuccessTitle, k_OkButton, k_InformationIcon);
+                }
             }
         }
 
         private bool CheakTableIsFullInPictures()
         {
-            foreach (Control control in tableLayoutPanel.Controls)
-            {
-                if (!(control is PictureBox pictureBox))
-                {
-                    return false;
-                }
-            }
-
-            return true;
+            return tableLayoutPanel.Controls.OfType<PictureBox>().Count() == tableLayoutPanel.RowCount * tableLayoutPanel.ColumnCount;
         }
     }
 }

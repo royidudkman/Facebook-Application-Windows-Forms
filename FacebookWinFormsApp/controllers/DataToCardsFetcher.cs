@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace BasicFacebookFeatures.controllers
 {
-    internal class DataToCardsFetcher
+    public class DataToCardsFetcher
     {
         public ImageAndTitleCardItem[] FetchFriends()
         {
