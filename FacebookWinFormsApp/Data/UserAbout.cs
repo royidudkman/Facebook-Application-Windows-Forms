@@ -7,7 +7,7 @@ using static FacebookWrapper.ObjectModel.User;
 
 namespace BasicFacebookFeatures.Data
 {
-    internal class UserAbout
+    public class UserAbout
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }

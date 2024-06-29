@@ -1,10 +1,12 @@
 ﻿using BasicFacebookFeatures.Data;
+using BasicFacebookFeatures.interfaces;
 using FacebookWrapper.ObjectModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace BasicFacebookFeatures.controllers
 {
@@ -12,17 +14,19 @@ namespace BasicFacebookFeatures.controllers
     {
         public FacebookObjectCollection<Album> UserAlbums { get; set; }
         public FacebookObjectCollection<Photo> UserPhotos { get; set; }
+        public IFacebookServiceProxy IFacebookService { get; set; }
 
         public AlbumController()
         {
-            UserAlbums = FacebookFetcherService.FetchAlbums();
+            IFacebookService = new FacebookFetcherService();
+            UserAlbums = IFacebookService.FetchAlbums();
             UserPhotos = new FacebookObjectCollection<Photo>();
         }
 
         public void GetAllUserImagesFromAlbum(Album i_UserAlbum)
         {
             UserPhotos.Clear();
-            UserPhotos = FacebookFetcherService.FetchPhotosFromAlbum(i_UserAlbum);
+            UserPhotos = IFacebookService.FetchPhotosFromAlbum(i_UserAlbum);
         }
     }
 }

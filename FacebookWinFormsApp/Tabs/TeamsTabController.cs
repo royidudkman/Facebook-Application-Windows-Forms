@@ -1,4 +1,5 @@
 ﻿using BasicFacebookFeatures.controllers;
+using BasicFacebookFeatures.interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,17 +11,16 @@ namespace BasicFacebookFeatures.Tabs
 {
     public class TeamsTabController : BaseTabController
     {
-        private DataToCardsFetcher m_DataToCard = new DataToCardsFetcher();
-
+        private IUserCardsFetcher IuserCardsFetcher = new DataToCardsFetcherAdapter();
         public TeamsTabController(FlowLayoutPanel flowLayoutPanel) : base(flowLayoutPanel) { }
 
         public override void Populate()
         {
-            var teams = m_DataToCard.FetchTeams();
+            var teamsCards = IuserCardsFetcher.GetTeamsCards();
 
-            foreach (var team in teams)
+            foreach (var teamCard in teamsCards)
             {
-                FlowLayoutPanel.Controls.Add(team);
+                FlowLayoutPanel.Controls.Add(teamCard as ImageAndTitleCardItem);
             }
         }
     }

@@ -1,4 +1,5 @@
 ﻿using BasicFacebookFeatures.controllers;
+using BasicFacebookFeatures.interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,16 +11,16 @@ namespace BasicFacebookFeatures.Tabs
 {
     public class LikedPagesTabController : BaseTabController
     {
-        private DataToCardsFetcher m_DataToCard = new DataToCardsFetcher();
+        private IUserCardsFetcher IuserCardsFetcher = new DataToCardsFetcherAdapter();
         public LikedPagesTabController(FlowLayoutPanel flowLayoutPanel) : base(flowLayoutPanel) { }
 
         public override void Populate()
         {
-            var likedPages = m_DataToCard.FetchLikedPages();
+            var likedPagesCards = IuserCardsFetcher.GetLikedPagesCards();
 
-            foreach (var likedPage in likedPages)
+            foreach (var likedPagecard in likedPagesCards)
             {
-                FlowLayoutPanel.Controls.Add(likedPage);
+                FlowLayoutPanel.Controls.Add(likedPagecard as ImageAndTitleCardItem);
             }
         }
     }

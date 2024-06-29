@@ -16,10 +16,16 @@ namespace BasicFacebookFeatures.controllers
         public GreetingCard GreetingCard { get; set; }
         public User Friend { get; set; }
         public eGreetTypes eGreetTypes { get; set; }
+        private IFacebookServiceProxy IFacebookService;
+
+        public BdayController()
+        {
+            IFacebookService = new FacebookFetcherService();
+        }
 
         public FacebookObjectCollection<User> GetAllAppFriends()
         {
-            FacebookObjectCollection<User> userFriends = FacebookFetcherService.FetchFriends();
+            FacebookObjectCollection<User> userFriends = IFacebookService.FetchFriends();
 
             if (userFriends.Count > 0)
             {

@@ -1,4 +1,5 @@
 ﻿using BasicFacebookFeatures.Data;
+using BasicFacebookFeatures.interfaces;
 using FacebookWrapper.ObjectModel;
 using System;
 using System.Collections.Generic;
@@ -16,10 +17,12 @@ namespace BasicFacebookFeatures
     public partial class FriendsListForm : Form
     {
         public User SelectedFriend { get; set; }
+        public IFacebookServiceProxy IFacebookServiceProxy { get; set; }
         public FriendsListForm()
         {
             InitializeComponent();
-            userBindingSource.DataSource = FacebookFetcherService.FetchFriends();
+            IFacebookServiceProxy = new FacebookServiceProxy();
+            userBindingSource.DataSource = IFacebookServiceProxy.FetchFriends();
         }
 
         private void buttonTag_Click(object sender, EventArgs e)

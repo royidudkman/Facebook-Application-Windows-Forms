@@ -165,11 +165,12 @@
     </Compile>
     <Compile Include="controllers\BdayController.cs" />
     <Compile Include="controllers\BusinessCardController.cs" />
-    <Compile Include="controllers\DataToCardsFetcher.cs" />
+    <Compile Include="controllers\DataToCardsFetcherAdapter.cs" />
     <Compile Include="controllers\CreateCanvasController.cs" />
     <Compile Include="controllers\PostsController.cs" />
     <Compile Include="Data\AuthRepository.cs" />
     <Compile Include="Data\Enums.cs" />
+    <Compile Include="Data\FacebookServiceProxy.cs" />
     <Compile Include="Data\UserAbout.cs" />
     <Compile Include="Data\FacebookFetcherService.cs" />
     <Compile Include="Data\GreetingCard.cs" />
@@ -185,6 +186,8 @@
     <Compile Include="ImageGalleryForm.Designer.cs">
       <DependentUpon>ImageGalleryForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="interfaces\IFacebookServiceProxy.cs" />
+    <Compile Include="interfaces\IUserCardsFetcher.cs" />
     <Compile Include="interfaces\IActionableImage.cs" />
     <Compile Include="interfaces\IPopulateable.cs" />
     <Compile Include="MainForm.cs">

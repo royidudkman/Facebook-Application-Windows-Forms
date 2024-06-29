@@ -1,4 +1,5 @@
 ﻿using BasicFacebookFeatures.controllers;
+using BasicFacebookFeatures.interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,16 +11,16 @@ namespace BasicFacebookFeatures.Tabs
 {
     public class FriendsTabController : BaseTabController
     {
-        private DataToCardsFetcher m_DataToCard = new DataToCardsFetcher();
+        private IUserCardsFetcher IuserCardsFetcher = new DataToCardsFetcherAdapter();
         public FriendsTabController(FlowLayoutPanel flowLayoutPanel) : base(flowLayoutPanel) { }
 
         public override void Populate()
         {
-            var friends = m_DataToCard.FetchFriends();
+            var friendsCards = IuserCardsFetcher.GetFriendsCards();
 
-            foreach (var friend in friends)
+            foreach (var friendCard in friendsCards)
             {
-                FlowLayoutPanel.Controls.Add(friend);
+                FlowLayoutPanel.Controls.Add(friendCard as ImageAndTitleCardItem);
             }
         }
     }
