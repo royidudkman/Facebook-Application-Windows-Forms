@@ -83,5 +83,12 @@ namespace BasicFacebookFeatures
             LoginForm loginForm = new LoginForm();
             loginForm.Show();
         }
+
+        private void buttonPost_Click(object sender, EventArgs e)
+        {
+            CreatePostForm createPostForm = new CreatePostForm();
+
+            createPostForm.Show();
+        }
     }
 }

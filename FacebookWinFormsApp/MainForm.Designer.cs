@@ -32,6 +32,7 @@
             this.labelTitle = new System.Windows.Forms.Label();
             this.buttonSendHappyBirthday = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.buttonLogout = new System.Windows.Forms.Button();
             this.buttonCreateCanvas = new System.Windows.Forms.Button();
             this.ButtonCreateBusinessCard = new System.Windows.Forms.Button();
@@ -50,7 +51,7 @@
             this.flowLayoutLikedPages = new System.Windows.Forms.FlowLayoutPanel();
             this.tabPageTeams = new System.Windows.Forms.TabPage();
             this.flowLayoutPanelTeams = new System.Windows.Forms.FlowLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.buttonPost = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUserProfile)).BeginInit();
             this.tabControlFeed.SuspendLayout();
@@ -105,6 +106,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(765, 102);
             this.panel1.TabIndex = 4;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Aharoni", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(10, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(110, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Special Features:";
             // 
             // buttonLogout
             // 
@@ -322,15 +333,15 @@
             this.flowLayoutPanelTeams.Size = new System.Drawing.Size(713, 441);
             this.flowLayoutPanelTeams.TabIndex = 2;
             // 
-            // label1
+            // buttonPost
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Aharoni", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(10, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 13);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Special Features:";
+            this.buttonPost.Location = new System.Drawing.Point(585, 21);
+            this.buttonPost.Name = "buttonPost";
+            this.buttonPost.Size = new System.Drawing.Size(153, 23);
+            this.buttonPost.TabIndex = 7;
+            this.buttonPost.Text = "Post";
+            this.buttonPost.UseVisualStyleBackColor = true;
+            this.buttonPost.Click += new System.EventHandler(this.buttonPost_Click);
             // 
             // MainForm
             // 
@@ -339,6 +350,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(4)))), ((int)(((byte)(94)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(765, 675);
+            this.Controls.Add(this.buttonPost);
             this.Controls.Add(this.tabControlFeed);
             this.Controls.Add(this.pictureBoxUserProfile);
             this.Controls.Add(this.panel1);
@@ -389,5 +401,6 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelTeams;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelAbout;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button buttonPost;
     }
 }

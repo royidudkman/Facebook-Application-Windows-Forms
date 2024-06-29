@@ -111,8 +111,38 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AlbumItemControl.cs">
-      <SubType>Component</SubType>
+    <Compile Include="CreatePostForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreatePostForm.Designer.cs">
+      <DependentUpon>CreatePostForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FriendsListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FriendsListForm.Designer.cs">
+      <DependentUpon>FriendsListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FullSizeImageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FullSizeImageForm.Designer.cs">
+      <DependentUpon>FullSizeImageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="interfaces\IPostable.cs" />
+    <Compile Include="Post Decorators\BackgroundDecorator.cs" />
+    <Compile Include="Post Decorators\BasePost.cs" />
+    <Compile Include="Post Decorators\ImageDecorator.cs" />
+    <Compile Include="Post Decorators\PostText.cs" />
+    <Compile Include="Post Decorators\TagFriendDecorator.cs" />
+    <Compile Include="UserControllers\ImageCardItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControllers\ImageCardItem.Designer.cs">
+      <DependentUpon>ImageCardItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControllers\AlbumItemControl.cs">
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="controllers\AlbumController.cs" />
     <Compile Include="CreateCanvasScreen.cs">
@@ -144,10 +174,10 @@
     <Compile Include="Data\UserAbout.cs" />
     <Compile Include="Data\FacebookFetcherService.cs" />
     <Compile Include="Data\GreetingCard.cs" />
-    <Compile Include="ImageAndTitleCardItem.cs">
+    <Compile Include="UserControllers\ImageAndTitleCardItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ImageAndTitleCardItem.Designer.cs">
+    <Compile Include="UserControllers\ImageAndTitleCardItem.Designer.cs">
       <DependentUpon>ImageAndTitleCardItem.cs</DependentUpon>
     </Compile>
     <Compile Include="ImageGalleryForm.cs">
@@ -158,6 +188,7 @@
     </Compile>
     <Compile Include="interfaces\IFacebookService.cs" />
     <Compile Include="interfaces\IUserCardsFetcher.cs" />
+    <Compile Include="interfaces\IActionableImage.cs" />
     <Compile Include="interfaces\IPopulateable.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -171,10 +202,16 @@
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="PostItem.cs">
+    <Compile Include="UserControllers\ImageComposite.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="PostItem.Designer.cs">
+    <Compile Include="UserControllers\ImageComposite.Designer.cs">
+      <DependentUpon>ImageComposite.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControllers\PostItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControllers\PostItem.Designer.cs">
       <DependentUpon>PostItem.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -186,6 +223,21 @@
     <Compile Include="Tabs\PicturesTabController .cs" />
     <Compile Include="Tabs\PostsTabController.cs" />
     <Compile Include="Tabs\TeamsTabController.cs" />
+    <EmbeddedResource Include="CreatePostForm.resx">
+      <DependentUpon>CreatePostForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FriendsListForm.resx">
+      <DependentUpon>FriendsListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FullSizeImageForm.resx">
+      <DependentUpon>FullSizeImageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControllers\ImageCardItem.resx">
+      <DependentUpon>ImageCardItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControllers\AlbumItemControl.resx">
+      <DependentUpon>AlbumItemControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CreateCanvasScreen.resx">
       <DependentUpon>CreateCanvasScreen.cs</DependentUpon>
     </EmbeddedResource>
@@ -198,7 +250,7 @@
     <EmbeddedResource Include="ImageGalleryForm.resx">
       <DependentUpon>ImageGalleryForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ImageAndTitleCardItem.resx">
+    <EmbeddedResource Include="UserControllers\ImageAndTitleCardItem.resx">
       <DependentUpon>ImageAndTitleCardItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
@@ -207,7 +259,10 @@
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PostItem.resx">
+    <EmbeddedResource Include="UserControllers\ImageComposite.resx">
+      <DependentUpon>ImageComposite.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControllers\PostItem.resx">
       <DependentUpon>PostItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -216,6 +271,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\FacebookWrapper.ObjectModel.User.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
