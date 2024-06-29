@@ -1,4 +1,5 @@
 ﻿using BasicFacebookFeatures.Data;
+using BasicFacebookFeatures.interfaces;
 using FacebookWrapper;
 using FacebookWrapper.ObjectModel;
 using System;
@@ -13,11 +14,16 @@ namespace BasicFacebookFeatures.Tabs
 {
     internal class AboutTabController : BaseTabController
     {
-        public AboutTabController(FlowLayoutPanel flowLayoutPanel) : base(flowLayoutPanel) { }
+        public IFacebookService IFacebookService { get; set; }
+        public AboutTabController(FlowLayoutPanel flowLayoutPanel) : base(flowLayoutPanel)
+        {
+            IFacebookService = new FacebookServiceProxy();
+        }
+
 
         public override void Populate()
         {
-            UserAbout user = FacebookFetcherService.FetchAbout();
+            UserAbout user = IFacebookService.FetchAbout();
             string info = $"{(user?.FirstName != null ? $"First Name: {user.FirstName}{Environment.NewLine}" : string.Empty)}" +
             $"{(user?.LastName != null ? $"Last Name: {user.LastName}{Environment.NewLine}" : string.Empty)}" +
             $"{(user?.Location?.Name != null ? $"City: {user.Location.Name}{Environment.NewLine}" : string.Empty)}" +

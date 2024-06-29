@@ -8,14 +8,22 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.CodeDom;
 using BasicFacebookFeatures.Data;
+using BasicFacebookFeatures.interfaces;
 
 namespace BasicFacebookFeatures.controllers
 {
     internal class PostsController
     {
+        IFacebookService IFacebookService;
+
+        public PostsController()
+        {
+            IFacebookService = new FacebookFetcherService();
+        }
+
         public PostItem[] FetchPosts()
         {
-            FacebookObjectCollection<Post> allPosts = FacebookFetcherService.FetchPosts();
+            FacebookObjectCollection<Post> allPosts = IFacebookService.FetchPosts();
             PostItem[] allPostItems;
             allPostItems = new PostItem[allPosts.Count];
 

@@ -14,10 +14,11 @@ namespace BasicFacebookFeatures.controllers
     internal class BusinessCardController 
     {
         public UserAbout BusinessCard { get; set; }
-
+        public IFacebookService IFacebookService { get; set; }
         public BusinessCardController()
         {
-            BusinessCard = FacebookFetcherService.FetchAbout();     
+            IFacebookService = new FacebookFetcherService();
+            BusinessCard = IFacebookService.FetchAbout();     
         }
 
         public string GetInfoFromUser(string i_InfoType)

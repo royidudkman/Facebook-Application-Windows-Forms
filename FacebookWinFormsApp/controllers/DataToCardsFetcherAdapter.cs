@@ -11,11 +11,18 @@ using System.Windows.Forms;
 
 namespace BasicFacebookFeatures.controllers
 {
-    public class DataToCardsFetcher
+    public class DataToCardsFetcherAdapter : IUserCardsFetcher
     {
-        public ImageAndTitleCardItem[] FetchFriends()
+        private IFacebookService IFacebookService;
+
+        public DataToCardsFetcherAdapter()
         {
-            FacebookObjectCollection<User> allFriends = FacebookFetcherService.FetchFriends();
+            IFacebookService = new FacebookServiceProxy();
+        }
+
+        public Control[] GetFriendsCards()
+        {
+            FacebookObjectCollection<User> allFriends = IFacebookService.FetchFriends();
             ImageAndTitleCardItem[] friendItems;
 
             if (allFriends == null || allFriends.Count == 0)
@@ -39,12 +46,12 @@ namespace BasicFacebookFeatures.controllers
             return friendItems;
         }
 
-        public ImageAndTitleCardItem[] FetchLikedPages()
+        public Control[] GetLikedPagesCards()
         {
-            FacebookObjectCollection<Page> allLikedPages = FacebookFetcherService.FetchLikedPages();
+            FacebookObjectCollection<Page> allLikedPages = IFacebookService.FetchLikedPages();
             ImageAndTitleCardItem[] likedPagesItems;
 
-            if(allLikedPages == null || allLikedPages.Count == 0)
+            if (allLikedPages == null || allLikedPages.Count == 0)
             {
                 likedPagesItems = new ImageAndTitleCardItem[0];
             }
@@ -61,16 +68,16 @@ namespace BasicFacebookFeatures.controllers
                     likedPagesItems[i].Image = allLikedPages[i].ImageSquare;
                 }
             }
-          
+
             return likedPagesItems;
         }
 
-        public ImageAndTitleCardItem[] FetchTeams()
+        public Control[] GetTeamsCards()
         {
-            Page[]  allTeams = FacebookFetcherService.FetchFavofriteTeams();
+            Page[] allTeams = IFacebookService.FetchFavoriteTeams();
             ImageAndTitleCardItem[] teamsItems;
 
-            if(allTeams == null || allTeams.Length == 0)
+            if (allTeams == null || allTeams.Length == 0)
             {
                 teamsItems = new ImageAndTitleCardItem[0];
             }
@@ -87,7 +94,7 @@ namespace BasicFacebookFeatures.controllers
                     teamsItems[i].Image = allTeams[i].ImageSquare;
                 }
             }
-         
+
             return teamsItems;
         }
     }

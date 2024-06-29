@@ -6,27 +6,28 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using BasicFacebookFeatures.Data;
+using BasicFacebookFeatures.interfaces;
 using FacebookWrapper.ObjectModel;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace BasicFacebookFeatures.Data
 {
-    internal class FacebookFetcherService
+    internal class FacebookFetcherService : IFacebookService
     {
         private static FacebookWrapper.LoginResult LoginResult = AuthRepository.LoginResult;
 
-        public static FacebookObjectCollection<User> FetchFriends()
+        public  FacebookObjectCollection<User> FetchFriends()
         {
             return LoginResult.LoggedInUser.Friends;
         }
 
-        public static FacebookObjectCollection<Album> FetchAlbums()
+        public  FacebookObjectCollection<Album> FetchAlbums()
         {
             return LoginResult.LoggedInUser.Albums;
         }
 
-        public static FacebookObjectCollection<Photo> FetchPhotosFromAlbum(Album i_UserAlbum)
+        public  FacebookObjectCollection<Photo> FetchPhotosFromAlbum(Album i_UserAlbum)
         {
             FacebookObjectCollection<Photo> userPhotos = new FacebookObjectCollection<Photo>();
 
@@ -38,22 +39,22 @@ namespace BasicFacebookFeatures.Data
             return userPhotos;
         }
 
-        public static FacebookObjectCollection<Page> FetchLikedPages()
+        public  FacebookObjectCollection<Page> FetchLikedPages()
         {
             return LoginResult.LoggedInUser.LikedPages;
         }
 
-        public static Page[] FetchFavofriteTeams()
+        public Page[] FetchFavoriteTeams()
         {
             return LoginResult.LoggedInUser.FavofriteTeams;
         }
 
-        public static FacebookObjectCollection<Post> FetchPosts()
+        public  FacebookObjectCollection<Post> FetchPosts()
         {
             return LoginResult.LoggedInUser.Posts;
         }
 
-        public static UserAbout FetchAbout()
+        public  UserAbout FetchAbout()
         {
             UserAbout user = new UserAbout();
 
@@ -67,5 +68,7 @@ namespace BasicFacebookFeatures.Data
 
             return user;
         }
+
+
     }
 }
