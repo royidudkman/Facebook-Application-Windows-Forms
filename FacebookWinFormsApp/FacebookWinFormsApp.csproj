@@ -130,6 +130,12 @@
       <DependentUpon>FullSizeImageForm.cs</DependentUpon>
     </Compile>
     <Compile Include="interfaces\IPostable.cs" />
+    <Compile Include="LoadingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoadingForm.Designer.cs">
+      <DependentUpon>LoadingForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Post Decorators\BackgroundDecorator.cs" />
     <Compile Include="Post Decorators\BasePost.cs" />
     <Compile Include="Post Decorators\ImageDecorator.cs" />
@@ -231,6 +237,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FullSizeImageForm.resx">
       <DependentUpon>FullSizeImageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoadingForm.resx">
+      <DependentUpon>LoadingForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControllers\ImageCardItem.resx">
       <DependentUpon>ImageCardItem.cs</DependentUpon>
