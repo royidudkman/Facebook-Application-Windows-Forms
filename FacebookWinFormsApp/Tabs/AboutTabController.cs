@@ -36,7 +36,7 @@ namespace BasicFacebookFeatures.Tabs
                 Font = new Font("Arial", 16)
             };
 
-            FlowLayoutPanel.Controls.Add(aboutInfoLabel);
+            FlowLayoutPanel.Invoke(new Action(() => FlowLayoutPanel.Controls.Add(aboutInfoLabel)));
         }
     }
 }

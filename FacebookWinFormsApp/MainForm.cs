@@ -41,19 +41,19 @@ namespace BasicFacebookFeatures
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            setTitleAndProfilePicture();
-            postsTabController.Populate();
-            aboutTabController.Populate();
-            friendsTabController.Populate();
-            picturesTabController.Populate();
-            LikedPagesTabController.Populate();
-            TeamsTabController.Populate();
+            new Thread(setTitleAndProfilePicture).Start();
+            //new Thread(postsTabController.Populate).Start();
+            new Thread(aboutTabController.Populate).Start();
+            new Thread(friendsTabController.Populate).Start();
+            new Thread(picturesTabController.Populate).Start();
+            new Thread(LikedPagesTabController.Populate).Start();
+            new Thread(TeamsTabController.Populate).Start();
         }
 
         private void setTitleAndProfilePicture()
         {
-            labelTitle.Text = $"Welcome {LoginResult.LoggedInUser.FirstName}";
-            pictureBoxUserProfile.Image = LoginResult.LoggedInUser.ImageNormal;
+            labelTitle.Invoke(new Action(() => labelTitle.Text = $"Welcome {LoginResult.LoggedInUser.FirstName}"));
+            pictureBoxUserProfile.Invoke(new Action(() => pictureBoxUserProfile.Image = LoginResult.LoggedInUser.ImageNormal));
         }
 
         private void ButtonCreateBusinessCard_Click(object sender, EventArgs e)

@@ -28,7 +28,7 @@ namespace BasicFacebookFeatures
             set
             {
                 m_UserName = value;
-                labelName.Text = value;
+                labelName.Invoke(new Action(() => labelName.Text = value)) ;
             }
         }
 
@@ -41,12 +41,12 @@ namespace BasicFacebookFeatures
                 if(value != null)
                 {
                     m_PostText = value;
-                    labelPostText.Text = value;
+                    labelPostText.Invoke(new Action(() => labelPostText.Text = value));
                 }
 
                 else
                 {
-                    labelPostText.Visible = false;
+                    labelPostText.Invoke(new Action(() => labelPostText.Visible = false));
                 }            
             }
         }
@@ -60,12 +60,12 @@ namespace BasicFacebookFeatures
                 if(value != null)
                 {
                     m_PostPictureURL = value;
-                    pictureBoxPostPicture.LoadAsync(value);
+                    pictureBoxPostPicture.Invoke(new Action(() => pictureBoxPostPicture.LoadAsync(value)));
                 }
 
                 else
                 {
-                    pictureBoxPostPicture.Visible = false;
+                    pictureBoxPostPicture.Invoke(new Action(() => pictureBoxPostPicture.Visible = false));
                 }            
             }
         }
@@ -79,13 +79,13 @@ namespace BasicFacebookFeatures
                 if(value != null)
                 {
                     m_PostVideoURL = value;
-                    axWindowsMediaPlayer1.URL = value;
-                    axWindowsMediaPlayer1.Ctlcontrols.stop();
+                    axWindowsMediaPlayer1.Invoke(new Action(() => axWindowsMediaPlayer1.URL = value));
+                    axWindowsMediaPlayer1.Invoke(new Action(() => axWindowsMediaPlayer1.Ctlcontrols.stop()));
                 }
 
                 else
                 {
-                    axWindowsMediaPlayer1.Visible = false;
+                    axWindowsMediaPlayer1.Invoke(new Action(() => axWindowsMediaPlayer1.Visible = false));
                 }          
             }
         }
@@ -97,7 +97,7 @@ namespace BasicFacebookFeatures
             set
             {
                 m_UserProfilePicture = value;
-                pictureBoxProfilePicture.Image = value;
+                pictureBoxProfilePicture.Invoke(new Action(() => pictureBoxProfilePicture.Image = value));
             }
         }
         public PostItem()
