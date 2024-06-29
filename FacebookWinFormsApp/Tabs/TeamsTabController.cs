@@ -11,6 +11,8 @@ namespace BasicFacebookFeatures.Tabs
 {
     public class TeamsTabController : BaseTabController
     {
+        public event Action PopulateCompleted;
+
         private IUserCardsFetcher IuserCardsFetcher = new DataToCardsFetcherAdapter();
         public TeamsTabController(FlowLayoutPanel flowLayoutPanel) : base(flowLayoutPanel) { }
 
@@ -22,6 +24,7 @@ namespace BasicFacebookFeatures.Tabs
             {
                 FlowLayoutPanel.Controls.Add(teamCard as ImageAndTitleCardItem);
             }
+            PopulateCompleted?.Invoke();
         }
     }
 }

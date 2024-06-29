@@ -28,10 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.lable_loading = new System.Windows.Forms.Label();
             this.progressBar_loading = new System.Windows.Forms.ProgressBar();
-            this.timer = new System.Windows.Forms.Timer(this.components);
             this.label_precent = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -60,10 +58,6 @@
             this.progressBar_loading.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.progressBar_loading.TabIndex = 1;
             this.progressBar_loading.UseWaitCursor = true;
-            // 
-            // timer
-            // 
-            this.timer.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // label_precent
             // 
@@ -99,7 +93,6 @@
 
         private System.Windows.Forms.Label lable_loading;
         private System.Windows.Forms.ProgressBar progressBar_loading;
-        private System.Windows.Forms.Timer timer;
         private System.Windows.Forms.Label label_precent;
     }
 }

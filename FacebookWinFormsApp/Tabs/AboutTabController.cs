@@ -12,9 +12,11 @@ using System.Windows.Forms;
 
 namespace BasicFacebookFeatures.Tabs
 {
-    internal class AboutTabController : BaseTabController
+    public class AboutTabController : BaseTabController
     {
+        public event Action PopulateCompleted;
         public IFacebookServiceProxy IFacebookService { get; set; }
+       
         public AboutTabController(FlowLayoutPanel flowLayoutPanel) : base(flowLayoutPanel)
         {
             IFacebookService = new FacebookServiceProxy();
@@ -37,6 +39,7 @@ namespace BasicFacebookFeatures.Tabs
             };
 
             FlowLayoutPanel.Controls.Add(aboutInfoLabel);
+            PopulateCompleted?.Invoke();
         }
     }
 }

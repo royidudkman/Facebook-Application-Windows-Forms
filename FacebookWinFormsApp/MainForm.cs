@@ -20,12 +20,12 @@ namespace BasicFacebookFeatures
     public partial class MainForm : Form
     {
         private LoginResult LoginResult { get; set; }
-        private PostsTabController postsTabController { get; set; }
-        private FriendsTabController friendsTabController { get; set; }
-        private AboutTabController aboutTabController { get; set; }
-        private PicturesTabController picturesTabController { get; set; }
-        private LikedPagesTabController LikedPagesTabController { get; set; }
-        private TeamsTabController TeamsTabController { get; set; }
+        public PostsTabController postsTabController { get; set; }
+        public FriendsTabController friendsTabController { get; set; }
+        public AboutTabController aboutTabController { get; set; }
+        public PicturesTabController picturesTabController { get; set; }
+        public LikedPagesTabController LikedPagesTabController { get; set; }
+        public TeamsTabController TeamsTabController { get; set; }
 
         public MainForm()
         {
@@ -42,12 +42,17 @@ namespace BasicFacebookFeatures
         private void MainForm_Load(object sender, EventArgs e)
         {
             setTitleAndProfilePicture();
+
+        }
+
+        public void initialData()
+        {
             postsTabController.Populate();
-            aboutTabController.Populate();
-            friendsTabController.Populate();
-            picturesTabController.Populate();
-            LikedPagesTabController.Populate();
-            TeamsTabController.Populate();
+            new Thread(friendsTabController.Populate).Start();
+            new Thread(aboutTabController.Populate).Start();
+            new Thread(picturesTabController.Populate).Start();
+            new Thread(LikedPagesTabController.Populate).Start();
+            new Thread(TeamsTabController.Populate).Start();
         }
 
         private void setTitleAndProfilePicture()

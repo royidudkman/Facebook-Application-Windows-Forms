@@ -11,6 +11,8 @@ namespace BasicFacebookFeatures.Tabs
 {
     public class FriendsTabController : BaseTabController
     {
+        public event Action PopulateCompleted;
+
         private IUserCardsFetcher IuserCardsFetcher = new DataToCardsFetcherAdapter();
         public FriendsTabController(FlowLayoutPanel flowLayoutPanel) : base(flowLayoutPanel) { }
 
@@ -22,6 +24,7 @@ namespace BasicFacebookFeatures.Tabs
             {
                 FlowLayoutPanel.Controls.Add(friendCard as ImageAndTitleCardItem);
             }
+            PopulateCompleted?.Invoke();
         }
     }
 }
