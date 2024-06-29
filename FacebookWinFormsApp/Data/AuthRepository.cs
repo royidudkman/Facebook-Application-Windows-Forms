@@ -21,8 +21,8 @@ namespace BasicFacebookFeatures.Data
 
         public static void Login()
         {      
-           // LoginResult = FacebookService.Login(AppId.ToString(), RequiredPermissions);
-            LoginResult = FacebookService.Connect("EAAMsl7nPw7gBO8kLMLfyfzkf3RimfQVPBoFFCPixBM9ZANjTqvT0IRWLrFhx4hbEB8ZB4YfhwGYea9ZCE0NeEWfovacB13nVHJAq0iJZAu6UReKR7f5ts7z27tmtiubloeZBhADHltq9jnwf3ZAQRVTUaG6GmSvR3IHAbZB7khzeivseOuNciZBpVueR5AZDZD");
+            //LoginResult = FacebookService.Login(AppId.ToString(), RequiredPermissions);
+            LoginResult = FacebookService.Connect("EAAMsl7nPw7gBO6GfKJzCCYbsI8DrgvqvgdMg97CriMpFISK8wAhrAhq0n5tIOIpqsqZBkPc7dZCy2CIfANfWDDafqXuPxCloPwq6O9sVd6zfVwzrp00yAtA0RIcTvi0MBIOs40sYQa47zMvGhMBSpJZC2V9t5DBg9j3sQ8VsrOHhU2VDbNyCi7tkgZDZD");
         }
 
         public static void Logout()

@@ -23,7 +23,8 @@ namespace BasicFacebookFeatures.Data
 
         public static FacebookObjectCollection<Album> FetchAlbums()
         {
-            return LoginResult.LoggedInUser.Albums;
+            //return LoginResult.LoggedInUser.Albums;
+            return new FacebookObjectCollection<Album>();
         }
 
         public static FacebookObjectCollection<Photo> FetchPhotosFromAlbum(Album i_UserAlbum)
