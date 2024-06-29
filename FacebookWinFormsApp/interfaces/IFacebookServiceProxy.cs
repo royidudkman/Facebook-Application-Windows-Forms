@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BasicFacebookFeatures.interfaces
 {
-    public interface IFacebookServiceProxy // TODO : make this interface internal ? 
+    public interface IFacebookServiceProxy 
     {
         FacebookObjectCollection<User> FetchFriends();
         FacebookObjectCollection<Album> FetchAlbums();
@@ -16,6 +16,6 @@ namespace BasicFacebookFeatures.interfaces
         FacebookObjectCollection<Page> FetchLikedPages();
         Page[] FetchFavoriteTeams();
         FacebookObjectCollection<Post> FetchPosts();
-        UserAbout FetchAbout(); //this is internall class and not public
+        UserAbout FetchAbout(); 
     }
 }
