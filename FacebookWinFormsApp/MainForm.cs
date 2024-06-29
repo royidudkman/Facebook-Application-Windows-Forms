@@ -28,26 +28,31 @@ namespace BasicFacebookFeatures
         private TeamsTabController TeamsTabController { get; set; }
 
         public MainForm()
-        {
+        {         
             InitializeComponent();
+            //tabControlFeed.Hide();
             LoginResult = AuthRepository.LoginResult;
             postsTabController = new PostsTabController(flowLayoutPanelPosts);
             friendsTabController = new FriendsTabController(flowLayoutPanelFriends);
             aboutTabController = new AboutTabController(flowLayoutPanelAbout);
             picturesTabController = new PicturesTabController(flowLayoutPanelPictures);
             LikedPagesTabController = new LikedPagesTabController(flowLayoutLikedPages);
-            TeamsTabController = new TeamsTabController(flowLayoutPanelTeams);
+            TeamsTabController = new TeamsTabController(flowLayoutPanelTeams);   
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
             new Thread(setTitleAndProfilePicture).Start();
-            //new Thread(postsTabController.Populate).Start();
+            new Thread(postsTabController.Populate).Start();
             new Thread(aboutTabController.Populate).Start();
             new Thread(friendsTabController.Populate).Start();
             new Thread(picturesTabController.Populate).Start();
             new Thread(LikedPagesTabController.Populate).Start();
             new Thread(TeamsTabController.Populate).Start();
+
+           
+            //tabControlFeed.Invoke(new Action(() => tabControlFeed.Show()));
+
         }
 
         private void setTitleAndProfilePicture()

@@ -12,6 +12,7 @@ namespace BasicFacebookFeatures
 {
     public partial class LoadingForm : Form
     {
+        private MainForm m_MainForm;
         public LoadingForm()
         {
             InitializeComponent();
@@ -20,6 +21,7 @@ namespace BasicFacebookFeatures
         private void LoadingForm_Load(object sender, EventArgs e)
         {
             timer.Start();
+            m_MainForm = new MainForm();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -32,10 +34,9 @@ namespace BasicFacebookFeatures
             else
             {
                 timer.Stop();
+                m_MainForm.Show();
             }
 
         }
-
-
     }
 }
