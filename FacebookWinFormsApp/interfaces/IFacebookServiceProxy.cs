@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BasicFacebookFeatures.interfaces
 {
-    internal interface IFacebookService // TODO : make this interface internal ? 
+    public interface IFacebookServiceProxy // TODO : make this interface internal ? 
     {
         FacebookObjectCollection<User> FetchFriends();
         FacebookObjectCollection<Album> FetchAlbums();

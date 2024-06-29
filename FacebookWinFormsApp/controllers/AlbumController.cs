@@ -14,7 +14,7 @@ namespace BasicFacebookFeatures.controllers
     {
         public FacebookObjectCollection<Album> UserAlbums { get; set; }
         public FacebookObjectCollection<Photo> UserPhotos { get; set; }
-        public IFacebookService IFacebookService { get; set; }
+        public IFacebookServiceProxy IFacebookService { get; set; }
 
         public AlbumController()
         {

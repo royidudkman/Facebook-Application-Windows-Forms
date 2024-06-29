@@ -13,7 +13,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace BasicFacebookFeatures.Data
 {
-    internal class FacebookFetcherService : IFacebookService
+    internal class FacebookFetcherService : IFacebookServiceProxy
     {
         private static FacebookWrapper.LoginResult LoginResult = AuthRepository.LoginResult;
 

@@ -14,7 +14,7 @@ namespace BasicFacebookFeatures.controllers
     internal class BusinessCardController 
     {
         public UserAbout BusinessCard { get; set; }
-        public IFacebookService IFacebookService { get; set; }
+        public IFacebookServiceProxy IFacebookService { get; set; }
         public BusinessCardController()
         {
             IFacebookService = new FacebookFetcherService();

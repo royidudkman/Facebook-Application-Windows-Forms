@@ -186,7 +186,7 @@
     <Compile Include="ImageGalleryForm.Designer.cs">
       <DependentUpon>ImageGalleryForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="interfaces\IFacebookService.cs" />
+    <Compile Include="interfaces\IFacebookServiceProxy.cs" />
     <Compile Include="interfaces\IUserCardsFetcher.cs" />
     <Compile Include="interfaces\IActionableImage.cs" />
     <Compile Include="interfaces\IPopulateable.cs" />

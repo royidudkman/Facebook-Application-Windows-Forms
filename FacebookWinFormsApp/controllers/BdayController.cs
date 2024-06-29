@@ -16,7 +16,7 @@ namespace BasicFacebookFeatures.controllers
         public GreetingCard GreetingCard { get; set; }
         public User Friend { get; set; }
         public eGreetTypes eGreetTypes { get; set; }
-        private IFacebookService IFacebookService;
+        private IFacebookServiceProxy IFacebookService;
 
         public BdayController()
         {

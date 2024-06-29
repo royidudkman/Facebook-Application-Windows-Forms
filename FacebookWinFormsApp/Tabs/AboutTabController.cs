@@ -14,7 +14,7 @@ namespace BasicFacebookFeatures.Tabs
 {
     internal class AboutTabController : BaseTabController
     {
-        public IFacebookService IFacebookService { get; set; }
+        public IFacebookServiceProxy IFacebookService { get; set; }
         public AboutTabController(FlowLayoutPanel flowLayoutPanel) : base(flowLayoutPanel)
         {
             IFacebookService = new FacebookServiceProxy();

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BasicFacebookFeatures.Data
 {
-    internal class FacebookServiceProxy : IFacebookService
+    internal class FacebookServiceProxy : IFacebookServiceProxy
     {
         private FacebookFetcherService _facebookService = new FacebookFetcherService();
         private FacebookObjectCollection<User> _cachedFriends;
