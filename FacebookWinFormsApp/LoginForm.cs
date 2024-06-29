@@ -48,21 +48,10 @@ namespace BasicFacebookFeatures
             if (AuthRepository.LoginResult.AccessToken != null)
             {
                 labelTitle.Text = "Logging in, please wait...";
-                MainForm = new MainForm();
                 LoadingForm loadingForm = new LoadingForm();
                 loadingForm.Show();
+                //MainForm = new MainForm();
                 //MainForm.Show();
-                //Thread thread = new Thread(new ThreadStart(MainForm.Show));
-                //thread.Start();
-                //while (thread.IsAlive)
-                //{
-                //    LoadingForm loadingForm = new LoadingForm();
-                //    loadingForm.Show();
-                  
-                //}
-
-
-
                 Hide();
             }
         }

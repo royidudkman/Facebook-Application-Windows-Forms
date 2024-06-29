@@ -13,6 +13,8 @@ namespace BasicFacebookFeatures.Tabs
 {
     public class PicturesTabController : BaseTabController
     {
+        public event Action PopulateCompleted;
+
         private AlbumController AlbumController { get; set; }
         private ImageComposite m_RootImageComposite = new ImageComposite();
         public PicturesTabController(FlowLayoutPanel flowLayoutPanel) : base(flowLayoutPanel) { }
@@ -20,6 +22,7 @@ namespace BasicFacebookFeatures.Tabs
         public override void Populate()
         {
             showAlbumsOnTheFlowPanel();
+            PopulateCompleted?.Invoke();
         }
 
         private void showAlbumsOnTheFlowPanel()

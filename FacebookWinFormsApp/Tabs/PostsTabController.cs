@@ -10,6 +10,8 @@ namespace BasicFacebookFeatures.Tabs
 {
     public class PostsTabController : BaseTabController
     {
+        public event Action PopulateCompleted;
+
         private PostsController m_PostsController = new PostsController();
 
         public PostsTabController(FlowLayoutPanel flowLayoutPanel) : base(flowLayoutPanel) { }
@@ -22,6 +24,8 @@ namespace BasicFacebookFeatures.Tabs
             {
                 FlowLayoutPanel.Controls.Add(post);
             }
+
+            PopulateCompleted?.Invoke();
         }
     }
 }
