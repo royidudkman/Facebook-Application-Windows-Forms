@@ -43,6 +43,7 @@ namespace BasicFacebookFeatures
         private void buttonPost_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Your post has been uploaded successfully!", "Post Upload", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Close();
         }
     }
 }
