@@ -147,9 +147,6 @@
     <Compile Include="UserControllers\ImageCardItem.Designer.cs">
       <DependentUpon>ImageCardItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControllers\AlbumItemControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Include="controllers\AlbumController.cs" />
     <Compile Include="CreateCanvasScreen.cs">
       <SubType>Form</SubType>
@@ -243,9 +240,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControllers\ImageCardItem.resx">
       <DependentUpon>ImageCardItem.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControllers\AlbumItemControl.resx">
-      <DependentUpon>AlbumItemControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CreateCanvasScreen.resx">
       <DependentUpon>CreateCanvasScreen.cs</DependentUpon>

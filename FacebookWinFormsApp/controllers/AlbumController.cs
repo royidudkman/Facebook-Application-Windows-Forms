@@ -1,5 +1,6 @@
 ﻿using BasicFacebookFeatures.Data;
 using BasicFacebookFeatures.interfaces;
+using BasicFacebookFeatures.UserControllers;
 using FacebookWrapper.ObjectModel;
 using System;
 using System.Collections.Generic;

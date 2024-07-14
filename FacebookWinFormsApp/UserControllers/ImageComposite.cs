@@ -15,15 +15,12 @@ namespace BasicFacebookFeatures.UserControllers
     {
         private List<IActionableImage> Childs { get; set; } = new List<IActionableImage>();
         private Image CompositeImageCover { get; set; }
-        public event EventHandler ImageClicked;
-        public event EventHandler CheckBoxChanged;
 
         public void AddChild(IActionableImage i_child)
         {
             Childs.Add(i_child);
             CompositeImageCover = CombineImages();
             updateGrid();
-
         }
 
         public void RemoveChild(IActionableImage i_child)
@@ -35,22 +32,6 @@ namespace BasicFacebookFeatures.UserControllers
         public List<IActionableImage> GetChildrens()
         {
             return Childs;
-        }
-
-        public void DeleteImage()
-        {
-            foreach (IActionableImage child in Childs)
-            {
-                child.DeleteImage();             
-            }
-        }
-
-        public void Download()
-        {
-            foreach (IActionableImage child in Childs)
-            {
-                child.Download();
-            }
         }
 
         public ImageComposite()

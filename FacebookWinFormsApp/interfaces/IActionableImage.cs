@@ -10,12 +10,9 @@ namespace BasicFacebookFeatures.interfaces
 {
     public interface IActionableImage
     {
-        void DeleteImage();
-        void Download();
         PictureBox GetImage();
         void ToggleCheckBox();
         bool IsChecked();
         void OpenImageItem();
-
     }
 }

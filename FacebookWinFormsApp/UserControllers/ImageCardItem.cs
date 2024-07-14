@@ -16,8 +16,6 @@ namespace BasicFacebookFeatures
     {
         private Image m_Image;
         private string m_Title;
-        public event EventHandler PictureBoxClicked;
-        public event EventHandler CheckBoxChanged;
 
         public Image Image
         {
@@ -41,22 +39,12 @@ namespace BasicFacebookFeatures
             }
         }
 
-        
-
         public ImageCardItem()
         {
             InitializeComponent();
         }
 
-        public void DeleteImage()
-        {
-            Dispose();
-        }
-
-        public void Download()
-        {
-            throw new NotImplementedException();
-        }
+   
         public PictureBox GetImage()
         {
             PictureBox pictureBox = new PictureBox

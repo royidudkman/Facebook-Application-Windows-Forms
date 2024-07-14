@@ -43,7 +43,6 @@ namespace BasicFacebookFeatures
                 image.ToggleCheckBox();
             }
 
-            buttonDeleteAll.Visible = !buttonDeleteAll.Visible;
             buttonAddToFolder.Visible = !buttonAddToFolder.Visible;
         }
         private void buttonSelect_Click(object sender, EventArgs e)
@@ -51,13 +50,7 @@ namespace BasicFacebookFeatures
             ToggleControlsVisibility();  
         }
 
-        private void buttonDeleteAll_Click(object sender, EventArgs e)
-        {
-            foreach (IActionableImage image in m_AllImageItems)
-            {
-                image.DeleteImage();
-            }
-        }
+        
 
         private void buttonAddToFolder_Click(object sender, EventArgs e)
         {
