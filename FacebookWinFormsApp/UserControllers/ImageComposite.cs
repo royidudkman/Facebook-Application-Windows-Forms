@@ -19,7 +19,7 @@ namespace BasicFacebookFeatures.UserControllers
         public void AddChild(IActionableImage i_child)
         {
             Childs.Add(i_child);
-            CompositeImageCover = CombineImages();
+            CompositeImageCover = combineImages();
             updateGrid();
         }
 
@@ -72,7 +72,7 @@ namespace BasicFacebookFeatures.UserControllers
 
             return pictureBox;
         }
-        private Image CombineImages()
+        private Image combineImages()
         {
             int count = Math.Min(4, Childs.Count);
             if (count == 0) 
