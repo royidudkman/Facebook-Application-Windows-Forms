@@ -14,10 +14,10 @@ namespace BasicFacebookFeatures.Tabs
     public class PicturesTabController : BaseTabController
     {
         public event Action PopulateCompleted;
-
         private AlbumController AlbumController { get; set; }
         private ImageComposite m_RootImageComposite = new ImageComposite();
-        public PicturesTabController(FlowLayoutPanel flowLayoutPanel) : base(flowLayoutPanel) { }
+
+        public PicturesTabController(FlowLayoutPanel i_FlowLayoutPanel) : base(i_FlowLayoutPanel) { }
 
         public override void Populate()
         {
@@ -45,6 +45,7 @@ namespace BasicFacebookFeatures.Tabs
                 foreach (Photo photo in album.Photos)
                 {
                     ImageCardItem imageCardItem = new ImageCardItem();
+
                     imageCardItem.Name = photo.Name;
                     imageCardItem.Image = photo.ImageNormal;
                     albumComposite.AddChild(imageCardItem);

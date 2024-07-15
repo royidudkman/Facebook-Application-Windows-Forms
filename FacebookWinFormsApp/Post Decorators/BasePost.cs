@@ -16,6 +16,6 @@ namespace BasicFacebookFeatures.Post_Decorators
             m_Postable = i_Postable;
         }
 
-        abstract public void AddDecoratorToPanel(FlowLayoutPanel i_flowLayoutPanel); 
+        abstract public void AddDecoratorToPanel(FlowLayoutPanel i_FlowLayoutPanel); 
     }
 }

@@ -50,8 +50,6 @@ namespace BasicFacebookFeatures
             ToggleControlsVisibility();  
         }
 
-        
-
         private void buttonAddToFolder_Click(object sender, EventArgs e)
         {
             ImageComposite imageComposite = new ImageComposite();
@@ -64,6 +62,7 @@ namespace BasicFacebookFeatures
                     image.ToggleCheckBox();
                     imageComposite.AddChild(image);               
                 }
+
                 else
                 {
                     newAllImagesItems.Add(image);

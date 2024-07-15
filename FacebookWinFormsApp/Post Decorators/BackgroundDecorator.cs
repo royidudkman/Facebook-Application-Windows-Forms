@@ -26,6 +26,7 @@ namespace BasicFacebookFeatures.Post_Decorators
                 {
                     BackgroundColor = colorDialog.Color;
                 }
+
                 else
                 {
                     BackgroundColor = Color.White;
@@ -33,9 +34,9 @@ namespace BasicFacebookFeatures.Post_Decorators
             }
         }
 
-        public override void AddDecoratorToPanel(FlowLayoutPanel i_flowLayoutPanel)
+        public override void AddDecoratorToPanel(FlowLayoutPanel i_FlowLayoutPanel)
         {
-            i_flowLayoutPanel.BackColor = BackgroundColor;
+            i_FlowLayoutPanel.BackColor = BackgroundColor;
         }
     }
 }

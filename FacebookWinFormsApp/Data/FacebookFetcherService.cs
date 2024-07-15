@@ -24,7 +24,6 @@ namespace BasicFacebookFeatures.Data
 
         public  FacebookObjectCollection<Album> FetchAlbums()
         {
-            //return LoginResult.LoggedInUser.Albums;
             return new FacebookObjectCollection<Album>();          
         }
 
@@ -69,7 +68,5 @@ namespace BasicFacebookFeatures.Data
 
             return user;
         }
-
-
     }
 }

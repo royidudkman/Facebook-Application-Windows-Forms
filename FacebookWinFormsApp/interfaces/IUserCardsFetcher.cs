@@ -13,6 +13,5 @@ namespace BasicFacebookFeatures.interfaces
         Control[] GetFriendsCards();
         Control[] GetLikedPagesCards();
         Control[] GetTeamsCards();
-        
     }
 }

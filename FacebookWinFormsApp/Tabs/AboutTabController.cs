@@ -17,11 +17,10 @@ namespace BasicFacebookFeatures.Tabs
         public event Action PopulateCompleted;
         public IFacebookServiceProxy IFacebookService { get; set; }
        
-        public AboutTabController(FlowLayoutPanel flowLayoutPanel) : base(flowLayoutPanel)
+        public AboutTabController(FlowLayoutPanel i_FlowLayoutPanel) : base(i_FlowLayoutPanel)
         {
             IFacebookService = new FacebookServiceProxy();
         }
-
 
         public override void Populate()
         {

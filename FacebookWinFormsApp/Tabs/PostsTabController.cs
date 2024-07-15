@@ -11,10 +11,9 @@ namespace BasicFacebookFeatures.Tabs
     public class PostsTabController : BaseTabController
     {
         public event Action PopulateCompleted;
-
         private PostsController m_PostsController = new PostsController();
 
-        public PostsTabController(FlowLayoutPanel flowLayoutPanel) : base(flowLayoutPanel) { }
+        public PostsTabController(FlowLayoutPanel i_FlowLayoutPanel) : base(i_FlowLayoutPanel) { }
 
         public override void Populate()
         {

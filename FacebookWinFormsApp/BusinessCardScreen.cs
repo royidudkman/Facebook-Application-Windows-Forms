@@ -22,7 +22,6 @@ namespace BasicFacebookFeatures
         private const string k_ErrorTitle = "Error";
         private const string k_NoContentMessage = "No content to save.";
         private const string k_InfoTitle = "Information";
-
         private BusinessCardController BusinessCardController;
 
         public BusinessCardScreen()
@@ -68,6 +67,7 @@ namespace BasicFacebookFeatures
                             File.WriteAllText(filePath, richTextBoxPreview.Text);
                             MessageBox.Show(k_SuccessMessage, k_SuccessTitle, MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
+
                         catch (Exception ex)
                         {
                             MessageBox.Show($"Error saving file: {ex.Message}", k_ErrorTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);

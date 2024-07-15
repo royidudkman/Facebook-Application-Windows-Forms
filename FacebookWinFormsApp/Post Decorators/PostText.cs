@@ -12,10 +12,10 @@ namespace BasicFacebookFeatures.Post_Decorators
     {
         public RichTextBox RichTextBox = new RichTextBox();
 
-        public void AddDecoratorToPanel(FlowLayoutPanel i_flowLayoutPanel)
+        public void AddDecoratorToPanel(FlowLayoutPanel i_FlowLayoutPanel)
         {
-            RichTextBox.Width = i_flowLayoutPanel.Width;
-            i_flowLayoutPanel.Controls.Add(RichTextBox);
+            RichTextBox.Width = i_FlowLayoutPanel.Width;
+            i_FlowLayoutPanel.Controls.Add(RichTextBox);
         }
     }
 }

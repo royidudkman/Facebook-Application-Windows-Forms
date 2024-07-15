@@ -14,7 +14,7 @@ namespace BasicFacebookFeatures.controllers
 {
     internal class PostsController
     {
-        IFacebookServiceProxy IFacebookService;
+        public IFacebookServiceProxy IFacebookService { get; set; }
 
         public PostsController()
         {

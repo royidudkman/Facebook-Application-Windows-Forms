@@ -20,22 +20,21 @@ namespace BasicFacebookFeatures
     public partial class MainForm : Form
     {
         private LoginResult LoginResult { get; set; }
-        public PostsTabController postsTabController { get; set; }
-        public FriendsTabController friendsTabController { get; set; }
-        public AboutTabController aboutTabController { get; set; }
-        public PicturesTabController picturesTabController { get; set; }
+        public PostsTabController PostsTabController { get; set; }
+        public FriendsTabController FriendsTabController { get; set; }
+        public AboutTabController AboutTabController { get; set; }
+        public PicturesTabController PicturesTabController { get; set; }
         public LikedPagesTabController LikedPagesTabController { get; set; }
         public TeamsTabController TeamsTabController { get; set; }
 
         public MainForm()
         {         
             InitializeComponent();
-            //tabControlFeed.Hide();
             LoginResult = AuthRepository.LoginResult;
-            postsTabController = new PostsTabController(flowLayoutPanelPosts);
-            friendsTabController = new FriendsTabController(flowLayoutPanelFriends);
-            aboutTabController = new AboutTabController(flowLayoutPanelAbout);
-            picturesTabController = new PicturesTabController(flowLayoutPanelPictures);
+            PostsTabController = new PostsTabController(flowLayoutPanelPosts);
+            FriendsTabController = new FriendsTabController(flowLayoutPanelFriends);
+            AboutTabController = new AboutTabController(flowLayoutPanelAbout);
+            PicturesTabController = new PicturesTabController(flowLayoutPanelPictures);
             LikedPagesTabController = new LikedPagesTabController(flowLayoutLikedPages);
             TeamsTabController = new TeamsTabController(flowLayoutPanelTeams);   
         }
@@ -43,23 +42,22 @@ namespace BasicFacebookFeatures
         private void MainForm_Load(object sender, EventArgs e)
         {
             setTitleAndProfilePicture();
-
         }
 
         public void initialData()
         {
-            postsTabController.Populate();
-            new Thread(friendsTabController.Populate).Start();
-            new Thread(aboutTabController.Populate).Start();
-            new Thread(picturesTabController.Populate).Start();
+            PostsTabController.Populate();
+            new Thread(FriendsTabController.Populate).Start();
+            new Thread(AboutTabController.Populate).Start();
+            new Thread(PicturesTabController.Populate).Start();
             new Thread(LikedPagesTabController.Populate).Start();
             new Thread(TeamsTabController.Populate).Start();
         }
 
         private void setTitleAndProfilePicture()
         {
-            labelTitle.Invoke(new Action(() => labelTitle.Text = $"Welcome {LoginResult.LoggedInUser.FirstName}"));
-            pictureBoxUserProfile.Invoke(new Action(() => pictureBoxUserProfile.Image = LoginResult.LoggedInUser.ImageNormal));
+            labelTitle.Text = $"Welcome {LoginResult.LoggedInUser.FirstName}";
+            pictureBoxUserProfile.Image = LoginResult.LoggedInUser.ImageNormal;
         }
 
         private void ButtonCreateBusinessCard_Click(object sender, EventArgs e)
@@ -72,6 +70,7 @@ namespace BasicFacebookFeatures
         private void buttonSendHappyBirthday_Click(object sender, EventArgs e)
         {
             BdayScreen bdayScreen = new BdayScreen();
+
             bdayScreen.Show();
         }
 
@@ -87,6 +86,7 @@ namespace BasicFacebookFeatures
             Close();
             AuthRepository.Logout();
             LoginForm loginForm = new LoginForm();
+
             loginForm.Show();
         }
 

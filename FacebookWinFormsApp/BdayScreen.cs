@@ -26,7 +26,6 @@ namespace BasicFacebookFeatures
         private const MessageBoxIcon k_ErrorIcon = MessageBoxIcon.Error;
         private const MessageBoxIcon k_QuestionIcon = MessageBoxIcon.Question;
         private const MessageBoxIcon k_InformationIcon = MessageBoxIcon.Information;
-
         BdayController BdayController { get; set; }
 
         public BdayScreen()
@@ -52,6 +51,7 @@ namespace BasicFacebookFeatures
                     listBoxUserFriends.Items.Add(friend);
                 }
             }
+
             catch
             {
                 MessageBox.Show(k_NoFriendsErrorMessage, k_ErrorTitle, k_OkButton, k_ErrorIcon);
@@ -80,14 +80,17 @@ namespace BasicFacebookFeatures
                     MessageBox.Show(k_SuccessMessage, k_SuccessTitle, k_OkButton, k_InformationIcon);
                 }
             }
+
             catch (ArgumentNullException ex)
             {
                 MessageBox.Show("Error: " + ex.Message, k_ErrorTitle, k_OkButton, k_ErrorIcon);
             }
+
             catch (InvalidOperationException ex)
             {
                 MessageBox.Show("Error: " + ex.Message, k_ErrorTitle, k_OkButton, k_ErrorIcon);
             }
+
             catch (Exception ex)
             {
                 MessageBox.Show("An unexpected error occurred: " + ex.Message, k_ErrorTitle, k_OkButton, k_ErrorIcon);
@@ -102,18 +105,21 @@ namespace BasicFacebookFeatures
                 BdayController.CreateAGreetingForFriend(BdayController.Friend, BdayController.eGreetTypes);
                 showHappyBdayOnTextBox(BdayController.GreetingCard.FormatMessage());
             }
+
             else if (radioButtonGreetType2.Checked)
             {
                 BdayController.eGreetTypes = eGreetTypes.TYPE2;
                 BdayController.CreateAGreetingForFriend(BdayController.Friend, BdayController.eGreetTypes);
                 showHappyBdayOnTextBox(BdayController.GreetingCard.FormatMessage());
             }
+
             else if (radioButtonGreetType3.Checked)
             {
                 BdayController.eGreetTypes = eGreetTypes.TYPE3;
                 BdayController.CreateAGreetingForFriend(BdayController.Friend, BdayController.eGreetTypes);
                 showHappyBdayOnTextBox(BdayController.GreetingCard.FormatMessage());
             }
+
             else if (radioButtonCustomGreed.Checked)
             {
                 BdayController.eGreetTypes = eGreetTypes.CUSTOM_GREET;

@@ -16,7 +16,7 @@ namespace BasicFacebookFeatures.controllers
         public GreetingCard GreetingCard { get; set; }
         public User Friend { get; set; }
         public eGreetTypes eGreetTypes { get; set; }
-        private IFacebookServiceProxy IFacebookService;
+        public IFacebookServiceProxy IFacebookService { get; set; }
 
         public BdayController()
         {
@@ -71,6 +71,7 @@ namespace BasicFacebookFeatures.controllers
                     throw new InvalidOperationException("User is not logged in.");
                 }
             }
+
             else
             {
                 throw new ArgumentNullException(nameof(GreetingCard), "Greeting card is null.");

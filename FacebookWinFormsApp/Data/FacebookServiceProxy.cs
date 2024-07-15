@@ -11,71 +11,77 @@ namespace BasicFacebookFeatures.Data
 {
     internal class FacebookServiceProxy : IFacebookServiceProxy
     {
-        private FacebookFetcherService _facebookService = new FacebookFetcherService();
-        private FacebookObjectCollection<User> _cachedFriends;
-        private FacebookObjectCollection<Album> _cachedAlbums;
-        private FacebookObjectCollection<Page> _cachedLikedPages;
-        private Page[] _cachedFavoriteTeams;
-        private FacebookObjectCollection<Post> _cachedPosts;
-        private UserAbout _cachedAbout;
+        private FacebookFetcherService m_FacebookService = new FacebookFetcherService();
+        private FacebookObjectCollection<User> m_CachedFriends;
+        private FacebookObjectCollection<Album> m_CachedAlbums;
+        private FacebookObjectCollection<Page> m_CachedLikedPages;
+        private Page[] m_CachedFavoriteTeams;
+        private FacebookObjectCollection<Post> m_CachedPosts;
+        private UserAbout m_CachedAbout;
 
         public FacebookObjectCollection<User> FetchFriends()
         {
-            if (_cachedFriends == null)
+            if (m_CachedFriends == null)
             {
-                _cachedFriends = _facebookService.FetchFriends();
+                m_CachedFriends = m_FacebookService.FetchFriends();
             }
-            return _cachedFriends;
+
+            return m_CachedFriends;
         }
 
         public FacebookObjectCollection<Album> FetchAlbums()
         {
-            if (_cachedAlbums == null)
+            if (m_CachedAlbums == null)
             {
-                _cachedAlbums = _facebookService.FetchAlbums();
+                m_CachedAlbums = m_FacebookService.FetchAlbums();
             }
-            return _cachedAlbums;
+
+            return m_CachedAlbums;
         }
 
-        public FacebookObjectCollection<Photo> FetchPhotosFromAlbum(Album userAlbum)
+        public FacebookObjectCollection<Photo> FetchPhotosFromAlbum(Album i_UserAlbum)
         {
-            return _facebookService.FetchPhotosFromAlbum(userAlbum);
+            return m_FacebookService.FetchPhotosFromAlbum(i_UserAlbum);
         }
 
         public FacebookObjectCollection<Page> FetchLikedPages()
         {
-            if (_cachedLikedPages == null)
+            if (m_CachedLikedPages == null)
             {
-                _cachedLikedPages = _facebookService.FetchLikedPages();
+                m_CachedLikedPages = m_FacebookService.FetchLikedPages();
             }
-            return _cachedLikedPages;
+
+            return m_CachedLikedPages;
         }
 
         public Page[] FetchFavoriteTeams()
         {
-            if (_cachedFavoriteTeams == null)
+            if (m_CachedFavoriteTeams == null)
             {
-                _cachedFavoriteTeams = _facebookService.FetchFavoriteTeams();
+                m_CachedFavoriteTeams = m_FacebookService.FetchFavoriteTeams();
             }
-            return _cachedFavoriteTeams;
+
+            return m_CachedFavoriteTeams;
         }
 
         public FacebookObjectCollection<Post> FetchPosts()
         {
-            if (_cachedPosts == null)
+            if (m_CachedPosts == null)
             {
-                _cachedPosts = _facebookService.FetchPosts();
+                m_CachedPosts = m_FacebookService.FetchPosts();
             }
-            return _cachedPosts;
+
+            return m_CachedPosts;
         }
 
         public UserAbout FetchAbout()
         {
-            if (_cachedAbout == null)
+            if (m_CachedAbout == null)
             {
-                _cachedAbout = _facebookService.FetchAbout();
+                m_CachedAbout = m_FacebookService.FetchAbout();
             }
-            return _cachedAbout;
+
+            return m_CachedAbout;
         }
     }
 }

@@ -10,12 +10,11 @@ namespace BasicFacebookFeatures.Tabs
 {
     public abstract class BaseTabController : IPopulateable
     {
-        
         protected FlowLayoutPanel FlowLayoutPanel { get; set; }
 
-        public BaseTabController(FlowLayoutPanel flowLayoutPanel)
+        public BaseTabController(FlowLayoutPanel i_FlowLayoutPanel)
         {
-            FlowLayoutPanel = flowLayoutPanel;
+            FlowLayoutPanel = i_FlowLayoutPanel;
         }
 
         public abstract void Populate();

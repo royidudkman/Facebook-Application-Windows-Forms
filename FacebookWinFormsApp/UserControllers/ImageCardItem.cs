@@ -44,16 +44,17 @@ namespace BasicFacebookFeatures
             InitializeComponent();
         }
 
-   
         public PictureBox GetImage()
         {
             PictureBox pictureBox = new PictureBox
+
             {
                 Image = m_Image,
                 SizeMode = PictureBoxSizeMode.StretchImage,
                 Width = 100, 
                 Height = 100 
             };
+
             return pictureBox;
         }
       
@@ -76,6 +77,7 @@ namespace BasicFacebookFeatures
         public void OpenImageItem()
         {
             FullSizeImageForm fullSizeImage = new FullSizeImageForm(); 
+
             fullSizeImage.Size = m_Image.Size;
             fullSizeImage.Image = m_Image;
             fullSizeImage.Show();

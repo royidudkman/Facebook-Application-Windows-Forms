@@ -17,7 +17,6 @@ namespace BasicFacebookFeatures
         private int operationsCompleted = 0;
         private const int totalOperations = 6;
 
-
         public LoadingForm()
         {
             InitializeComponent();
@@ -26,17 +25,14 @@ namespace BasicFacebookFeatures
         private void LoadingForm_Load(object sender, EventArgs e)
         {
             MainForm = new MainForm();
-            MainForm.postsTabController.PopulateCompleted += TabController_PopulateCompleted;
-            MainForm.friendsTabController.PopulateCompleted += TabController_PopulateCompleted;
-            MainForm.aboutTabController.PopulateCompleted += TabController_PopulateCompleted;
-            MainForm.picturesTabController.PopulateCompleted += TabController_PopulateCompleted;
+            MainForm.PostsTabController.PopulateCompleted += TabController_PopulateCompleted;
+            MainForm.FriendsTabController.PopulateCompleted += TabController_PopulateCompleted;
+            MainForm.AboutTabController.PopulateCompleted += TabController_PopulateCompleted;
+            MainForm.PicturesTabController.PopulateCompleted += TabController_PopulateCompleted;
             MainForm.LikedPagesTabController.PopulateCompleted += TabController_PopulateCompleted;
             MainForm.TeamsTabController.PopulateCompleted += TabController_PopulateCompleted;
             MainForm.initialData();
-
         }
-
-
 
         private void TabController_PopulateCompleted()
         {
@@ -44,6 +40,7 @@ namespace BasicFacebookFeatures
             {
                 Invoke(new Action(TabController_PopulateCompleted));
             }
+
             else
             {
                 operationsCompleted++;
@@ -58,6 +55,5 @@ namespace BasicFacebookFeatures
                 }
             }
         }
-
     }
 }

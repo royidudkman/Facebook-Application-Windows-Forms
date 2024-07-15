@@ -49,9 +49,8 @@ namespace BasicFacebookFeatures
             {
                 labelTitle.Text = "Logging in, please wait...";
                 LoadingForm loadingForm = new LoadingForm();
+
                 loadingForm.Show();
-                //MainForm = new MainForm();
-                //MainForm.Show();
                 Hide();
             }
         }

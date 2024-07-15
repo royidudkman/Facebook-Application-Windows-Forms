@@ -13,7 +13,7 @@ namespace BasicFacebookFeatures.controllers
 {
     public class DataToCardsFetcherAdapter : IUserCardsFetcher
     {
-        private IFacebookServiceProxy IFacebookService;
+        public IFacebookServiceProxy IFacebookService { get; set; }
 
         public DataToCardsFetcherAdapter()
         {

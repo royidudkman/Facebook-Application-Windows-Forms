@@ -46,6 +46,7 @@ namespace BasicFacebookFeatures
                 comboBoxAlbumsNames.DisplayMember = k_DisplayMemberName;
                 comboBoxAlbumsNames.DataSource = userAlbums;
             }
+
             else
             {
                 comboBoxAlbumsNames.Text = k_NoAlbumsMessage;
@@ -56,7 +57,6 @@ namespace BasicFacebookFeatures
         {
             tableLayoutPanel.RowCount = CreateCanvasController.LayoutRaws;
             tableLayoutPanel.ColumnCount = CreateCanvasController.LayoutCols;
-
             setColAndRowsSameSizeOfTable();
             createButtonsForTableLayout();
         }

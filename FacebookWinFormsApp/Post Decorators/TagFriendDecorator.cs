@@ -26,13 +26,13 @@ namespace BasicFacebookFeatures.Post_Decorators
             }     
         }
 
-        public override void AddDecoratorToPanel(FlowLayoutPanel i_flowLayoutPanel)
+        public override void AddDecoratorToPanel(FlowLayoutPanel i_FlowLayoutPanel)
         {
             Label label = new Label();
             if (FriendTagged != null)
             {
                 label.Text = FriendTagged.Name;
-                i_flowLayoutPanel.Controls.Add(label);
+                i_FlowLayoutPanel.Controls.Add(label);
             }          
         }
     }

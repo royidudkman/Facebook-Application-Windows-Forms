@@ -12,9 +12,9 @@ namespace BasicFacebookFeatures.Tabs
     public class LikedPagesTabController : BaseTabController
     {
         public event Action PopulateCompleted;
-
         private IUserCardsFetcher IuserCardsFetcher = new DataToCardsFetcherAdapter();
-        public LikedPagesTabController(FlowLayoutPanel flowLayoutPanel) : base(flowLayoutPanel) { }
+
+        public LikedPagesTabController(FlowLayoutPanel i_FlowLayoutPanel) : base(i_FlowLayoutPanel) { }
 
         public override void Populate()
         {
@@ -24,6 +24,7 @@ namespace BasicFacebookFeatures.Tabs
             {
                 FlowLayoutPanel.Controls.Add(likedPagecard as ImageAndTitleCardItem);
             }
+
             PopulateCompleted?.Invoke();
         }
     }

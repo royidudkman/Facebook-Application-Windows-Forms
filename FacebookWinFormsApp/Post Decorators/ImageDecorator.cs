@@ -43,9 +43,9 @@ namespace BasicFacebookFeatures.Post_Decorators
             }
         }
 
-        public override void AddDecoratorToPanel(FlowLayoutPanel i_flowLayoutPanel)
+        public override void AddDecoratorToPanel(FlowLayoutPanel i_FlowLayoutPanel)
         {
-            i_flowLayoutPanel.Controls.Add(PictureBox);
+            i_FlowLayoutPanel.Controls.Add(PictureBox);
         }
     }
 }
