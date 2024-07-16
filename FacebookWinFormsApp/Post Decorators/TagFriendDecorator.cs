@@ -2,6 +2,7 @@
 using FacebookWrapper.ObjectModel;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,9 +30,10 @@ namespace BasicFacebookFeatures.Post_Decorators
         public override void AddDecoratorToPanel(FlowLayoutPanel i_FlowLayoutPanel)
         {
             Label label = new Label();
+            label.Height = 50;
             if (FriendTagged != null)
             {
-                label.Text = FriendTagged.Name;
+                label.Text = $"{FriendTagged.Name}({FriendTagged.ShortName})";
                 i_FlowLayoutPanel.Controls.Add(label);
             }          
         }
